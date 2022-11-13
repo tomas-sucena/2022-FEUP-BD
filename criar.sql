@@ -1,10 +1,10 @@
 CREATE TABLE Época(
-    ano INT PRIMARY KEY
+    ano INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Equipa(
-    idEquipa INT PRIMARY KEY,
-    nome TEXT,
-    género TEXT,
-    idClube INT REFERENCES Clube(idClube)
+    idEquipa INT NOT NULL PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    género TEXT NOT NULL,
+    idClube INT NOT NULL REFERENCES Clube(idClube)
 );
