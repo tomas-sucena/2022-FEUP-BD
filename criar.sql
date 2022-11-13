@@ -1,7 +1,7 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 CREATE TABLE Época(
-    ano                     INTEGER PRIMARY KEY,
+    ano                     INTEGER PRIMARY KEY
 );
 
 CREATE TABLE Equipa(
@@ -17,7 +17,7 @@ CREATE TABLE ÉpocaEquipa(
     
     PRIMARY KEY (idÉpoca, idEquipa),
     FOREIGN KEY (idÉpoca) REFERENCES Época(idÉpoca) ON UPDATE CASCADE,
-    FOREIGN KEY (idEquipa) REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    FOREIGN KEY (idEquipa) REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
 CREATE TABLE Jogador(
@@ -62,4 +62,12 @@ CREATE TABLE Jogo(
     idEstádio               INTEGER NOT NULL REFERENCES Estádio(idEstádio) ON UPDATE CASCADE,
     idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
+);
+
+CREATE TABLE Cesto(
+    idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    período                 INTEGER NOT NULL CONSTRAINT períodoVálido CHECK (período >= 1 and período <= 4),
+    minuto                  REAL NOT NULL,
+    pontos                  INTEGER NOT NULL CONSTRAINT pontosVálidos CHECK (pontos > 0 and pontos <= 3),
+    idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
