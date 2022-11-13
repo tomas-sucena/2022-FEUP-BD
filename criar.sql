@@ -1,12 +1,14 @@
+PRAGMA FOREIGN_KEYS = ON;
+
 CREATE TABLE Época(
-    ano                     INTEGER PRIMARY KEY
+    ano                     INTEGER PRIMARY KEY,
 );
 
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     género                  BOOLEAN,
-    idClube                 INTEGER NOT NULL REFERENCES Clube(idClube)
+    idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
 CREATE TABLE ÉpocaEquipa(
@@ -14,27 +16,27 @@ CREATE TABLE ÉpocaEquipa(
     idEquipa                INTEGER,
     
     PRIMARY KEY (idÉpoca, idEquipa),
-    FOREIGN KEY (idÉpoca) REFERENCES Época(idÉpoca),
-    FOREIGN KEY (idEquipa) REFERENCES Equipa(idEquipa)
+    FOREIGN KEY (idÉpoca) REFERENCES Época(idÉpoca) ON UPDATE CASCADE,
+    FOREIGN KEY (idEquipa) REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
 );
 
 CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     dataNascimento          DATE,
-    género                  BOOLEAN,
+    género                  BOOLEAN DEFAULT 0,
     altura                  DECIMAL(1, 2) CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
     numCamisola             INTEGER CONSTRAINT numVálido CHECK (numCamisola >= 0 and numCamisola < 100),
-    idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa)
+    idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     dataFundação            DATE,
-    idAssociação            INTEGER NOT NULL REFERENCES Associação(idAssociação)
+    idAssociação            INTEGER NOT NULL REFERENCES Associação(idAssociação) ON UPDATE CASCADE
 );
 
 CREATE TABLE Associação(
@@ -57,7 +59,7 @@ CREATE TABLE Jogo(
     fase                    TEXT NOT NULL,
     data                    DATE NOT NULL,
     jornada                 TEXT NOT NULL,
-    idEstádio               INTEGER NOT NULL REFERENCES Estádio(idEstádio),
-    idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa),
-    idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa)
+    idEstádio               INTEGER NOT NULL REFERENCES Estádio(idEstádio) ON UPDATE CASCADE,
+    idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
