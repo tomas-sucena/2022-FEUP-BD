@@ -23,7 +23,7 @@ CREATE TABLE ÉpocaEquipa(
 CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    dataNascimento          DATE,
+    dataNascimento          DATE NOT NULL,
     género                  BOOLEAN DEFAULT 0,
     altura                  DECIMAL(1, 2) CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER CONSTRAINT pesoPositivo CHECK (peso > 0),
@@ -35,7 +35,7 @@ CREATE TABLE Jogador(
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    dataFundação            DATE,
+    dataFundação            DATE NOT NULL,
     idAssociação            INTEGER NOT NULL REFERENCES Associação(idAssociação) ON UPDATE CASCADE
 );
 
