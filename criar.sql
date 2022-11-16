@@ -1,22 +1,22 @@
 PRAGMA FOREIGN_KEYS = ON;
 
-CREATE TABLE Época(
+CREATE TABLE Epoca(
     ano                     INTEGER PRIMARY KEY
 );
 
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    género                  BOOLEAN,
+    genero                  BOOLEAN,
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
-CREATE TABLE ÉpocaEquipa(
-    idÉpoca                 INTEGER,
+CREATE TABLE EpocaEquipa(
+    idEpoca                 INTEGER,
     idEquipa                INTEGER,
     
-    PRIMARY KEY (idÉpoca, idEquipa),
-    FOREIGN KEY (idÉpoca) REFERENCES Época(idÉpoca) ON UPDATE CASCADE,
+    PRIMARY KEY (idEpoca, idEquipa),
+    FOREIGN KEY (idEpoca) REFERENCES Época(idEpoca) ON UPDATE CASCADE,
     FOREIGN KEY (idEquipa) REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
@@ -24,34 +24,34 @@ CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
-    género                  BOOLEAN DEFAULT 0,
+    genero                  BOOLEAN DEFAULT 0,
     altura                  DECIMAL(1, 2) CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
-    numCamisola             INTEGER CONSTRAINT numVálido CHECK (numCamisola >= 0 and numCamisola < 100),
+    numCamisola             INTEGER CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola < 100),
     idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    dataFundação            DATE NOT NULL,
-    idAssociação            INTEGER NOT NULL REFERENCES Associação(idAssociação) ON UPDATE CASCADE
+    dataFundacao            DATE NOT NULL,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
 );
 
-CREATE TABLE Associação(
-    idAssociação            INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE Associacao(
+    idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     distrito                VARCHAR(17) NOT NULL,                
     cidade                  TEXT NOT NULL,
-    dataFundação            DATE NOT NULL  
+    dataFundacao            DATE NOT NULL  
 );
 
-CREATE TABLE Estádio(
-    idEstádio               INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE Estadio(
+    idEstadio               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     morada                  TEXT NOT NULL,
-    lotação                 INTEGER CONSTRAINT lotaçãoPositiva CHECK (lotação > 0)
+    lotacao                 INTEGER CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );
 
 CREATE TABLE Jogo(
@@ -59,15 +59,15 @@ CREATE TABLE Jogo(
     fase                    TEXT NOT NULL,
     data                    DATE NOT NULL,
     jornada                 TEXT NOT NULL,
-    idEstádio               INTEGER NOT NULL REFERENCES Estádio(idEstádio) ON UPDATE CASCADE,
+    idEstadio               INTEGER NOT NULL REFERENCES Estadio(idEstadio) ON UPDATE CASCADE,
     idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
 CREATE TABLE Cesto(
     idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    período                 INTEGER NOT NULL CONSTRAINT períodoVálido CHECK (período >= 1 and período <= 4),
-    minuto                  REAL NOT NULL CONSTRAINT minutoVálido CHECK (minuto >= 0 and minuto < 60),
-    pontos                  INTEGER NOT NULL CONSTRAINT pontosVálidos CHECK (pontos > 0 and pontos <= 3),
+    periodo                 INTEGER NOT NULL CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
+    minuto                  REAL NOT NULL CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
+    pontos                  INTEGER NOT NULL CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
     idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
