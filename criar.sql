@@ -67,7 +67,7 @@ CREATE TABLE Jogo(
 CREATE TABLE Cesto(
     idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
     período                 INTEGER NOT NULL CONSTRAINT períodoVálido CHECK (período >= 1 and período <= 4),
-    minuto                  REAL NOT NULL,
+    minuto                  REAL NOT NULL CONSTRAINT minutoVálido CHECK (minuto >= 0 and minuto < 60),
     pontos                  INTEGER NOT NULL CONSTRAINT pontosVálidos CHECK (pontos > 0 and pontos <= 3),
     idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
