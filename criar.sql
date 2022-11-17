@@ -5,7 +5,7 @@ CREATE TABLE Epoca(
 );
 
 CREATE TABLE Equipa(
-    idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
+    idEquipa                INTEGER                 CONSTRAINT idEquipa_PK PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     genero                  BOOLEAN,
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
@@ -25,10 +25,10 @@ CREATE TABLE Jogador(
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
     genero                  BOOLEAN DEFAULT 0,
-    altura                  DECIMAL(1, 2) CONSTRAINT alturaPositiva CHECK (altura > 0),
+    altura                  DECIMAL(1, 2)           CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
-    numCamisola             INTEGER CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola < 100),
+    numCamisola             INTEGER                 CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola < 100),
     idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
