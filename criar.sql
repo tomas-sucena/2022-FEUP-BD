@@ -1,13 +1,13 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 CREATE TABLE Epoca(
-    ano                     INTEGER PRIMARY KEY
+    ano                     INTEGER PRIMARY KEY     CONSTRAINT ano_primeiro_campeonato CHECK (ano >= 1932)
 );
 
 CREATE TABLE Equipa(
-    idEquipa                INTEGER                 CONSTRAINT idEquipa_PK PRIMARY KEY AUTOINCREMENT,
+    idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    genero                  BOOLEAN,
+    genero                  BOOLEAN DEFAULT 0,
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
@@ -25,8 +25,8 @@ CREATE TABLE Jogador(
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
     genero                  BOOLEAN DEFAULT 0,
-    altura                  DECIMAL(1, 2)           CONSTRAINT alturaPositiva CHECK (altura > 0),
-    peso                    INTEGER CONSTRAINT pesoPositivo CHECK (peso > 0),
+    altura                  DECIMAL(3, 2)           CONSTRAINT alturaPositiva CHECK (altura > 0),
+    peso                    INTEGER                 CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
     numCamisola             INTEGER                 CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola < 100),
     idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
@@ -57,7 +57,7 @@ CREATE TABLE Estadio(
 CREATE TABLE Jogo(
     idJogo                  INTEGER PRIMARY KEY AUTOINCREMENT,
     fase                    TEXT NOT NULL,
-    data                    DATE NOT NULL,
+    dataJogo                DATE NOT NULL,
     jornada                 TEXT NOT NULL,
     idEstadio               INTEGER NOT NULL REFERENCES Estadio(idEstadio) ON UPDATE CASCADE,
     idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
@@ -66,8 +66,8 @@ CREATE TABLE Jogo(
 
 CREATE TABLE Cesto(
     idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    periodo                 INTEGER NOT NULL CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
-    minuto                  REAL NOT NULL CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
-    pontos                  INTEGER NOT NULL CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
+    periodo                 INTEGER NOT NULL        CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
+    minuto                  REAL NOT NULL           CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
+    pontos                  INTEGER NOT NULL        CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
     idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
