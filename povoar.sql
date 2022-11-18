@@ -9,13 +9,23 @@ VALUES ("21/22")
 
 --FPB
 INSERT INTO Associacao (nome, sede, dataFundacao)
-VALUES ("Federação Portuguesa de Basquetebol", "Lisboa", 1927-08-17)
+VALUES ("Federação Portuguesa de Basquetebol", "Telheiras, Lisboa", 1927)
+
+--ABP
+INSERT INTO Associacao (nome, sede)
+VALUES ("Associação de Basquetebol do Porto", "Porto")
+
+
+--ABL
+INSERT INTO Associacao (nome, sede, dataFundacao)
+VALUES ("Associação de Basquetebol de Lisboa", "Carnide, Lisboa", 1927)
 
 
 
 --Clube
 
 --FCPORTO
+INSERT INTO Clube (
 
 
 
@@ -147,5 +157,6 @@ VALUES ("Pavilhão Dragão Arena", "Avenida dos Campeões, 4350-415 Porto", 2179
 
 --Jogos
 
+--Benfica/Porto
 INSERT INTO Jogo (fase, jornada, dataJogo, idEstadio, idEquipaVisitante, idEquipaVisitada, espectadores)
 VALUES ("Fase Regular", 6, 2021-08-31, 1, 1, 2, 1304)

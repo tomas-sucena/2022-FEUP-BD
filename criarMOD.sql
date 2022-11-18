@@ -56,7 +56,7 @@ CREATE TABLE Associacao(
     idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     sede                    TEXT NOT NULL,
-    dataFundacao            DATE NOT NULL  
+    anoFundacao             INTEGER                         CONSTRAINT anoValido CHECK (anoFundacao > 1900)
 );
 
 CREATE TABLE Clube(
