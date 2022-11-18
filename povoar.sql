@@ -33,7 +33,7 @@ VALUES ("21/22")
 
 
 
---Equipas
+--Equipa
 
 
 
@@ -155,8 +155,8 @@ VALUES ("21/22")
     VALUES ("Pavilhão Dragão Arena", "Avenida dos Campeões, 4350-415 Porto", 2179)
 
 
---Jogos
+--Jogo
 
     --Benfica/Porto
-    INSERT INTO Jogo (fase, jornada, dataJogo, idEstadio, idEquipaVisitante, idEquipaVisitada, espectadores)
-    VALUES ("Fase Regular", 6, 2021-08-31, 1, 1, 2, 1304)
+    INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
+    VALUES ("Fase Regular", 6, 2021-08-31, 1, 2, 1, 1304)
