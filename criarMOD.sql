@@ -1,6 +1,14 @@
 PRAGMA FOREIGN_KEYS = ON;
 
-
+DROP TABLE IF EXISTS Cesto;
+DROP TABLE IF EXISTS Jogo;
+DROP TABLE IF EXISTS Estadio;
+DROP TABLE IF EXISTS Clube;
+DROP TABLE IF EXISTS Associacao;
+DROP TABLE IF EXISTS Jogador;
+DROP TABLE IF EXISTS EpocaEquipa;
+DROP TABLE IF EXISTS Equipa;
+DROP TABLE IF EXISTS Epoca;
 
 --ON DELETE SET NULL / ON UPDATE SET NULL: places the NULL value in the foreign key
 --of tuples that reference the removed/changed tuple.
@@ -27,7 +35,7 @@ CREATE TABLE EpocaEquipa(
     idEquipa                INTEGER,
     
     PRIMARY KEY (idEpoca, idEquipa),
-    FOREIGN KEY (idEpoca)   REFERENCES Época(idEpoca) ON UPDATE CASCADE,
+    FOREIGN KEY (idEpoca)   REFERENCES Epoca(idEpoca) ON UPDATE CASCADE,
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
@@ -44,13 +52,6 @@ CREATE TABLE Jogador(
     posicao                 TEXT NOT NULL
 );
 
-CREATE TABLE Clube(
-    idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    dataFundacao            DATE NOT NULL,
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
-);
-
 CREATE TABLE Associacao(
     idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
@@ -58,8 +59,15 @@ CREATE TABLE Associacao(
     dataFundacao            DATE NOT NULL  
 );
 
-CREATE TABLE Pavilhao(
-    idPavilhao              INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE Clube(
+    idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    dataFundacao            DATE NOT NULL,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
+);
+
+CREATE TABLE Estadio(
+    idEstadio               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     morada                  TEXT NOT NULL,
     lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
