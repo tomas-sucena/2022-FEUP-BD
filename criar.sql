@@ -41,6 +41,9 @@ CREATE TABLE EpocaEquipa(
     idEquipa                INTEGER NOT NULL,
     pontos                  INTEGER NOT NULL                CONSTRAINT pontosEquipaValidos CHECK (pontos > 0),
     classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
+    vitorias                INTEGER NOT NULL                CONSTRAINT vitoriasValidas CHECK (vitorias >= 0),                                                            ,
+    derrotas                INTEGER NOT NULL,               CONSTRAINT derrotasValidas CHECK (derrotas >= 0),
+    faltasComparencia       INTEGER NOT NULL,               CONSTRAINT faltasComparenciaValidas CHECK (faltasComparencia >= 0),       
     
     PRIMARY KEY (ano, idEquipa),
     FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
