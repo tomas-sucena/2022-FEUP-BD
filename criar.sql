@@ -39,8 +39,8 @@ CREATE TABLE Equipa(
 CREATE TABLE EpocaEquipa(
     ano                     TEXT NOT NULL,
     idEquipa                INTEGER NOT NULL,
-    pontos                  INTEGER NOT NULL CONSTRAINT pontosEpocaValidos CHECK (pontos > 0),
-    classificacao           INTEGER NOT NULL CONSTRAINT classificacaoValida CHECK (classificacao > 0),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosEquipaValidos CHECK (pontos > 0),
+    classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
     
     PRIMARY KEY (ano, idEquipa),
     FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
