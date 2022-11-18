@@ -35,14 +35,25 @@ VALUES ("21/22")
 
 --Equipa
 
+    --FCPORTO
+    INSERT INTO Equipa (escalao, sexo, idClube)
+    VALUES("Sénior", "M", 1)
 
+    --SLBENFICA
+    INSERT INTO Equipa (escalao, sexo, idClube)
+    VALUES("Sénior", "M", 2)
 
---FCPORTO
+--EpocaEquipa
 
+    --FCPORTO
+    INSERT INTO EpocaEquipa (ano, idEquipa, pontos, classificacao)
+    VALUES ("21/22", 1, 39, 3)
 
+    --SLBENFICA
+    INSERT INTO EpocaEquipa (ano, idEquipa, pontos, classificacao)
+    VALUES ("21/22", 2, 41, 1)
 
-
---SLBENFICA
+    
 
 
 -- Jogadores
