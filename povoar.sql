@@ -166,10 +166,52 @@ VALUES ("21/22");
     INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
     VALUES (2, "Wendell Lewis", 1989-09-21, "M", 208, 118, "Estados Unidos da América", 30, "Poste");
 
+
     --SPORTINGCP
     INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
-    VALUES (2, "Aaron Broussard", 1990-04-14, "M", 196, 93, "Estados Unidos da América", 1, "Base/Extremo");
+    VALUES (3, "Afonso Guedes", 2003-03-06, "M", 196, 87, "Portugal", 16, "Extremo");
 
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "António Monteiro", 1989-04-02, "M", 204, 96, "Angola", 10, "Extremo/Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Daniel Machado", 1990-04-11, "M", 190, 90, "Portugal", 88, "Extremo");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Daniel Relvão", 1996-06-26, "M", 208, 115, "Portugal", 14, "Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Diogo Ventura", 1994-06-24, "M", 194, 82, "Portugal", 9, "Base");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Diogo Araújo", 1997-04-16, "M", 199, 88, "Portugal", 20, "Extremo/Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "João Fernandes", 1992-12-01, "M", 200, 100, "Angola", 13, "Extremo/Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Joshua Patton", 1997-03-07, "M", 203, 104, "Estados Unidos da América", 30, "Extremo/Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Justin Tuoyo", 1994-06-18, "M", 208, 107, "Estados Unidos da América", 4, "Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Micah Downs", 1986-09-08, "M", 203, 95, "Estados Unidos da América", 33, "Extremo");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Miguel Cardoso", 1993-01-15, "M", 186, 85, "Portugal", 1, "Base");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Seydougou Santis", 1997-10-05, "M", 206, 95, "Estados Unidos da América", 5, "Extremo/Poste");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Shakir Smith", 1992-10-25, "M", 185, 73, "Estados Unidos da América", 3, "Base");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Tanner Omlid", 1993-12-02, "M", 191, 98, "Estados Unidos da América", 11, "Extremo");
+
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (3, "Travante Williams", 1993-07-29, "M", 195, 91, "Estados Unidos da América", 0, "Extremo");
 
 
 --Pavilhao
@@ -216,3 +258,7 @@ VALUES ("21/22");
         VALUES("Q3", 18, 21, 2);
         INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
         VALUES("Q4", 16, 6, 2);
+    
+    --Benfica/Sporting
+    INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
+    VALUES ("Fase Regular", 16, 2022-03-23, 3, 1, 2, 850);
