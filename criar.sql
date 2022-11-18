@@ -39,7 +39,7 @@ CREATE TABLE Equipa(
 CREATE TABLE EpocaEquipa(
     ano                     TEXT NOT NULL,
     idEquipa                INTEGER NOT NULL,
-    pontos                  INTEGER NOT NULL CONSTRAINT pontosValidosEpoca CHECK (pontos > 0),
+    pontos                  INTEGER NOT NULL CONSTRAINT pontosEpocaValidos CHECK (pontos > 0),
     classificacao           INTEGER NOT NULL CONSTRAINT classificacaoValida CHECK (classificacao > 0),
     
     PRIMARY KEY (ano, idEquipa),
@@ -81,7 +81,7 @@ CREATE TABLE Jogo(
 CREATE TABLE Periodo(
     idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidosPeriodo CHECK (pontos >= 0),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosPeriodoValidos CHECK (pontos >= 0),
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo)
 );
 
