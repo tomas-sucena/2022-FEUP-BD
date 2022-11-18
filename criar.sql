@@ -1,6 +1,6 @@
 PRAGMA FOREIGN_KEYS = ON;
 
-DROP TABLE IF EXISTS Cesto;
+DROP TABLE IF EXISTS Periodo;
 DROP TABLE IF EXISTS Jogo;
 DROP TABLE IF EXISTS Pavilhao;
 DROP TABLE IF EXISTS Jogador;
@@ -31,8 +31,8 @@ CREATE TABLE Clube(
 
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    sexo                    TEXT NOT NULL,
+    escalao                 TEXT NOT NULL,
+    sexo                    CHAR(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE Jogador(
     idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
-    sexo                    TEXT NOT NULL,
+    sexo                    CHAR(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
@@ -78,6 +78,14 @@ CREATE TABLE Jogo(
     espectadores            INTEGER NOT NULL                CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
 );
 
+CREATE TABLE Periodo(
+    idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidosPeriodo CHECK (pontos >= 0),
+    idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo)
+);
+
+/*
 CREATE TABLE Cesto(
     idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
     periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
@@ -85,3 +93,4 @@ CREATE TABLE Cesto(
     pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
     idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
+*/
