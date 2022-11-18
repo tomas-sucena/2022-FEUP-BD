@@ -53,15 +53,15 @@ VALUES ("21/22");
 --EpocaEquipa
 
     --FCPORTO
-    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltasComparencia, pontos, classificacao)
     VALUES ("21/22", 1, 19, 3, 2, 39, 3);
 
     --SLBENFICA
-    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltasComparencia, pontos, classificacao)
     VALUES ("21/22", 2, 19, 1, 0, 41, 1);
 
     --SPORTINGCP
-    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltasComparencia, pontos, classificacao)
     VALUES ("21/22", 3, 19, 3, 0, 41, 2);
     
 
