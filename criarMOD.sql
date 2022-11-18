@@ -30,9 +30,23 @@ CREATE TABLE Equipa(
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
+CREATE TABLE Associacao(
+    idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    sede                    TEXT NOT NULL,
+    anoFundacao             INTEGER                         CONSTRAINT anoValido CHECK (anoFundacao > 1900)
+);
+
+CREATE TABLE Clube(
+    idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    dataFundacao            DATE NOT NULL,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
+);
+
 CREATE TABLE EpocaEquipa(
-    idEpoca                 INTEGER,
-    idEquipa                INTEGER,
+    idEpoca                 INTEGER NOT NULL,
+    idEquipa                INTEGER NOT NULL,
     
     PRIMARY KEY (idEpoca, idEquipa),
     FOREIGN KEY (idEpoca)   REFERENCES Epoca(idEpoca) ON UPDATE CASCADE,
@@ -46,24 +60,10 @@ CREATE TABLE Jogador(
     dataNascimento          DATE NOT NULL,
     sexo                    TEXT NOT NULL,
     altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
-    peso                    NOT NULL                        CONSTRAINT pesoPositivo CHECK (peso > 0),
+    peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
     numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
     posicao                 TEXT NOT NULL
-);
-
-CREATE TABLE Associacao(
-    idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    sede                    TEXT NOT NULL,
-    anoFundacao             INTEGER                         CONSTRAINT anoValido CHECK (anoFundacao > 1900)
-);
-
-CREATE TABLE Clube(
-    idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    dataFundacao            DATE NOT NULL,
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
 );
 
 CREATE TABLE Estadio(
