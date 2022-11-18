@@ -18,7 +18,7 @@ CREATE TABLE Epoca(
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    sexo                    BOOLEAN DEFAULT 1,
+    sexo                    TEXT NOT NULL,
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
@@ -37,9 +37,10 @@ CREATE TABLE Jogador(
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
     sexo                    TEXT NOT NULL,
-    altura                  INTEGER                 CONSTRAINT alturaPositiva CHECK (altura > 0),
-    paisOrigem              TEXT NOT NULL,
-    numCamisola             INTEGER                 CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
+    altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
+    peso                    NOT NULL                        CONSTRAINT pesoPositivo CHECK (peso > 0),
+    nacionalidade           TEXT NOT NULL,
+    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
     posicao                 TEXT NOT NULL
 );
 
@@ -77,8 +78,8 @@ CREATE TABLE Jogo(
 
 CREATE TABLE Cesto(
     idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    periodo                 INTEGER NOT NULL        CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
-    minuto                  TIME NOT NULL           CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
-    pontos                  INTEGER NOT NULL        CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
+    periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
+    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
     idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
 );
