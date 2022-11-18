@@ -81,7 +81,8 @@ CREATE TABLE Jogo(
 CREATE TABLE Periodo(
     idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosPeriodoValidos CHECK (pontos >= 0),
+    pontosVisitante         INTEGER NOT NULL                CONSTRAINT pontosVisitanteValidos CHECK (pontos >= 0),
+    pontosVisitada          INTEGER NOT NULL                CONSTRAINT pontosVisitadaValidos CHECK (pontos >= 0),
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE
 );
 
