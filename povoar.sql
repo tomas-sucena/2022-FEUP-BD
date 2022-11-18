@@ -233,7 +233,7 @@ VALUES ("21/22");
 
     --Benfica/Porto
     INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
-    VALUES ("Fase Regular", 6, 2021-08-31, 1, 2, 1, 1304);
+    VALUES ("Fase Regular", 6, 2021-10-31, 1, 2, 1, 1304);
 
         --Periodo
         INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
@@ -261,4 +261,56 @@ VALUES ("21/22");
     
     --Benfica/Sporting
     INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
-    VALUES ("Fase Regular", 16, 2022-03-23, 3, 1, 2, 850);
+    VALUES ("Fase Regular", 16, 2022-03-23, 2, 2, 3, 1398);
+
+        --Periodo
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q1", 26, 14, 3);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q2", 14, 19, 3);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q3", 21, 13, 3);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q4", 28, 27, 3);
+
+    --Sporting/Benfica
+    INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
+    VALUES ("Fase Regular", 5, 2022-01-05, 3, 3, 2, 615);
+
+        --Periodo
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q1", 14, 24, 4);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q2", 21, 15, 4);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q3", 23, 15, 4);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q4", 16, 9, 4);
+
+    --Porto/Sporting
+    INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada)
+    VALUES ("Fase Regular", 2, 2021-10-09, 2, 1, 3);
+
+        --Periodo
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q1", 13, 19, 5);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q2", 21, 22, 5);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q3", 23, 17, 5);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q4", 21, 14, 5);
+
+    --Sporting/Porto
+    INSERT INTO Jogo (fase, jornada, dataJogo, idPavilhao, idEquipaVisitante, idEquipaVisitada, espectadores)
+    VALUES ("Fase Regular", 13, 2021-12-28, 1, 3, 1, 545);
+
+        --Periodo
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q1", 21, 22, 6);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q2", 16, 17, 6);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q3", 13, 13, 6);
+        INSERT INTO Periodo (nome, pontosVisitante, pontosVisitada, idJogo)
+        VALUES("Q4", 9, 14, 6);
