@@ -12,7 +12,7 @@ PRAGMA FOREIGN_KEYS = ON;
 
 
 CREATE TABLE Epoca(
-    ano                     INTEGER PRIMARY KEY     CONSTRAINT ano_primeiro_campeonato CHECK (ano >= 1932)
+    ano                     TEXT PRIMARY KEY NOT NULL
 );
 
 CREATE TABLE Equipa(
@@ -33,14 +33,14 @@ CREATE TABLE EpocaEquipa(
 
 CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
+    idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
-    sexo                    BOOLEAN DEFAULT 1,
-    altura                  DECIMAL(3, 2)           CONSTRAINT alturaPositiva CHECK (altura > 0),
-    peso                    INTEGER                 CONSTRAINT pesoPositivo CHECK (peso > 0),
-    nacionalidade           TEXT NOT NULL,
+    sexo                    TEXT NOT NULL,
+    altura                  INTEGER                 CONSTRAINT alturaPositiva CHECK (altura > 0),
+    paisOrigem              TEXT NOT NULL,
     numCamisola             INTEGER                 CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
-    idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
+    posicao                 TEXT NOT NULL
 );
 
 CREATE TABLE Clube(
