@@ -1,10 +1,38 @@
 PRAGMA FOREIGN_KEYS = ON;
 
+--Epoca
+INSERT INTO Epoca (ano)
+VALUES ("21/22")
+
+
+--Associaçao
+
+--FPB
+INSERT INTO Associacao (nome, sede, dataFundacao)
+VALUES ("Federação Portuguesa de Basquetebol", "Lisboa", 1927-08-17)
+
+
+
+--Clube
+
+--FCPORTO
+
+
+
+--SLBENFICA
+
 
 
 -- Equipas
 
 
+
+--FCPORTO
+
+
+
+
+--SLBENFICA
 
 
 -- Jogadores
@@ -56,7 +84,7 @@ INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, naciona
 VALUES (1, "Michael Morrison", 1989-10-31, "Masculino", 207, 108, "Estados Unidos da América", 22, "Poste")
 
 
---Benfica
+--SLBENFICA
 INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
 VALUES (2, "Aaron Broussard", 1990-04-14, "Masculino", 196, 93, "Estados Unidos da América", 1, "Base/Extremo")
 
@@ -107,3 +135,17 @@ VALUES (2, "Travis Munnings", 1994-09-14, "Masculino", 198, 95, "Bahamas", 3, "E
 
 INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
 VALUES (2, "Wendell Lewis", 1989-09-21, "Masculino", 208, 118, "Estados Unidos da América", 30, "Poste")
+
+
+
+--Pavilhao
+
+--Pavilhao Dragao Arena
+INSERT INTO Pavilhao (nome, morada, lotacao)
+VALUES ("Pavilhão Dragão Arena", "Avenida dos Campeões, 4350-415 Porto", 2179)
+
+
+--Jogos
+
+INSERT INTO Jogo (fase, jornada, dataJogo, idEstadio, idEquipaVisitante, idEquipaVisitada, espectadores)
+VALUES ("Fase Regular", 6, 2021-08-31, 1, 1, 2, 1304)

@@ -54,26 +54,26 @@ CREATE TABLE Clube(
 CREATE TABLE Associacao(
     idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    distrito                TEXT NOT NULL,                
-    cidade                  TEXT NOT NULL,
+    sede                    TEXT NOT NULL,
     dataFundacao            DATE NOT NULL  
 );
 
-CREATE TABLE Estadio(
-    idEstadio               INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE Pavilhao(
+    idPavilhao              INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     morada                  TEXT NOT NULL,
-    lotacao                 INTEGER CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
+    lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );
 
 CREATE TABLE Jogo(
     idJogo                  INTEGER PRIMARY KEY AUTOINCREMENT,
     fase                    TEXT NOT NULL,
+    jornada                 TEXT,
     dataJogo                DATE NOT NULL,
-    jornada                 TEXT NOT NULL,
     idEstadio               INTEGER NOT NULL REFERENCES Estadio(idEstadio) ON UPDATE CASCADE,
     idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
+    idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    espectadores            INTEGER NOT NULL                CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
 );
 
 CREATE TABLE Cesto(
