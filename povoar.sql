@@ -31,6 +31,9 @@ VALUES ("21/22");
     INSERT INTO Clube (nome, dataFundacao, idAssociacao)
     VALUES ("Sport Lisboa e Benfica", 1904-02-28, 3);
 
+    --SPORTINGCP
+    INSERT INTO Clube (nome, dataFundacao, idAssociacao)
+    VALUES ("Sporting Clube de Portugal", 1906-07-01, 3);
 
 
 --Equipa
@@ -43,16 +46,23 @@ VALUES ("21/22");
     INSERT INTO Equipa (escalao, sexo, idClube)
     VALUES("Sénior", "M", 2);
 
+    --SPORTINGCP
+    INSERT INTO Equipa (escalao, sexo, idClube)
+    VALUES("Sénior", "M", 3);
+
 --EpocaEquipa
 
     --FCPORTO
-    INSERT INTO EpocaEquipa (ano, idEquipa, pontos, classificacao)
-    VALUES ("21/22", 1, 39, 3);
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    VALUES ("21/22", 1, 19, 3, 2, 39, 3);
 
     --SLBENFICA
-    INSERT INTO EpocaEquipa (ano, idEquipa, pontos, classificacao)
-    VALUES ("21/22", 2, 41, 1);
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    VALUES ("21/22", 2, 19, 1, 0, 41, 1);
 
+    --SPORTINGCP
+    INSERT INTO EpocaEquipa (ano, idEquipa, vitorias, derrotas, faltaComparencia, pontos, classificacao)
+    VALUES ("21/22", 3, 19, 3, 0, 41, 2);
     
 
 -- Jogadores
@@ -155,6 +165,10 @@ VALUES ("21/22");
 
     INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
     VALUES (2, "Wendell Lewis", 1989-09-21, "M", 208, 118, "Estados Unidos da América", 30, "Poste");
+
+    --SPORTINGCP
+    INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+    VALUES (2, "Aaron Broussard", 1990-04-14, "M", 196, 93, "Estados Unidos da América", 1, "Base/Extremo");
 
 
 
