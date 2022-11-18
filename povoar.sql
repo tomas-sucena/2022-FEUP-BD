@@ -57,36 +57,53 @@ VALUES (1, "Michael Morrison", 1989-10-31, "Masculino", 207, 108, "Estados Unido
 
 
 --Benfica
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Aaron Broussard", 1990-04-14, "Masculino", 196, "Estados Unidos da América", 1, "Base/Extremo")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Aaron Broussard", 1990-04-14, "Masculino", 196, 93, "Estados Unidos da América", 1, "Base/Extremo")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Diogo Gameiro", 1995-08-13, "Masculino", 183, "Portugal", 13, "Base")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Diogo Gameiro", 1995-08-13, "Masculino", 183, 81, "Portugal", 13, "Base")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Eduardo Francisco", 2003-11-05, "Masculino", 200, "Angola", 0, "Extremo/Posto")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Eduardo Francisco", 2003-11-05, "Masculino", 200, 92, "Angola", 5, "Extremo/Poste")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Ivan Almeida", 1989-05-10, "Masculino", 198, "Portugal", 96, "Extremo")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Ivan Almeida", 1989-05-10, "Masculino", 198, 94, "Portugal", 96, "Extremo")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Ivan Pavicevic", 2002-08-26, "Masculino", 206, "Sérvia", 11, "Poste")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Arnette Hallman", 1988-01-06, "Masculino", 198, 97, "Espanha", 22, "Extremo/Poste")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "James Ellisor", 1990-03-09, "Masculino", 195, "Estados Unidos da América", 34, "Extremo")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Dennis Clifford", 1992-02-29, "Masculino", 216, 118, "Estados Unidos da América", 42, "Poste")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "João Gomes", 1985-02-05, "Masculino", 200, "Portugal", 15, "Extremo")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "João Gomes", 1985-02-05, "Masculino", 200, 100, "Portugal", 15, "Extremo")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "José Silva", 1989-04-16, "Masculino", 194, "Portugal", 4, "Extremo")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "José Silva", 1989-04-16, "Masculino", 194, 92, "Portugal", 4, "Extremo")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "José Barbosa", 1990-10-18, "Masculino", 178, "Portugal", 6, "Base")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "José Barbosa", 1990-10-18, "Masculino", 178, 74, "Portugal", 6, "Base")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Maik Zirbes", 1990-01-29, "Masculino", 207, "Alemanha", 33, "Poste")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Frank Gaines", 1990-07-07, "Masculino", 193, 88, "Estados Unidos da América", 0, "Base/Extremo")
 
-INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, nacionalidade, numCamisola, posicao)
-VALUES (2, "Makram Romdhane", 1989-03-27, "Masculino", 206, "Tunisia", 12, "Extremo/Poste")
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Makram Romdhane", 1989-03-27, "Masculino", 206, 102, "Tunisia", 12, "Extremo/Poste")
 
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Guilherme Saiote", 2002-05-10, "Masculino", 186, 80, "Portugal", 10, "Base")
+
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Hugo Silva", 2002-05-06, "Masculino", 203, 90, "Portugal", 9, "Extremo/Poste")
+
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "James Farr", 1992-11-02, "Masculino", 208, 112, "Estados Unidos da América", 2, "Poste")
+
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Tomás Barroso", 1990-11-02, "Masculino", 182, 88, "Portugal", 21, "Base/Extremo")
+
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Travis Munnings", 1994-09-14, "Masculino", 198, 95, "Bahamas", 3, "Extremo")
+
+INSERT INTO Jogador (idEquipa, nome, dataNascimento, sexo, altura, peso, nacionalidade, numCamisola, posicao)
+VALUES (2, "Wendell Lewis", 1989-09-21, "Masculino", 208, 118, "Estados Unidos da América", 30, "Poste")
