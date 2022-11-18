@@ -78,7 +78,7 @@ CREATE TABLE Jogo(
     idPavilhao              INTEGER NOT NULL REFERENCES Pavilhao(idPavilhao) ON UPDATE CASCADE,
     idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    espectadores            INTEGER NOT NULL                CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
+    espectadores            INTEGER                         CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
 );
 
 CREATE TABLE Periodo(
