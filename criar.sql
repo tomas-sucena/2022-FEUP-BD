@@ -32,14 +32,14 @@ CREATE TABLE Clube(
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     escalao                 TEXT NOT NULL,
-    sexo                    CHAR(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
 CREATE TABLE EpocaEquipa(
-    ano                     INTEGER NOT NULL,
+    ano                     TEXT NOT NULL,
     idEquipa                INTEGER NOT NULL,
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidosEpoca CHECK (pontos > 0),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosEquipaValidos CHECK (pontos > 0),
     classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
     
     PRIMARY KEY (ano, idEquipa),
@@ -52,7 +52,7 @@ CREATE TABLE Jogador(
     idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     nome                    TEXT NOT NULL,
     dataNascimento          DATE NOT NULL,
-    sexo                    CHAR(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE Jogo(
 CREATE TABLE Periodo(
     idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidosPeriodo CHECK (pontos >= 0),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosPeriodoValidos CHECK (pontos >= 0),
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo)
 );
 
