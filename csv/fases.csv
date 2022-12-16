@@ -1,0 +1,9 @@
+Fases/fase_id,Fases/nome,Fases/tipoFase,Fases/desdobramento,Fases/num_equipas,Fases/numero_equipas_apuradas,Fases/tipo_classificacao,Fases/num_voltas,Fases/idCompeticao,Fases/nomeProva,Fases/short_name,Fases/sorteio_dt_prevista,Fases/sorteio_dt_real,Fases/estado_fase,Fases/estado_calendario,Fases/id_genius_fase,Fases/live
+22335,Fase Regular,Regular,Chave 12,12,8,Poule sem empates,2,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,,,Terminada,Calendário Definitivo,22335,1
+23620,2ª Fase - Grupo C,Regular,Chave 04 ,4,0,Poule sem empates,2,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-03-23,2022-03-23,Em curso,Calendário Definitivo,23620,1
+23633,2ª Fase - Grupo B,Regular,Chave 04 ,4,0,Poule sem empates,2,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-03-24,2022-03-24,Em curso,Calendário Definitivo,23633,1
+23634,2ª Fase - Grupo A,Regular,Chave 04 ,4,0,Poule sem empates,2,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-03-24,2022-03-24,Em curso,Calendário Definitivo,23634,1
+23754,Playout,Eliminatória,Playoff (Final) melhor 5 Jogos (C-C-F-F-C),2,0,Eliminatória Impar,1,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-05-02,2022-05-02,Em curso,Calendário Definitivo,23754,1
+23756,Playoff - 1/4 Final,PlayOff,Playoff (1/4 Final) melhor 3 jogos (C-F-C),8,0,Eliminatória Impar,1,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-05-02,2022-05-02,Em curso,Calendário Definitivo,23756,1
+23757,Playoff - 1/2 Final,PlayOff,Playoff (1/2 Final) melhor 5 Jogos (C-C-F-F-C),4,0,Eliminatória Impar,1,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-05-02,2022-05-02,Em curso,Calendário Definitivo,23757,1
+23758,Playoff - Final,PlayOff,Playoff (Final) melhor 5 Jogos (C-C-F-F-C),2,0,Eliminatória Impar,1,8894,Liga BETCLIC Masculina,Liga BETCLIC Masculina,2022-05-02,2022-05-02,Terminada,Calendário Definitivo,23758,1

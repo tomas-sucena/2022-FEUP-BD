@@ -12,16 +12,25 @@ DROP TABLE IF EXISTS Epoca;
 
 
 CREATE TABLE Epoca(
-    ano                     TEXT PRIMARY KEY NOT NULL
+    idEpoca                 INTEGER PRIMARY KEY,
+    ano                     TEXT NOT NULL
 );
 
 CREATE TABLE Associacao(
-    idAssociacao            INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    sede                    TEXT NOT NULL,
-    anoFundacao             INTEGER                         CONSTRAINT anoValido CHECK (anoFundacao > 1900)
+    idAssociacao            INTEGER PRIMARY KEY, --1
+    nome                    TEXT NOT NULL, --2
+    abreviatura             TEXT, --8
+    dataFundacao            DATE NOT NULL, --9
+    telefone                CHARACTER(9), --13
+    email                   TEXT NOT NULL, --15
+    pais                    TEXT NOT NULL, --26
+    concelho                TEXT, --28
+    distrito                TEXT, --29
+    morada                  TEXT --30
+    --idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) --36 ?
 );
 
+-- distrito concelho
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
@@ -29,11 +38,15 @@ CREATE TABLE Clube(
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
 );
 
+-- escalao
+/*
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
-    escalao                 TEXT NOT NULL,
+    designacao              TEXT NOT NULL,
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao()
     sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
+    idEpoca                 INTEGER NOT NULL
 );
 
 CREATE TABLE EpocaEquipa(
@@ -48,37 +61,69 @@ CREATE TABLE EpocaEquipa(
     PRIMARY KEY (ano, idEquipa),
     FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
+);*/
+
+CREATE TABLE Competicao(
+    idCompeticao            INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
+    idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao)
 );
 
-CREATE TABLE Jogador(
-    idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
-    idEquipa                INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+-- criar tabela fase
+CREATE TABLE FASE(
+    idFase                  INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
-    dataNascimento          DATE NOT NULL,
-    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
-    altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
-    peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
-    nacionalidade           TEXT NOT NULL,
-    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
-    posicao                 TEXT NOT NULL
+    numEquipas              INTEGER NOT NULL                CONSTRAINT numEquipasPositivo CHECK (numEquipas > 0),      
+    idCompeticao            INTEGER NOT NULL REFERENCES Competicao(idCompeticao) ON UPDATE CASCADE
+);
+
+
+-- criar tabela jornada
+
+/*CREATE TABLE Jogo(
+    idJogo                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    idFase                  TEXT NOT NULL,
+    jornada                 TEXT,
+    dataJogo                DATE NOT NULL,
+    horaJogo                             ,
+    idPavilhao              INTEGER NOT NULL REFERENCES Pavilhao(idPavilhao) ON UPDATE CASCADE,
+    idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    idEquipaFora            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    estado                  TEXT NOT NULL,
+    pontosEquipaCasa
+    pontosEquipaFora
+    faltasComparenciaCasa
+    faltasComparenciaFora
+    espectadores            INTEGER                         CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
 );
 
 CREATE TABLE Pavilhao(
     idPavilhao              INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
     morada                  TEXT NOT NULL,
+    idConcelho  
+    idDistrito
     lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );
 
-CREATE TABLE Jogo(
-    idJogo                  INTEGER PRIMARY KEY AUTOINCREMENT,
-    fase                    TEXT NOT NULL,
-    jornada                 TEXT,
-    dataJogo                DATE NOT NULL,
-    idPavilhao              INTEGER NOT NULL REFERENCES Pavilhao(idPavilhao) ON UPDATE CASCADE,
-    idEquipaVisitante       INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    idEquipaVisitada        INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    espectadores            INTEGER                         CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
+CREATE TABLE Jogador(
+    idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    dataNascimento          DATE NOT NULL,
+    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
+    peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
+    nacionalidade           TEXT NOT NULL,
+);
+
+CREATE TABLE EquipaJogador(
+    idEquipa
+    idJogador
+    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
+    posicao                 TEXT NOT NULL
 );
 
 CREATE TABLE Periodo(
@@ -89,12 +134,24 @@ CREATE TABLE Periodo(
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE
 );
 
-/*
-CREATE TABLE Cesto(
-    idCesto                 INTEGER PRIMARY KEY AUTOINCREMENT,
-    periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo >= 1 and periodo <= 4),
-    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto >= 0 and minuto < 60),
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos > 0 and pontos <= 3),
-    idJogador               REFERENCES Jogador(idJogador) ON UPDATE CASCADE
+CREATE TABLE EstatisticaJogo(
+    idJogo
+    idJogador
+    numCamisola
+    tempoJogo --segundos
+    pontos
 );
-*/
+
+CREATE TABLE Classificacao(
+    idCompeticao
+    idFase
+    idEquipa
+    posicao
+    pontos
+    nJogos
+    nVitorias
+    nDerrotas
+    nPontosMarcados
+    nPontosSofridos
+    faltasComparencia
+);*/
