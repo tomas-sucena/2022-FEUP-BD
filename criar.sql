@@ -32,7 +32,7 @@ CREATE TABLE Associacao(
 
 -- distrito concelho
 CREATE TABLE Clube(
-    idClube                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    idClube                 INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
     dataFundacao            DATE NOT NULL,
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
@@ -134,7 +134,7 @@ CREATE TABLE Periodo(
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE
 );
 
-CREATE TABLE EstatisticaJogo(
+CREATE TABLE JogoJogador(
     idJogo
     idJogador
     numCamisola

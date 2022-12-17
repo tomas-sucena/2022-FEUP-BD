@@ -1,4 +1,7 @@
+PRAGMA FOREIGN_KEYS = ON;
+
 --Associações
+
 INSERT INTO Associacao 
 VALUES (90, 'Federação Internacional de Basquetebol Amador ', 'FIBA', 1932-06-18, '2147483647', 'info@fiba.com ', 'Swaziland', 'NULL', 'NULL', 'NULL');
 

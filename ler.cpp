@@ -15,10 +15,11 @@ void ignore_cols(istringstream& line_, int n){
 
 int main(){
     ofstream writer("povoar.sql");
+    writer << "PRAGMA FOREIGN_KEYS = ON;" << endl << endl;
 
     /* ASSOCIACOES */
     ifstream associacoes("csv/associacoes.csv");
-    writer << "--Associações" << endl;
+    writer << "--Associações" << endl << endl;
 
     string header; getline(associacoes, header); // ignorar o cabeçalho
 
