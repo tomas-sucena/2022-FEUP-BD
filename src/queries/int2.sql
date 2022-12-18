@@ -2,17 +2,17 @@
 .headers on
 .nullvalue NULL
 
-/* Qual a terceira associação que possui o menor número de clubes que têm a palavra "Clube" ou "Club" no nome? Liste o nome da associação, o respetivo endereço 
-de email e o número de clubes que respeita o critério. Em caso de empate, selecione a associação que foi fundada há mais tempo.*/
+/* Quais foram as 5 fases onde foram marcados mais pontos? Para cada uma, quais foram o número máximo e mínimo de pontos que foram marcados 
+num só jogo? Selecione o nome da fase, o número total de pontos e o número máximo e mínimo de pontos marcados num jogo (designe as duas últimas
+colunas de 'Máximo' e 'Mínimo', respetivamente). */
 
--- tabela auxiliar que lista todos os clubes que têm a palavra "Clube" ou "Club" no nome
-WITH t1 AS
-(SELECT *
-FROM Clube
-WHERE nome like "%Clube%" and nome like "%Club%")
+-- tabela auxiliar que lista a fase e o total de pontos de cada jogo
+WITH pontuacao AS
+(SELECT j.idFase, j.pontosEquipaCasa + j.pontosEquipaFora AS pontos
+FROM Jogo j)
 
-SELECT a.nome as 'Nome', a.email as 'Email', coalesce(count(t1.idClube), 0) as 'Nº clubes'
-FROM Associacao a LEFT OUTER JOIN t1 ON a.idAssociacao = t1.idAssociacao
-GROUP BY a.idAssociacao
-ORDER BY 3, a.dataFundacao
-LIMIT 2, 1;
+SELECT f.nome AS Nome, sum(p.pontos) AS 'Pontos totais', max(p.pontos) as 'Máximo', min(p.pontos) as 'Mínimo'
+FROM Fase f JOIN pontuacao p ON f.idFase = p.idFase
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;

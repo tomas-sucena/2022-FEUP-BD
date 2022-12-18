@@ -166,5 +166,3 @@ CREATE TABLE Classificacao(
     nPontosSofridos
     faltasComparencia
 );*/
-
-COMMIT;
