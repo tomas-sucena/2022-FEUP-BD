@@ -87,223 +87,223 @@ VALUES (1, 'Associação de Basquetebol de Lisboa', 'AB Lisboa', 1927-10-10, '21
 --Competições
 
 INSERT INTO Competicao 
-VALUES (8894, 'Liga BETCLIC Masculina', 'Liga BETCLIC Masculina', 60, Sénior, 50);
+VALUES (8894, 'Liga BETCLIC Masculina', 'Liga BETCLIC Masculina', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8895, 'XIX Campeonato da Proliga', 'Proliga', 60, Sénior, 50);
+VALUES (8895, 'XIX Campeonato da Proliga', 'Proliga', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8897, 'IX Campeonato Nacional 1ª Divisão Masculina', 'CN 1ª Masculina', 60, Sénior, 50);
+VALUES (8897, 'IX Campeonato Nacional 1ª Divisão Masculina', 'CN 1ª Masculina', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8898, 'V Campeonato Nacional 2ª Divisão Masculina', 'CN 2ª Masculina', 60, Sénior, 50);
+VALUES (8898, 'V Campeonato Nacional 2ª Divisão Masculina', 'CN 2ª Masculina', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8899, 'Liga BETCLIC Feminina', 'Liga BETCLIC Feminina', 60, Sénior, 50);
+VALUES (8899, 'Liga BETCLIC Feminina', 'Liga BETCLIC Feminina', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8900, 'LVI Campeonato Nacional 1ª Divisão Feminina', 'CN 1 Feminina', 60, Sénior, 50);
+VALUES (8900, 'LVI Campeonato Nacional 1ª Divisão Feminina', 'CN 1 Feminina', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8901, 'LV Campeonato Nacional 2ª Divisão Feminina', 'CN 2 Feminina', 60, Sénior, 50);
+VALUES (8901, 'LV Campeonato Nacional 2ª Divisão Feminina', 'CN 2 Feminina', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8902, 'XXX Campeonato Nacional 1ª Divisão BCR', '1ª Divisão BCR', 60, BCR, 50);
+VALUES (8902, 'XXX Campeonato Nacional 1ª Divisão BCR', '1ª Divisão BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (8903, 'VIII Campeonato Nacional 2ª Divisão BCR', '2ª Divisão BCR', 60, BCR, 50);
+VALUES (8903, 'VIII Campeonato Nacional 2ª Divisão BCR', '2ª Divisão BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (8904, ' FIBA World Cup 2023 Qualifiers', 'FIBA WC 2023 Q', 60, Sénior, 50);
+VALUES (8904, ' FIBA World Cup 2023 Qualifiers', 'FIBA WC 2023 Q', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8906, 'Basketball Champions League', 'Champions League', 60, Sénior, 50);
+VALUES (8906, 'Basketball Champions League', 'Champions League', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8907, 'FIBA Europe Cup', 'FIBAEurope Cup', 60, Sénior, 50);
+VALUES (8907, 'FIBA Europe Cup', 'FIBAEurope Cup', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8908, 'FIBA EuroCup Women', 'EuroCup Women', 60, Sénior, 50);
+VALUES (8908, 'FIBA EuroCup Women', 'EuroCup Women', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8909, 'LXXIII Taça de Portugal Alfaloc', 'Taça de Portugal Alfaloc', 60, Sénior, 50);
+VALUES (8909, 'LXXIII Taça de Portugal Alfaloc', 'Taça de Portugal Alfaloc', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8910, 'LVI Taça de Portugal Skoiy', 'Taça de Portugal Skoiy', 60, Sénior, 50);
+VALUES (8910, 'LVI Taça de Portugal Skoiy', 'Taça de Portugal Skoiy', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8911, 'XXVIII Taça de Portugal BCR', 'Taça de Portugal BCR', 60, BCR, 50);
+VALUES (8911, 'XXVIII Taça de Portugal BCR', 'Taça de Portugal BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (8912, 'XXXVI Supertaça Masculina', 'Supertaça', 60, Sénior, 50);
+VALUES (8912, 'XXXVI Supertaça Masculina', 'Supertaça', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8913, 'XXXVI Supertaça Feminina', 'Supertaça Feminina', 60, Sénior, 50);
+VALUES (8913, 'XXXVI Supertaça Feminina', 'Supertaça Feminina', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8914, 'XXVI Supertaça BCR', 'Supertaça BCR', 60, BCR, 50);
+VALUES (8914, 'XXVI Supertaça BCR', 'Supertaça BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (8915, 'XIII Taça Hugo dos Santos Betclic', 'Taça Hugo dos Santos Betc', 60, Sénior, 50);
+VALUES (8915, 'XIII Taça Hugo dos Santos Betclic', 'Taça Hugo dos Santos Betc', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8916, 'XII Taça Federação Betclic', 'Taça Federação Betclic', 60, Sénior, 50);
+VALUES (8916, 'XII Taça Federação Betclic', 'Taça Federação Betclic', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8917, 'Centro Nacional de Treino de Ponte Sor', 'CNT Ponte Sor', 60, Sénior, 50);
+VALUES (8917, 'Centro Nacional de Treino de Ponte Sor', 'CNT Ponte Sor', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8918, 'Centro Nacional de Treino do Jamor', 'CAR Jamor', 60, Sénior, 50);
+VALUES (8918, 'Centro Nacional de Treino do Jamor', 'CAR Jamor', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8921, 'VIII Azeméis Basketball Cup 2021', 'Azeméis Cup 2021', 60, Sénior, 50);
+VALUES (8921, 'VIII Azeméis Basketball Cup 2021', 'Azeméis Cup 2021', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8922, 'IV Albufeira Basket Cup 2021', 'Albufeira Cup 21', 60, Sénior, 50);
+VALUES (8922, 'IV Albufeira Basket Cup 2021', 'Albufeira Cup 21', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8923, 'Jogos Apresentação Masculino', 'Jogos Apresentação Masculino', 60, Sénior, 50);
+VALUES (8923, 'Jogos Apresentação Masculino', 'Jogos Apresentação Masculino', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8924, 'Torneio Internacional de Lisboa', 'Torneio de Lisboa', 60, Sénior, 50);
+VALUES (8924, 'Torneio Internacional de Lisboa', 'Torneio de Lisboa', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8925, '8º Torneio Nacional - Cidade do Funchal', 'Torneio Cidade do Funchal', 60, Sénior, 50);
+VALUES (8925, '8º Torneio Nacional - Cidade do Funchal', 'Torneio Cidade do Funchal', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8926, 'Jogos Apresentação Feminino', 'Jogos Apresentação Femini', 60, Sénior, 50);
+VALUES (8926, 'Jogos Apresentação Feminino', 'Jogos Apresentação Femini', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (8940, 'IV Torneio BC Gaia BCR	', 'Torneio BC Gaia BCR', 60, BCR, 50);
+VALUES (8940, 'IV Torneio BC Gaia BCR	', 'Torneio BC Gaia BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (8941, 'Torneio Humberto Mendes - Sangalhos', 'Torneio Sangalhos', 60, Sénior, 50);
+VALUES (8941, 'Torneio Humberto Mendes - Sangalhos', 'Torneio Sangalhos', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (8994, 'XX Torneio Internacional de Lisboa BCR', 'Torneio Lisboa BCR', 60, BCR, 50);
+VALUES (8994, 'XX Torneio Internacional de Lisboa BCR', 'Torneio Lisboa BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (9079, 'V Liga Masters DHIKA', 'Liga Masters DHIKA', 60, Masters / Veteranos, 50);
+VALUES (9079, 'V Liga Masters DHIKA', 'Liga Masters DHIKA', 60, 29, 50);
 
 INSERT INTO Competicao 
-VALUES (9085, 'Jogos Preparação SN BCR', 'Jogos SN BCR', 60, BCR, 50);
+VALUES (9085, 'Jogos Preparação SN BCR', 'Jogos SN BCR', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (9112, 'Torneio Memorial Pedro Raimundo - 11ª Edição', 'Torneio Pedro Raimundo', 60, Sub 16, 50);
+VALUES (9112, 'Torneio Memorial Pedro Raimundo - 11ª Edição', 'Torneio Pedro Raimundo', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9143, 'XXV Campeonato Nacional Sub 18 Masculinos', 'Camp Nac Sub18 Masculinos', 60, Sub 18, 50);
+VALUES (9143, 'XXV Campeonato Nacional Sub 18 Masculinos', 'Camp Nac Sub18 Masculinos', 60, 10, 50);
 
 INSERT INTO Competicao 
-VALUES (9144, 'XXXV Campeonato Nacional Sub 19 Femininos', 'Campeonato Nacional S19F', 60, Sub 19, 50);
+VALUES (9144, 'XXXV Campeonato Nacional Sub 19 Femininos', 'Campeonato Nacional S19F', 60, 8, 50);
 
 INSERT INTO Competicao 
-VALUES (9164, 'XXV Taça Nacional Sub18 Masculinos', 'Taça Nac Sub18', 60, Sub 18, 50);
+VALUES (9164, 'XXV Taça Nacional Sub18 Masculinos', 'Taça Nac Sub18', 60, 10, 50);
 
 INSERT INTO Competicao 
-VALUES (9165, 'XXIII Taça Nacional Sub19 Femininos', 'Taça Nacional S19F', 60, Sub 19, 50);
+VALUES (9165, 'XXIII Taça Nacional Sub19 Femininos', 'Taça Nacional S19F', 60, 8, 50);
 
 INSERT INTO Competicao 
-VALUES (9166, 'XXIII Campeonato Nacional Sub-16 Masculinos', 'Nacional S16M', 60, Sub 16, 50);
+VALUES (9166, 'XXIII Campeonato Nacional Sub-16 Masculinos', 'Nacional S16M', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9167, 'XXIII Campeonato Nacional Sub16 Femininos', 'Camp Nac Sub16 Femininos', 60, Sub 16, 50);
+VALUES (9167, 'XXIII Campeonato Nacional Sub16 Femininos', 'Camp Nac Sub16 Femininos', 60, 1, 50);
 
 INSERT INTO Competicao 
-VALUES (9168, 'XV Taça Nacional Sub16 Masculinos', 'Taça Nac Sub16 M', 60, Sub 16, 50);
+VALUES (9168, 'XV Taça Nacional Sub16 Masculinos', 'Taça Nac Sub16 M', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9169, 'XXIV Taça Nacional Sub16 Femininos', 'Taça Nac Sub16 F', 60, Sub 16, 50);
+VALUES (9169, 'XXIV Taça Nacional Sub16 Femininos', 'Taça Nac Sub16 F', 60, 1, 50);
 
 INSERT INTO Competicao 
-VALUES (9195, 'VIII Campeonato Nacional Sub14 Masculinos', 'Camp Nac Sub14 Masculinos', 60, Sub 14, 50);
+VALUES (9195, 'VIII Campeonato Nacional Sub14 Masculinos', 'Camp Nac Sub14 Masculinos', 60, 5, 50);
 
 INSERT INTO Competicao 
-VALUES (9196, 'VIII Campeonato Nacional Sub14 Femininos', 'Camp Nac Sub14 Femininos', 60, Sub 14, 50);
+VALUES (9196, 'VIII Campeonato Nacional Sub14 Femininos', 'Camp Nac Sub14 Femininos', 60, 6, 50);
 
 INSERT INTO Competicao 
-VALUES (9202, 'Paredes Basket Cup', 'Paredes Basket Cup', 60, Sénior, 50);
+VALUES (9202, 'Paredes Basket Cup', 'Paredes Basket Cup', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (9246, 'VII Taça Nacional Seniores Masculinos', 'TN Seniores Masculinos', 60, Sénior, 50);
+VALUES (9246, 'VII Taça Nacional Seniores Masculinos', 'TN Seniores Masculinos', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (9247, 'IV Taça Nacional Seniores Femininos', 'Taça Nacional SF', 60, Sénior, 50);
+VALUES (9247, 'IV Taça Nacional Seniores Femininos', 'Taça Nacional SF', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (9252, 'XIV Festa do Basquetebol Juvenil U16', 'Festa Basquetebol U16', 60, Sub 16, 50);
+VALUES (9252, 'XIV Festa do Basquetebol Juvenil U16', 'Festa Basquetebol U16', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9253, 'XIV Festa do Basquetebol Juvenil U16W', 'Festa Basquetebol U16W', 60, Sub 16, 50);
+VALUES (9253, 'XIV Festa do Basquetebol Juvenil U16W', 'Festa Basquetebol U16W', 60, 1, 50);
 
 INSERT INTO Competicao 
-VALUES (9254, 'XIV Festa do Basquetebol Juvenil U14', 'Festa Basquetebol U14', 60, Sub 14, 50);
+VALUES (9254, 'XIV Festa do Basquetebol Juvenil U14', 'Festa Basquetebol U14', 60, 5, 50);
 
 INSERT INTO Competicao 
-VALUES (9255, 'XIV Festa do Basquetebol Juvenil U14W', 'Festa Basquetebol U14W', 60, Sub 14, 50);
+VALUES (9255, 'XIV Festa do Basquetebol Juvenil U14W', 'Festa Basquetebol U14W', 60, 6, 50);
 
 INSERT INTO Competicao 
-VALUES (9266, 'Jogos Preparação Seniores Femininos', 'Jogos Sen Femininos', 60, Sénior, 50);
+VALUES (9266, 'Jogos Preparação Seniores Femininos', 'Jogos Sen Femininos', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (9281, 'Jogos ANDDI', 'Jogos ANDII', 60, Sénior, 50);
+VALUES (9281, 'Jogos ANDDI', 'Jogos ANDII', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (9282, 'Jogos Preparação Seleção Universitária Feminina', 'Jogos Preparação ', 60, Sénior, 50);
+VALUES (9282, 'Jogos Preparação Seleção Universitária Feminina', 'Jogos Preparação ', 60, 19, 50);
 
 INSERT INTO Competicao 
-VALUES (9304, 'Jogos Preparação Sub20 Femininos', 'Jogos Preparação Sub20 Fe', 60, Sub 20, 50);
+VALUES (9304, 'Jogos Preparação Sub20 Femininos', 'Jogos Preparação Sub20 Fe', 60, 22, 50);
 
 INSERT INTO Competicao 
-VALUES (9307, 'Jogos Preparação Seniores Masculinos', 'Jogos Preparação Sen Masc', 60, Sénior, 50);
+VALUES (9307, 'Jogos Preparação Seniores Masculinos', 'Jogos Preparação Sen Masc', 60, 18, 50);
 
 INSERT INTO Competicao 
-VALUES (9308, 'Jogos Preparação Sub20 Masculinos', 'Jogos Preparação Sub20 Masc', 60, Sub 20, 50);
+VALUES (9308, 'Jogos Preparação Sub20 Masculinos', 'Jogos Preparação Sub20 Masc', 60, 9, 50);
 
 INSERT INTO Competicao 
-VALUES (9314, '2.º Torneio BCR - Cidade Covilhã', '2.º Torneio BCR - Cidade Covilhã', 60, BCR, 50);
+VALUES (9314, '2.º Torneio BCR - Cidade Covilhã', '2.º Torneio BCR - Cidade Covilhã', 60, 31, 50);
 
 INSERT INTO Competicao 
-VALUES (9325, 'X Festa Nacional Minibasquete - Feminino', 'Festa Minibasquete F', 60, Mini 12, 50);
+VALUES (9325, 'X Festa Nacional Minibasquete - Feminino', 'Festa Minibasquete F', 60, 11, 50);
 
 INSERT INTO Competicao 
-VALUES (9326, 'X Festa Nacional Minibasquete - Masculino', 'X Festa Minibasquete M', 60, Mini 12, 50);
+VALUES (9326, 'X Festa Nacional Minibasquete - Masculino', 'X Festa Minibasquete M', 60, 15, 50);
 
 INSERT INTO Competicao 
-VALUES (9328, 'Jogos Preparação Sub18 Masculinos', 'Jogos Prep Sub18 Masc', 60, Sub 18, 50);
+VALUES (9328, 'Jogos Preparação Sub18 Masculinos', 'Jogos Prep Sub18 Masc', 60, 10, 50);
 
 INSERT INTO Competicao 
-VALUES (9329, 'Jogos Preparação Sub18 Femininos', 'Jogos Prep Sub18 Fem', 60, Sub 18, 50);
+VALUES (9329, 'Jogos Preparação Sub18 Femininos', 'Jogos Prep Sub18 Fem', 60, 21, 50);
 
 INSERT INTO Competicao 
-VALUES (9330, 'Jogos Preparação Sub15/Sub16 Masculinos', 'Jogos Preparação S15/S16M', 60, Sub 16, 50);
+VALUES (9330, 'Jogos Preparação Sub15/Sub16 Masculinos', 'Jogos Preparação S15/S16M', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9331, 'Jogos Preparação Sub15/Sub16 Femininos', 'Jogos Preparação S15/S16F', 60, Sub 16, 50);
+VALUES (9331, 'Jogos Preparação Sub15/Sub16 Femininos', 'Jogos Preparação S15/S16F', 60, 1, 50);
 
 INSERT INTO Competicao 
-VALUES (9353, 'Jogos Preparação Sub14 Masculinos', 'Jogos Preparação Sub14 Masculinos', 60, Sub 14, 50);
+VALUES (9353, 'Jogos Preparação Sub14 Masculinos', 'Jogos Preparação Sub14 Masculinos', 60, 5, 50);
 
 INSERT INTO Competicao 
-VALUES (9354, 'Jogos Preparação Sub14 Femininos', 'Jogos Preparação Sub14 F', 60, Sub 14, 50);
+VALUES (9354, 'Jogos Preparação Sub14 Femininos', 'Jogos Preparação Sub14 F', 60, 6, 50);
 
 INSERT INTO Competicao 
-VALUES (9355, 'U20 European Championship - Division A', 'U20 EC Div.A', 60, Sub 20, 50);
+VALUES (9355, 'U20 European Championship - Division A', 'U20 EC Div.A', 60, 9, 50);
 
 INSERT INTO Competicao 
-VALUES (9356, 'U20W European Championship - Division A', 'U20W EC Div.A', 60, Sub 20, 50);
+VALUES (9356, 'U20W European Championship - Division A', 'U20W EC Div.A', 60, 22, 50);
 
 INSERT INTO Competicao 
-VALUES (9361, 'U18 European Championship - Division B', 'U18 European Championship - Division B', 60, Sub 18, 50);
+VALUES (9361, 'U18 European Championship - Division B', 'U18 European Championship - Division B', 60, 10, 50);
 
 INSERT INTO Competicao 
-VALUES (9362, 'U18W European Championship - Division B', 'U18W European Championship - Division B', 60, Sub 18, 50);
+VALUES (9362, 'U18W European Championship - Division B', 'U18W European Championship - Division B', 60, 21, 50);
 
 INSERT INTO Competicao 
-VALUES (9363, 'U16 European Championship - Division B', 'U16 European Championship - Division B', 60, Sub 16, 50);
+VALUES (9363, 'U16 European Championship - Division B', 'U16 European Championship - Division B', 60, 3, 50);
 
 INSERT INTO Competicao 
-VALUES (9364, 'U16W European Championship - Division A', 'U16W EC - Division A', 60, Sub 16, 50);
+VALUES (9364, 'U16W European Championship - Division A', 'U16W EC - Division A', 60, 1, 50);
 
 --Clubes
 

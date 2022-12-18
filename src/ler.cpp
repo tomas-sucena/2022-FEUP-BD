@@ -137,7 +137,7 @@ int main(){
         getline(line_, idAssociacao, ',');
 
         // ler o idEscalao
-        ignore_cols(line_, 1, ',');
+        ignore_cols(line_, 2, ',');
 
         string idEscalao;
         getline(line_, idEscalao, ',');
