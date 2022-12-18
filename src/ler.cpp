@@ -385,6 +385,72 @@ int main(){
         << 18 << ", " << idClube << ");" << endl << endl;
     }
 
+    /* JOGADORES */
+    ifstream jogadores("../csv/jogadores.csv");
+    writer << "--Jogadores" << endl << endl;
+
+    getline(jogadores, header); // ignorar o cabeçalho
+
+    for (string line; getline(jogadores, line);){
+        istringstream line_(line);
+
+        // ler o idJogador
+        string idJogador;
+
+        getline(line_, idJogador, ';');
+
+        // ler o nomeCompleto
+        string nomeCompleto;
+        getline(line_, nomeCompleto, ';');
+
+        nomeCompleto = "\'" + nomeCompleto + "\'";
+
+        // ler o nome
+        string nome;
+        getline(line_, nome, ';');
+
+        nome = "\'" + nome + "\'";
+
+        // ler o pais
+        ignore_cols(line_, 2, ';');
+
+        string pais;
+        getline(line_, pais, ';');
+
+        pais = "\'" + pais + "\'";
+
+        // ler a dataNascimento
+        ignore_cols(line_, 12, ';');
+
+        string dataNascimento;
+        getline(line_, dataNascimento, ';');
+
+        // ler o sexo
+        string sexo;
+        getline(line_, sexo, ';');
+
+        sexo = '\'' + sexo + '\'';
+
+        // ler a altura
+        string altura;
+        getline(line_, altura, ';');
+
+        altura = (altura.empty() || altura[0] == '0') ? "NULL" : altura;
+ 
+        // ler o peso
+        string peso;
+        getline(line_, peso, ';');
+
+        peso = (peso.empty() || peso[0] == '0') ? "NULL" : peso;
+
+        // escrever no ficheiro
+        writer << "INSERT INTO Jogador " << endl
+        << "VALUES (" << idJogador << ", " << nome << ", " 
+        << nomeCompleto << ", " << dataNascimento << ", "
+        << pais << ", " << sexo << ", " << altura << ", "
+        << peso << ");" << endl << endl;
+    }
+
     /* JOGOS */
     ifstream jogos("../csv/jogos.csv");
     writer << "--Jogos" << endl << endl;

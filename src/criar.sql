@@ -1,6 +1,7 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 DROP TABLE IF EXISTS Jogo;
+DROP TABLE IF EXISTS Jogador;
 DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
 DROP TABLE IF EXISTS Fase;
@@ -103,17 +104,25 @@ CREATE TABLE EpocaEquipa(
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );*/
 
-/*
+
 CREATE TABLE Jogador(
-    idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    dataNascimento          DATE NOT NULL,
+    idJogador               INTEGER PRIMARY KEY, --1
+    nome                    TEXT NOT NULL, --3
+    nomeCompleto            TEXT NOT NULL, --2
+    dataNascimento          DATE NOT NULL, --19
+    pais                    TEXT NOT NULL, --6
     sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
-    altura                  INTEGER NOT NULL                CONSTRAINT alturaPositiva CHECK (altura > 0),
-    peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
-    nacionalidade           TEXT NOT NULL,
+    altura                  INTEGER                         CONSTRAINT alturaPositiva CHECK (altura > 0),
+    peso                    INTEGER                         CONSTRAINT pesoPositivo CHECK (peso > 0)
 );
-*/
+
+/*
+CREATE TABLE EquipaJogador(
+    idEquipa
+    idJogador
+    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
+    posicao                 TEXT NOT NULL
+);*/
 
 CREATE TABLE Jogo(
     idJogo                  INTEGER PRIMARY KEY,
@@ -130,13 +139,6 @@ CREATE TABLE Jogo(
 );
 
 /*
-CREATE TABLE EquipaJogador(
-    idEquipa
-    idJogador
-    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
-    posicao                 TEXT NOT NULL
-);
-
 CREATE TABLE Periodo(
     idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,

@@ -11,7 +11,7 @@ WITH t1 AS
 FROM Clube
 WHERE nome like "%Clube%" and nome like "%Club%")
 
-SELECT a.nome as 'Nome', a.email as 'Email', coalesce(count(t1.idClube), 0) as 'Nº clubes'
+SELECT a.nome as 'NOME', a.email as 'EMAIL', coalesce(count(t1.idClube), 0) as 'Nº CLUBES'
 FROM Associacao a LEFT OUTER JOIN t1 ON a.idAssociacao = t1.idAssociacao
 GROUP BY a.idAssociacao
 ORDER BY 3, a.dataFundacao

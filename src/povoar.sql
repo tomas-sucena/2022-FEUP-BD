@@ -1898,6 +1898,560 @@ VALUES (40600, 'CD Póvoa', 18, 118);
 INSERT INTO Equipa 
 VALUES (40601, 'Illiabum Clube', 18, 22);
 
+--Jogadores
+
+INSERT INTO Jogador 
+VALUES (272930, 'Aaron Broussard', 'Aaron Broussard', 1990-04-14, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (188949, 'Afonso Marques', 'Afonso José Ferreira Henriques Falcão Marques', 2002-05-18, 'Portugal', 'M', 170, NULL);
+
+INSERT INTO Jogador 
+VALUES (196448, 'Afonso Guedes', 'Afonso Morais Guedes', 2003-03-06, 'Portugal', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (273260, 'Alexander Thompson', 'Alexander Jacob Thompson', 1995-04-25, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (278310, 'Amenhotep Abif', 'Amenhotep Kazembe Ture Abif', 1992-11-18, 'Estados Unidos da América', 'M', 201, 110);
+
+INSERT INTO Jogador 
+VALUES (109007, 'André Bessa', 'André Filipe de Oliveira Bessa', 1989-01-13, 'Portugal', 'M', 182, 78);
+
+INSERT INTO Jogador 
+VALUES (279035, 'Andrew KosteckaIII', 'Andrew Edward KosteckaIII ', 1997-08-19, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (273376, 'Andrew Robinson', 'Andrew Michael Richard Robinson', 1996-06-05, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (268721, 'Anthony Smith', 'Anthony Louis Smith', 1997-03-16, 'Estados Unidos da América', 'M', 202, NULL);
+
+INSERT INTO Jogador 
+VALUES (166708, 'António Monteiro', 'António Nicolau Monteiro', 1989-04-02, 'Angola', 'M', 204, NULL);
+
+INSERT INTO Jogador 
+VALUES (236666, 'António Arantes', 'António Pedro Guimarães Arantes', 2003-04-17, 'Portugal', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (130949, 'Arnette Hallman', 'Arnette Lamar Scharfusen Hallman', 1988-01-06, 'Espanha', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (105379, 'Augusto Sobrinho', 'Augusto Jorge Ferreira Sobrinho', 1985-03-31, 'Portugal', 'M', 188, NULL);
+
+INSERT INTO Jogador 
+VALUES (196210, 'Bernardo Ferreira', 'Bernardo Pereira Ferreira', 2003-06-05, 'Portugal', 'M', 180, 77);
+
+INSERT INTO Jogador 
+VALUES (235796, 'Bradley Tinsley', 'Bradley Glen Tinsley', 1989-05-10, 'Estados Unidos da América', 'M', 191, NULL);
+
+INSERT INTO Jogador 
+VALUES (273910, 'Brandon Austin', 'Brandon Alexander Austin', 1995-12-07, 'Estados Unidos da América', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (274323, 'Brandon Anderson', 'Brandon Warren Anderson', 1998-06-12, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (170431, 'Bruno Martins', 'Bruno Gabriel Sambu Gomes Martins', 1998-09-18, 'Portugal', 'M', 193, NULL);
+
+INSERT INTO Jogador 
+VALUES (177284, 'Carlos Cardoso', 'Carlos Filipe Medeiros Cardoso', 1997-10-20, 'Portugal', 'M', 184, 73);
+
+INSERT INTO Jogador 
+VALUES (272925, 'Charlon Kloof', 'Charlon Anduele Romano Kloof', 1990-03-20, 'Paises Baixos', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (136537, 'Claúdio Fonseca', 'Claúdio dos Santos Fonseca', 1989-01-22, 'Portugal', 'M', 208, 110);
+
+INSERT INTO Jogador 
+VALUES (155382, 'Cristovão Cordeiro', 'Cristovão Melo Cordeiro', 1989-08-24, 'Portugal', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (139206, 'Daniel Machado', 'Daniel Alexandre da Conceição Machado', 1990-04-11, 'Portugal', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (217588, 'Daniel Relvão', 'Daniel Batista Relvão', 1996-06-26, 'Portugal', 'M', 208, 115);
+
+INSERT INTO Jogador 
+VALUES (272927, 'Danjel Purifoy', 'Danjel Kevon Purifoy', 1995-10-11, 'Estados Unidos da América', 'M', 201, NULL);
+
+INSERT INTO Jogador 
+VALUES (278619, 'Delaney Blaylock', 'Delaney Lamar Blaylock', 1997-01-17, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (272931, 'Dennis Clifford', 'Dennis J Clifford', 1992-02-29, 'Estados Unidos da América', 'M', 216, NULL);
+
+INSERT INTO Jogador 
+VALUES (274375, 'Dennis Woolfolk', 'Dennis Junior Lobo dos Santos Woolfolk', 1999-03-20, 'Portugal', 'M', 171, NULL);
+
+INSERT INTO Jogador 
+VALUES (272994, 'Derrick Colter', 'Derrick Antwan Colter', 1994-03-22, 'Estados Unidos da América', 'M', 180, NULL);
+
+INSERT INTO Jogador 
+VALUES (280270, 'Devine Eke', 'Devine Chukwuemeka Eke', 1996-07-29, 'Nigeria', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (273331, 'Devon Goodman', 'Devon Bryant Goodman', 1997-09-12, 'Estados Unidos da América', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (273177, 'Diego Kapelan', 'Diego Kapelan', 1987-07-08, 'Canada', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (136299, 'Diogo Ventura', 'Diogo da Costa Ventura', 1994-06-24, 'Portugal', 'M', 194, NULL);
+
+INSERT INTO Jogador 
+VALUES (193380, 'Diogo Gomes', 'Diogo Ferreira Gomes', 2001-04-09, 'Portugal', 'M', 173, NULL);
+
+INSERT INTO Jogador 
+VALUES (176602, 'Diogo Peixe', 'Diogo Janeiro Peixe', 2000-01-17, 'Portugal', 'M', 191, 89);
+
+INSERT INTO Jogador 
+VALUES (170452, 'Diogo Araújo', 'Diogo Mendes de Araújo', 1997-04-16, 'Portugal', 'M', 199, 88);
+
+INSERT INTO Jogador 
+VALUES (150447, 'Diogo Gameiro', 'Diogo Rodrigues Gameiro', 1995-08-13, 'Portugal', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (273160, 'Dontae Bruner', 'Dontae Evon Bruner', 1997-12-31, 'Estados Unidos da América', 'M', 206, NULL);
+
+INSERT INTO Jogador 
+VALUES (157282, 'Eduardo Guimarães', 'Eduardo Evaristo Guimarães', 1992-09-24, 'Portugal', 'M', 186, NULL);
+
+INSERT INTO Jogador 
+VALUES (219390, 'Eduardo Santos', 'Eduardo Filipe Morete Dos Santos ', 2003-12-11, 'Portugal', 'M', 202, NULL);
+
+INSERT INTO Jogador 
+VALUES (266618, 'Eduardo Francisco', 'Eduardo Mingas Francisco', 2003-11-05, 'Angola', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (171229, 'Emanuel Sá', 'Emanuel Lopes Correia de Sá', 1993-11-29, 'Portugal', 'M', 200, 95);
+
+INSERT INTO Jogador 
+VALUES (249300, 'Eric Coleman', 'Eric Nathaniel Coleman', 1985-08-08, 'Estados Unidos da América', 'M', 201, NULL);
+
+INSERT INTO Jogador 
+VALUES (143610, 'Fábio Lima', 'Fábio Arlindo da Cruz Lima', 1988-08-18, 'Portugal', 'M', 198, 96);
+
+INSERT INTO Jogador 
+VALUES (210905, 'Fábio Dias', 'Fábio Miguel Costa Valverde Pepe Dias', 2001-12-01, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (262463, 'Feliciano Neto', 'Feliciano Perez Neto', 1990-05-23, 'Brasil', 'M', 210, NULL);
+
+INSERT INTO Jogador 
+VALUES (191364, 'Fernando Ferreira', 'Fernando Augusto Machado Ferreira', 1994-11-10, 'Portugal', 'M', 200, 120);
+
+INSERT INTO Jogador 
+VALUES (246181, 'Filip Gewert', 'Filip Hans Herbert Herman Gewert', 2002-11-12, 'Suécia', 'M', 202, 88);
+
+INSERT INTO Jogador 
+VALUES (244862, 'Filip Simic', 'Filip Simic', 1990-05-11, 'Sérvia', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (134318, 'Francisco Amiel', 'Francisco Andrade Amiel', 1996-01-20, 'Portugal', 'M', 189, NULL);
+
+INSERT INTO Jogador 
+VALUES (152194, 'Francisco Albergaria', 'Francisco Bastos Albergaria', 1997-02-10, 'Portugal', 'M', 184, 75);
+
+INSERT INTO Jogador 
+VALUES (198294, 'Francisco Jardim', 'Francisco Couto Jardim', 2003-05-13, 'Portugal', 'M', 177, NULL);
+
+INSERT INTO Jogador 
+VALUES (199884, 'Francisco Amarante', 'Francisco José Ribau Amarante', 2000-03-24, 'Portugal', 'M', 195, 94);
+
+INSERT INTO Jogador 
+VALUES (210794, 'Francisco Cardoso', 'Francisco Oliveira Ortins Cardoso', 2004-11-27, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (277848, 'Frank Gaines', 'Frank Brandon Gaines', 1990-07-07, 'Estados Unidos da América', 'M', 193, NULL);
+
+INSERT INTO Jogador 
+VALUES (273176, 'Fredrick Thomas', 'Fredrick Maurice Thomas', 1993-06-13, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (211165, 'Gabriel Figueiredo', 'Gabriel Rubinstein de Figueiredo', 2002-04-06, 'Portugal', 'M', 187, NULL);
+
+INSERT INTO Jogador 
+VALUES (200711, 'Guilherme Saiote', 'Guilherme de Góis Saiote', 2002-05-10, 'Portugal', 'M', 186, 80);
+
+INSERT INTO Jogador 
+VALUES (218937, 'Guilherme Nunes', 'Guilherme Ramos Nunes', 2003-04-05, 'Portugal', 'M', 197, NULL);
+
+INSERT INTO Jogador 
+VALUES (192728, 'Gustavo Teixeira', 'Gustavo Brandao Teixeira', 2000-07-26, 'Portugal', 'M', 189, 73);
+
+INSERT INTO Jogador 
+VALUES (228390, 'Gustavo Guerra', 'Gustavo da Cunha Leal Dinis Guerra', 2003-08-11, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (82106, 'Helder Carvalho', 'Helder João Reis Gomes de Carvalho', 1984-05-27, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (168802, 'Hugo Sotta', 'Hugo Cesar Correia Sá Sotta', 1993-07-15, 'Portugal', 'M', 205, 100);
+
+INSERT INTO Jogador 
+VALUES (193812, 'Hugo Silva', 'Hugo Miguel Vieitas Ferreira da Silva', 2002-05-06, 'Portugal', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (176575, 'Ivan Almeida', 'Ivan Freitas Almeida', 1989-05-10, 'Portugal', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (273261, 'Jacob Gibson', 'Jacob Everett Gibson', 1993-09-28, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (273175, 'Jalan Mccloud', 'Jalan Taraune Mccloud', 1995-06-13, 'Estados Unidos da América', 'M', 178, NULL);
+
+INSERT INTO Jogador 
+VALUES (272932, 'James Farr', 'James Anthony Farr', 1992-11-02, 'Estados Unidos da América', 'M', 208, NULL);
+
+INSERT INTO Jogador 
+VALUES (279673, 'James Southerland', 'James Southerland', 1990-04-28, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (137573, 'Jaques Conceição', 'Jaques Leandro Pinto Nzadi Conceição', 1989-09-04, 'Portugal', 'M', 184, 92);
+
+INSERT INTO Jogador 
+VALUES (213694, 'Jason Catarino', 'Jason Astley Guimarães Catarino', 2003-02-23, 'Portugal', 'M', 194, NULL);
+
+INSERT INTO Jogador 
+VALUES (274542, 'Jason Carter', 'Jason Bryant Carter', 1992-02-21, 'Estados Unidos da América', 'M', 205, 112);
+
+INSERT INTO Jogador 
+VALUES (268875, 'Jaylen Key', 'Jaylen Alexander Key', 1997-05-09, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (239368, 'Jeremias Manjate', 'Jeremias Salomão Manjate', 1998-11-10, 'Moçambique', 'M', 205, 105);
+
+INSERT INTO Jogador 
+VALUES (193259, 'João Neves', 'João Filipe Arroja Neves', 1999-12-16, 'Portugal', 'M', 202, NULL);
+
+INSERT INTO Jogador 
+VALUES (220987, 'João Rodrigues', 'João Filipe Assis Rodrigues', 2004-01-22, 'Portugal', 'M', 198, 86);
+
+INSERT INTO Jogador 
+VALUES (168201, 'João Ribeiro', 'João Filipe Brites Ribeiro', 1993-07-30, 'Portugal', 'M', 202, NULL);
+
+INSERT INTO Jogador 
+VALUES (157785, 'João Maia', 'João Filipe Valente Soares da Costa Maia', 1990-03-27, 'Portugal', 'M', 2, 97);
+
+INSERT INTO Jogador 
+VALUES (168487, 'João Oliveira', 'João Francisco Mateus Oliveira', 1999-08-06, 'Portugal', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (207171, 'João Santos', 'João Henrique Torres Santos', 2000-03-09, 'Portugal', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (124572, 'João Guerreiro', 'João Miguel Rodrigues Guerreiro', 1990-10-10, 'Portugal', 'M', 206, NULL);
+
+INSERT INTO Jogador 
+VALUES (185166, 'João Fernandes', 'João Paulo da Costa Fernandes', 1992-12-01, 'Angola', 'M', 200, 100);
+
+INSERT INTO Jogador 
+VALUES (167835, 'João Grosso', 'João Pedro Ascenso Grosso', 1994-02-11, 'Portugal', 'M', 196, 104);
+
+INSERT INTO Jogador 
+VALUES (175533, 'João Gallina', 'João Pedro Gallina', 1994-02-21, 'Portugal', 'M', 1, 90);
+
+INSERT INTO Jogador 
+VALUES (156274, 'João Torrie', 'João Pedro Lopes Nogueira Stuart Torrie', 1991-03-20, 'Portugal', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (166980, 'João Teixeira', 'João Pedro Mendes Teixeira', 1995-09-23, 'Portugal', 'M', 186, NULL);
+
+INSERT INTO Jogador 
+VALUES (130786, 'João Balseiro', 'João Rainho Balseiro', 1987-03-14, 'Portugal', 'M', 192, 79);
+
+INSERT INTO Jogador 
+VALUES (150245, 'João Gomes', 'João Roberto Correia Gomes', 1985-02-05, 'Portugal', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (218208, 'João Nunes', 'João Tiago de Sequeira Ribeiro Nunes', 1999-09-21, 'Portugal', 'M', 191, 87);
+
+INSERT INTO Jogador 
+VALUES (246300, 'João Embaló', 'João Vitor dos Santos Embaló', 2001-08-09, 'Cabo Verde', 'M', 201, NULL);
+
+INSERT INTO Jogador 
+VALUES (114816, 'Joaquim Pires', 'Joaquim Ferreira de Matos Grilo Pires', 1987-03-14, 'Portugal', 'M', 191, NULL);
+
+INSERT INTO Jogador 
+VALUES (276646, 'John Florveus', 'John Richard Florveus', 1990-10-10, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (273084, 'Jonas Zakas', 'Jonas Zakas', 1997-10-14, 'Lituânia', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (269979, 'Jonathan Silva', 'Jonathan Ferreira Machado da Silva', 2003-11-17, 'Brasil', 'M', 198, 114);
+
+INSERT INTO Jogador 
+VALUES (272928, 'Jonathan Arledge', 'Jonathan Harold Arledge', 1991-09-21, 'Estados Unidos da América', 'M', 2, NULL);
+
+INSERT INTO Jogador 
+VALUES (214779, 'Jorge Embaló', 'Jorge Amadu Embaló', 1999-07-20, 'Guiné-Bissau', 'M', 195, 85);
+
+INSERT INTO Jogador 
+VALUES (201110, 'Jorge Rodrigues', 'Jorge Cunha Rodrigues', 2003-05-07, 'Portugal', 'M', 186, NULL);
+
+INSERT INTO Jogador 
+VALUES (230595, 'José Machado', 'José Carlos Miranda Machado', 2003-12-11, 'Portugal', 'M', 181, NULL);
+
+INSERT INTO Jogador 
+VALUES (139461, 'José Silva', 'José Carlos Vilhena da Silva', 1989-04-16, 'Portugal', 'M', 194, 89);
+
+INSERT INTO Jogador 
+VALUES (125975, 'José Barbosa', 'José Miguel Soares Barbosa', 1990-10-18, 'Portugal', 'M', 178, 74);
+
+INSERT INTO Jogador 
+VALUES (205242, 'José Jesus', 'José Pedro Vieira Jesus', 2004-04-21, 'Portugal', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (272934, 'Joshua Patton', 'Joshua Kyle Patton', 1997-03-07, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (269083, 'Joshua Mcnair', 'Joshua Lee Mcnair', 1996-08-07, 'Estados Unidos da América', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (273329, 'Julien Ducree', 'Julien Dimitri Ducree', 1997-03-31, 'Estados Unidos da América', 'M', 202, NULL);
+
+INSERT INTO Jogador 
+VALUES (279678, 'Justin Tuoyo', 'Justin Adetola Tuoyo', 1994-06-18, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (273085, 'Kai Watkins', 'Kai Shaborn Mitchell Watkins', 1997-02-15, 'Estados Unidos da América', 'M', 201, NULL);
+
+INSERT INTO Jogador 
+VALUES (273168, 'Kameron Chatman', 'Kameron Jamal Chatman', 1996-06-01, 'Estados Unidos da América', 'M', 201, NULL);
+
+INSERT INTO Jogador 
+VALUES (273171, 'Kameron Hankerson', 'Kameron James Haynes Hankerson', 1998-08-02, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (262532, 'Kendall Jacks', 'Kendall Anthony Jacks', 1996-06-04, 'Estados Unidos da América', 'M', 196, NULL);
+
+INSERT INTO Jogador 
+VALUES (232792, 'Keven Gomes', 'Keven Eloy Gonçalves Gomes', 1995-10-29, 'Portugal', 'M', 211, 116);
+
+INSERT INTO Jogador 
+VALUES (203149, 'Krassimir Pereira', 'Krassimir João Graça Pereira', 1995-02-02, 'Portugal', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (262547, 'Lamar Morgan', 'Lamar Andrew Morgan', 1997-04-30, 'Estados Unidos da América', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (226394, 'Lamine Banora', 'Lamine Dansó Banora', 2000-10-22, 'Portugal', 'M', 200, NULL);
+
+INSERT INTO Jogador 
+VALUES (215426, 'Luis Silva', 'Luis Manuel Ferreira da Silva', 2004-04-29, 'Portugal', 'M', 193, 86);
+
+INSERT INTO Jogador 
+VALUES (273133, 'Makram Romdhane', 'Makram Ben Romdhane', 1989-03-27, 'Tunisia', 'M', 206, NULL);
+
+INSERT INTO Jogador 
+VALUES (262520, 'Malcolm Drumwright', 'Malcolm Louis Drumwright', 1995-06-27, 'Estados Unidos da América', 'M', 192, NULL);
+
+INSERT INTO Jogador 
+VALUES (162968, 'Manuel Sicó', 'Manuel Fernando Sicó', 1988-12-09, 'Portugal', 'M', 207, NULL);
+
+INSERT INTO Jogador 
+VALUES (214063, 'Manuel Magalhães', 'Manuel Reis Magalhães', 2002-08-31, 'Portugal', 'M', 187, 77);
+
+INSERT INTO Jogador 
+VALUES (229047, 'Manuel Rosas', 'Manuel Ribeiro Rosas', 2002-04-04, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (279454, 'Markus Loncar', 'Markus Loncar', 1996-04-08, 'Croácia', 'M', 213, NULL);
+
+INSERT INTO Jogador 
+VALUES (273651, 'Matthew Mccarthy', 'Matthew Nicholas Mccarthy', 1996-07-30, 'Austrália', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (262449, 'Max Landis', 'Max Daniel Landis', 1993-02-02, 'Estados Unidos da América', 'M', 188, NULL);
+
+INSERT INTO Jogador 
+VALUES (256011, 'Micah Downs', 'Micah Philip Downs', 1986-09-08, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (280929, 'Michael Morrison', 'Michael Anthony Morrison', 1989-10-31, 'Estados Unidos da América', 'M', 207, NULL);
+
+INSERT INTO Jogador 
+VALUES (200049, 'Miguel Rodrigues', 'Miguel Cunha Rodrigues', 2001-02-05, 'Portugal', 'M', 174, NULL);
+
+INSERT INTO Jogador 
+VALUES (177160, 'Miguel Correia', 'Miguel Lourenço Correia', 2000-09-29, 'Portugal', 'M', 188, NULL);
+
+INSERT INTO Jogador 
+VALUES (125679, 'Miguel Cardoso', 'Miguel Maria Varajão Leal Cardoso', 1993-01-15, 'Portugal', 'M', 186, NULL);
+
+INSERT INTO Jogador 
+VALUES (131516, 'Miguel Freitas', 'Miguel Rodrigues Vieira Toste de Freitas', 1990-09-28, 'Portugal', 'M', 178, 75);
+
+INSERT INTO Jogador 
+VALUES (247388, 'Miguel Baker', 'Miguel Salim Dudó Belante Baker', 2004-08-24, 'Portugal', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (154371, 'Miguel Queiroz', 'Miguel Tinoco Queiroz', 1991-07-04, 'Portugal', 'M', 204, 107);
+
+INSERT INTO Jogador 
+VALUES (262514, 'Montell Goodwin', 'Montell Rayshawn Goodwin', 1995-09-04, 'Estados Unidos da América', 'M', 188, NULL);
+
+INSERT INTO Jogador 
+VALUES (273180, 'Nakye Sanders', 'Nakye Gerald Sanders', 1997-11-01, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (224047, 'Nikola Tadic', 'Nikola Tadic', 1988-11-04, 'Sérvia', 'M', 206, NULL);
+
+INSERT INTO Jogador 
+VALUES (273428, 'Nikola Vujovic', 'Nikola Vujovic', 1993-01-21, 'Sérvia', 'M', 210, NULL);
+
+INSERT INTO Jogador 
+VALUES (137354, 'Nuno Oliveira', 'Nuno Fortunato Oliveira', 1989-08-20, 'Portugal', 'M', 183, 90);
+
+INSERT INTO Jogador 
+VALUES (208207, 'Nuno Sá', 'Nuno Miguel Camacho de Sá', 1997-03-25, 'Portugal', 'M', 200, 90);
+
+INSERT INTO Jogador 
+VALUES (167755, 'Nuno Brito', 'Nuno Miguel Ferreira Brito', 1996-02-22, 'Portugal', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (151165, 'Nuno Morais', 'Nuno Miguel Sousa Morais', 1990-02-06, 'Portugal', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (192469, 'Paulo Sereno', 'Paulo Alexandre Ruge Sereno', 1996-03-24, 'Portugal', 'M', 199, NULL);
+
+INSERT INTO Jogador 
+VALUES (155174, 'Pedro Bastos', 'Pedro Alexandre Almeida Bastos', 1994-10-24, 'Portugal', 'M', 188, 78);
+
+INSERT INTO Jogador 
+VALUES (169338, 'Pedro Oliveira', 'Pedro Baptista Oliveira', 1997-02-26, 'Portugal', 'M', 180, 73);
+
+INSERT INTO Jogador 
+VALUES (111676, 'Pedro Catarino', 'Pedro Filipe Vaz Catarino', 1990-10-20, 'Portugal', 'M', 186, NULL);
+
+INSERT INTO Jogador 
+VALUES (173200, 'Pedro Pinto', 'Pedro Lascasas Pinto', 1997-12-01, 'Portugal', 'M', 192, NULL);
+
+INSERT INTO Jogador 
+VALUES (188613, 'Pedro Margalho', 'Pedro Mateus da Silva Margalho', 2002-03-08, 'Portugal', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (85854, 'Pedro Pinto', 'Pedro Miguel Santos Pinto', 1988-03-05, 'Portugal', 'M', 188, 91);
+
+INSERT INTO Jogador 
+VALUES (200019, 'Rafael Costa', 'Rafael Flores Costa', 2001-09-28, 'Portugal', 'M', 179, NULL);
+
+INSERT INTO Jogador 
+VALUES (272929, 'Rashard Odomes', 'Rashard Marque Odomes', 1996-12-21, 'Estados Unidos da América', 'M', 1, NULL);
+
+INSERT INTO Jogador 
+VALUES (235831, 'Raven Barber', 'Raven Louis Barber', 1991-10-02, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (140327, 'Renato Azevedo', 'Renato Alexandre Moreira Azevedo', 1991-08-01, 'Portugal', 'M', 187, NULL);
+
+INSERT INTO Jogador 
+VALUES (209673, 'Ricardo Monteiro', 'Ricardo Bernardo Dias Monteiro', 1997-02-13, 'Portugal', 'M', 208, 106);
+
+INSERT INTO Jogador 
+VALUES (279560, 'Roddy PetersJr', 'Roddy Troy PetersJr', 1995-07-14, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (184458, 'Rodrigo Soeiro', 'Rodrigo Tobias Simões Rebelo Soeiro', 1996-12-20, 'Portugal', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (205486, 'Rúben Sona', 'Rúben André Monteiro Sona', 2004-05-21, 'Portugal', 'M', 184, NULL);
+
+INSERT INTO Jogador 
+VALUES (237485, 'Rui Fernandes', 'Rui Carlos Jesus Oliveira da Costa Fernandes', 2002-06-07, 'Portugal', 'M', 195, 95);
+
+INSERT INTO Jogador 
+VALUES (145055, 'Rui Coelho', 'Rui Eduardo Fernandes Coelho', 1989-11-09, 'Portugal', 'M', 191, NULL);
+
+INSERT INTO Jogador 
+VALUES (125990, 'Rui França', 'Rui Jorge dos Santos Silva França', 1989-06-26, 'Portugal', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (102320, 'Rui Quintino', 'Rui Miguel Freire Quintino', 1983-10-20, 'Portugal', 'M', 196, 92);
+
+INSERT INTO Jogador 
+VALUES (201195, 'Salvador Caldeira', 'Salvador Magalhães Cardoso Caldeira', 2003-03-18, 'Portugal', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (208548, 'Salvador Victo', 'Salvador Serápio Victo', 2005-03-08, 'Portugal', 'M', 192, NULL);
+
+INSERT INTO Jogador 
+VALUES (268477, 'Sérgio Alves', 'Sérgio dos Santos Alves', 2005-02-26, 'Cabo Verde', 'M', 191, NULL);
+
+INSERT INTO Jogador 
+VALUES (150441, 'Sérgio Silva', 'Sérgio Fernando Penela da Silva', 1996-03-05, 'Portugal', 'M', 193, 83);
+
+INSERT INTO Jogador 
+VALUES (77301, 'Sérgio Duarte', 'Sérgio Filipe da Silva Duarte', 1979-03-22, 'Portugal', 'M', 182, NULL);
+
+INSERT INTO Jogador 
+VALUES (269329, 'Seydougou Santis', 'Seydougou Mamourou Fofana Santis', 1997-10-05, 'Estados Unidos da América', 'M', 206, NULL);
+
+INSERT INTO Jogador 
+VALUES (268935, 'Shakir Smith', 'Shakir Marwan Smith', 1992-10-25, 'Estados Unidos da América', 'M', 185, NULL);
+
+INSERT INTO Jogador 
+VALUES (276286, 'Shaun Willett', 'Shaun Gregory Willett', 1996-11-15, 'Estados Unidos da América', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (230675, 'Simão Ribeiro', 'Simão Filipe Andrade Certo Pinheiro Ribeiro', 2003-06-11, 'Portugal', 'M', NULL, NULL);
+
+INSERT INTO Jogador 
+VALUES (163662, 'Stefan Djukic', 'Stefan Djukic', 1989-07-18, 'Portugal', 'M', 201, 101);
+
+INSERT INTO Jogador 
+VALUES (273335, 'Tahjai Teague', 'Tahjai Anaiah Teague', 1997-06-25, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (262570, 'Tanner Omlid', 'Tanner Howard Omlid', 1993-12-02, 'Estados Unidos da América', 'M', 191, NULL);
+
+INSERT INTO Jogador 
+VALUES (255992, 'Thomas Thaey', 'Thomas Hugo R. De Thaey', 1991-03-15, 'Bélgica', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (211453, 'Thomas Sampaio', 'Thomas Silva Sampaio', 2003-02-12, 'Portugal', 'M', 176, NULL);
+
+INSERT INTO Jogador 
+VALUES (200034, 'Tiago Almeida', 'Tiago Alexandre da Rocha Almeida', 2003-06-12, 'Portugal', 'M', 190, NULL);
+
+INSERT INTO Jogador 
+VALUES (191451, 'Tiago Nazário', 'Tiago Nogueira Nazário', 1999-03-06, 'Portugal', 'M', 183, NULL);
+
+INSERT INTO Jogador 
+VALUES (129794, 'Tomás Barroso', 'Tomás Cabrita dos Santos Nunes Barroso', 1990-11-02, 'Portugal', 'M', 182, 88);
+
+INSERT INTO Jogador 
+VALUES (184353, 'Tomás Dias', 'Tomás Martins Dias', 2001-10-24, 'Portugal', 'M', 195, 95);
+
+INSERT INTO Jogador 
+VALUES (249301, 'Travante Williams', 'Travante António Williams', 1993-07-29, 'Portugal', 'M', 195, 91);
+
+INSERT INTO Jogador 
+VALUES (268941, 'Travis Munnings', 'Travis Trayvon Munnings', 1994-09-14, 'Bahamas', 'M', 198, 95);
+
+INSERT INTO Jogador 
+VALUES (268823, 'Tyere Marshall', 'Tyere Dashaun Marshall', 1997-06-26, 'Estados Unidos da América', 'M', 205, NULL);
+
+INSERT INTO Jogador 
+VALUES (256177, 'Tymetrius Toney', 'Tymetrius Montovia Toney', 1994-11-27, 'Estados Unidos da América', 'M', 193, NULL);
+
+INSERT INTO Jogador 
+VALUES (187286, 'Vladyslav Voytso', 'Vladyslav Voytso', 1999-07-30, 'Portugal', 'M', 200, 91);
+
+INSERT INTO Jogador 
+VALUES (280845, 'Wendell Lewis', 'Wendell Lewis', 1989-09-21, 'Estados Unidos da América', 'M', 208, NULL);
+
+INSERT INTO Jogador 
+VALUES (273584, 'William DunstonJr', 'William Christopher DunstonJr', 1994-03-26, 'Estados Unidos da América', 'M', 198, NULL);
+
+INSERT INTO Jogador 
+VALUES (272993, 'Zane Waterman', 'Zane Haden Waterman', 1995-10-12, 'Estados Unidos da América', 'M', 203, NULL);
+
+INSERT INTO Jogador 
+VALUES (273181, 'Zarko Jukic', 'Zarko Jukic', 1993-07-28, 'Dinamarca', 'M', 202, NULL);
+
 --Jogos
 
 INSERT INTO Jogo
