@@ -8,7 +8,49 @@ VALUES (60, '2021/2022');
 --Escalões
 
 INSERT INTO Escalao
+VALUES (15, 'Mini 12', 'M');
+
+INSERT INTO Escalao
+VALUES (11, 'Mini 12', 'F');
+
+INSERT INTO Escalao
+VALUES (5, 'Sub 14', 'M');
+
+INSERT INTO Escalao
+VALUES (6, 'Sub 14', 'F');
+
+INSERT INTO Escalao
+VALUES (3, 'Sub 16', 'M');
+
+INSERT INTO Escalao
+VALUES (1, 'Sub 16', 'F');
+
+INSERT INTO Escalao
+VALUES (10, 'Sub 18', 'M');
+
+INSERT INTO Escalao
+VALUES (21, 'Sub 18', 'F');
+
+INSERT INTO Escalao
+VALUES (8, 'Sub 19', 'F');
+
+INSERT INTO Escalao
+VALUES (9, 'Sub 20', 'M');
+
+INSERT INTO Escalao
+VALUES (22, 'Sub 20', 'F');
+
+INSERT INTO Escalao
 VALUES (18, 'Sénior', 'M');
+
+INSERT INTO Escalao
+VALUES (19, 'Sénior', 'F');
+
+INSERT INTO Escalao
+VALUES (29, 'Masters / Veteranos', 'M');
+
+INSERT INTO Escalao
+VALUES (31, 'BCR', 'M');
 
 --Associações
 

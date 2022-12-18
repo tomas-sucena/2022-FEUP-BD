@@ -15,7 +15,7 @@ CREATE TABLE Epoca(
 CREATE TABLE Escalao(
     idEscalao               INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
-    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    sexo                    CHARACTER(1) NOT NULL -- 'M' -> masculino, 'F' -> feminino
 );
 
 CREATE TABLE Associacao(
@@ -36,8 +36,8 @@ CREATE TABLE Competicao(
     idCompeticao            INTEGER PRIMARY KEY, --1
     nome                    TEXT NOT NULL, --3
     abreviatura             TEXT NOT NULL, --2
-    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
     idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE, --5
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE, --9
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) --7
 );
 

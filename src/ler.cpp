@@ -27,7 +27,49 @@ int main(){
     writer << "--Escalões" << endl << endl;
 
     writer << "INSERT INTO Escalao\n"
+    << "VALUES (15, \'Mini 12\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (11, \'Mini 12\', \'F\');" << endl << endl; 
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (5, \'Sub 14\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (6, \'Sub 14\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (3, \'Sub 16\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (1, \'Sub 16\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (10, \'Sub 18\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (21, \'Sub 18\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (8, \'Sub 19\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (9, \'Sub 20\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (22, \'Sub 20\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
     << "VALUES (18, \'Sénior\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (19, \'Sénior\', \'F\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (29, \'Masters / Veteranos\', \'M\');" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (31, \'BCR\', \'M\');" << endl << endl;
 
     /* ASSOCIACOES */
     ifstream associacoes("../csv/associacoes.csv");
