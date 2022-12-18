@@ -1,9 +1,19 @@
 PRAGMA FOREIGN_KEYS = ON;
 
+--Épocas
+
+INSERT INTO Epoca
+VALUES (60, '2021/2022');
+
+--Escalões
+
+INSERT INTO Escalao
+VALUES (18, 'Sénior', 'M');
+
 --Associações
 
 INSERT INTO Associacao 
-VALUES (90, 'Federação Internacional de Basquetebol Amador ', 'FIBA', 1932-06-18, '2147483647', 'info@fiba.com ', 'Swaziland', 'NULL', 'NULL', 'NULL');
+VALUES (90, 'Federação Internacional de Basquetebol Amador', 'FIBA', 1932-06-18, '2147483647', 'info@fiba.com ', 'Swaziland', 'NULL', 'NULL', 'NULL');
 
 INSERT INTO Associacao 
 VALUES (50, 'Federação Portuguesa de Basquetebol', 'FPB', 1927-08-17, '218815800', 'portugalbasket@fpb.pt ', 'Portugal', 'Telheiras', 'Lisboa', 'Lisboa');
@@ -15,13 +25,13 @@ INSERT INTO Associacao
 VALUES (22, 'Associação de Basquetebol de Santa Maria ', 'AB Santa Maria', 1996-06-04, '296883206', 'absma@sapo.pt', 'Portugal', 'Vila do Porto', 'Vila Do Porto', 'Ilha de Santa Maria');
 
 INSERT INTO Associacao 
-VALUES (20, 'Associação de Basquetebol da Guarda ', 'AB Guarda', 1989-02-16, '271213446', 'abguarda.geral@gmail.com', 'Portugal', 'Guarda', 'Guarda', 'Guarda');
+VALUES (20, 'Associação de Basquetebol da Guarda', 'AB Guarda', 1989-02-16, '271213446', 'abguarda.geral@gmail.com', 'Portugal', 'Guarda', 'Guarda', 'Guarda');
 
 INSERT INTO Associacao 
-VALUES (19, 'Associação de Basquetebol das Ilhas do Faial e Pico ', 'AB Faial e Pico ', 2000-05-27, '292101263', 'abifpazores@gmail.com', 'Portugal', 'Horta Faial', 'Horta', 'Ilha do Faial');
+VALUES (19, 'Associação de Basquetebol das Ilhas do Faial e Pico', 'AB Faial e Pico ', 2000-05-27, '292101263', 'abifpazores@gmail.com', 'Portugal', 'Horta Faial', 'Horta', 'Ilha do Faial');
 
 INSERT INTO Associacao 
-VALUES (18, 'Associação de Basquetebol de Vila Real ', 'AB Vila Real', 1989-10-12, '259323921', 'abvilareal@sapo.pt', 'Portugal', 'Vila Real', 'Vila Real', 'Vila Real');
+VALUES (18, 'Associação de Basquetebol de Vila Real', 'AB Vila Real', 1989-10-12, '259323921', 'abvilareal@sapo.pt', 'Portugal', 'Vila Real', 'Vila Real', 'Vila Real');
 
 INSERT INTO Associacao 
 VALUES (17, 'Associação de Basquetebol de Viana do Castelo ', 'AB Viana do Castelo', 1989-03-11, '258741292', 'geral.abvc@gmail.com', 'Portugal', 'Ponte de Lima', 'Ponte De Lima', 'Viana do Castelo');
@@ -73,6 +83,227 @@ VALUES (2, 'Associação de Basquetebol de Setúbal ', 'AB Setúbal', 1943-11-12
 
 INSERT INTO Associacao 
 VALUES (1, 'Associação de Basquetebol de Lisboa', 'AB Lisboa', 1927-10-10, '214118230', 'geral@ablisboa.pt', 'Portugal', 'Carnide', 'Lisboa', 'Lisboa');
+
+--Competições
+
+INSERT INTO Competicao 
+VALUES (8894, Liga BETCLIC Masculina, Liga BETCLIC Masculina, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8895, XIX Campeonato da Proliga, Proliga, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8897, IX Campeonato Nacional 1ª Divisão Masculina, CN 1ª Masculina, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8898, V Campeonato Nacional 2ª Divisão Masculina, CN 2ª Masculina, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8899, Liga BETCLIC Feminina, Liga BETCLIC Feminina, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8900, LVI Campeonato Nacional 1ª Divisão Feminina, CN 1 Feminina, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8901, LV Campeonato Nacional 2ª Divisão Feminina, CN 2 Feminina, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8902, XXX Campeonato Nacional 1ª Divisão BCR, 1ª Divisão BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8903, VIII Campeonato Nacional 2ª Divisão BCR, 2ª Divisão BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8904,  FIBA World Cup 2023 Qualifiers, FIBA WC 2023 Q, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8906, Basketball Champions League, Champions League, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8907, FIBA Europe Cup, FIBAEurope Cup, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8908, FIBA EuroCup Women, EuroCup Women, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8909, LXXIII Taça de Portugal Alfaloc, Taça de Portugal Alfaloc, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8910, LVI Taça de Portugal Skoiy, Taça de Portugal Skoiy, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8911, XXVIII Taça de Portugal BCR, Taça de Portugal BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8912, XXXVI Supertaça Masculina, Supertaça, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8913, XXXVI Supertaça Feminina, Supertaça Feminina, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8914, XXVI Supertaça BCR, Supertaça BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8915, XIII Taça Hugo dos Santos Betclic, Taça Hugo dos Santos Betc, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8916, XII Taça Federação Betclic, Taça Federação Betclic, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8917, Centro Nacional de Treino de Ponte Sor, CNT Ponte Sor, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8918, Centro Nacional de Treino do Jamor, CAR Jamor, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8921, VIII Azeméis Basketball Cup 2021, Azeméis Cup 2021, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8922, IV Albufeira Basket Cup 2021, Albufeira Cup 21, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8923, Jogos Apresentação Masculino, Jogos Apresentação Masculino, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8924, Torneio Internacional de Lisboa, Torneio de Lisboa, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8925, 8º Torneio Nacional - Cidade do Funchal, Torneio Cidade do Funchal, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8926, Jogos Apresentação Feminino, Jogos Apresentação Femini, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8940, IV Torneio BC Gaia BCR	, Torneio BC Gaia BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8941, Torneio Humberto Mendes - Sangalhos, Torneio Sangalhos, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (8994, XX Torneio Internacional de Lisboa BCR, Torneio Lisboa BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9079, V Liga Masters DHIKA, Liga Masters DHIKA, 60, 29, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9085, Jogos Preparação SN BCR, Jogos SN BCR, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9112, Torneio Memorial Pedro Raimundo - 11ª Edição, Torneio Pedro Raimundo, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9143, XXV Campeonato Nacional Sub 18 Masculinos, Camp Nac Sub18 Masculinos, 60, 10, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9144, XXXV Campeonato Nacional Sub 19 Femininos, Campeonato Nacional S19F, 60, 8, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9164, XXV Taça Nacional Sub18 Masculinos, Taça Nac Sub18, 60, 10, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9165, XXIII Taça Nacional Sub19 Femininos, Taça Nacional S19F, 60, 8, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9166, XXIII Campeonato Nacional Sub-16 Masculinos, Nacional S16M, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9167, XXIII Campeonato Nacional Sub16 Femininos, Camp Nac Sub16 Femininos, 60, 1, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9168, XV Taça Nacional Sub16 Masculinos, Taça Nac Sub16 M, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9169, XXIV Taça Nacional Sub16 Femininos, Taça Nac Sub16 F, 60, 1, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9195, VIII Campeonato Nacional Sub14 Masculinos, Camp Nac Sub14 Masculinos, 60, 5, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9196, VIII Campeonato Nacional Sub14 Femininos, Camp Nac Sub14 Femininos, 60, 6, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9202, Paredes Basket Cup, Paredes Basket Cup, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9246, VII Taça Nacional Seniores Masculinos, TN Seniores Masculinos, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9247, IV Taça Nacional Seniores Femininos, Taça Nacional SF, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9252, XIV Festa do Basquetebol Juvenil U16, Festa Basquetebol U16, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9253, XIV Festa do Basquetebol Juvenil U16W, Festa Basquetebol U16W, 60, 1, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9254, XIV Festa do Basquetebol Juvenil U14, Festa Basquetebol U14, 60, 5, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9255, XIV Festa do Basquetebol Juvenil U14W, Festa Basquetebol U14W, 60, 6, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9266, Jogos Preparação Seniores Femininos, Jogos Sen Femininos, 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9281, Jogos ANDDI, Jogos ANDII, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9282, Jogos Preparação Seleção Universitária Feminina, Jogos Preparação , 60, 19, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9304, Jogos Preparação Sub20 Femininos, Jogos Preparação Sub20 Fe, 60, 22, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9307, Jogos Preparação Seniores Masculinos, Jogos Preparação Sen Masc, 60, 18, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9308, Jogos Preparação Sub20 Masculinos, Jogos Preparação Sub20 Masc, 60, 9, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9314, 2.º Torneio BCR - Cidade Covilhã, 2.º Torneio BCR - Cidade Covilhã, 60, 31, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9325, X Festa Nacional Minibasquete - Feminino, Festa Minibasquete F, 60, 11, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9326, X Festa Nacional Minibasquete - Masculino, X Festa Minibasquete M, 60, 15, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9328, Jogos Preparação Sub18 Masculinos, Jogos Prep Sub18 Masc, 60, 10, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9329, Jogos Preparação Sub18 Femininos, Jogos Prep Sub18 Fem, 60, 21, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9330, Jogos Preparação Sub15/Sub16 Masculinos, Jogos Preparação S15/S16M, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9331, Jogos Preparação Sub15/Sub16 Femininos, Jogos Preparação S15/S16F, 60, 1, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9353, Jogos Preparação Sub14 Masculinos, Jogos Preparação Sub14 Masculinos, 60, 5, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9354, Jogos Preparação Sub14 Femininos, Jogos Preparação Sub14 F, 60, 6, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9355, U20 European Championship - Division A, U20 EC Div.A, 60, 9, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9356, U20W European Championship - Division A, U20W EC Div.A, 60, 22, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9361, U18 European Championship - Division B, U18 European Championship - Division B, 60, 10, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9362, U18W European Championship - Division B, U18W European Championship - Division B, 60, 21, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9363, U16 European Championship - Division B, U16 European Championship - Division B, 60, 3, Federação Portuguesa de Basquetebol);
+
+INSERT INTO Competicao 
+VALUES (9364, U16W European Championship - Division A, U16W EC - Division A, 60, 1, Federação Portuguesa de Basquetebol);
 
 --Clubes
 
@@ -1481,83 +1712,83 @@ INSERT INTO Clube
 VALUES (3561, 'Juventude Ouriense', 'Juventude Ouriense', 1952-08-06, '249545114', 'geral@juventudeouriense.com', 'Renato Amilcar Matos Lopes', 'Portugal', 'Ourém', 'Santarém', 'Rua Dr. Agostinho Barroso Gonçalves, nº 9', 7, 10377);
 
 INSERT INTO Clube 
-VALUES (3562, 'Brose Baskets Bamberg', 'Brose Bamberg', 1955-01-01, NULL, 'd@d.com', '', 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
+VALUES (3562, 'Brose Baskets Bamberg', 'Brose Bamberg', 1955-01-01, NULL, 'd@d.com', NULL, 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
 
 INSERT INTO Clube 
-VALUES (3563, 'Basketball Club Budivelnyk Kyiv', 'BC Budivelnyk Kyiv', 1945-01-01, NULL, 'maxymgayovyy@gmail.com', '', 'Portugal', 'Ourém', 'Santarém', 'Kiev', 90, 1);
+VALUES (3563, 'Basketball Club Budivelnyk Kyiv', 'BC Budivelnyk Kyiv', 1945-01-01, NULL, 'maxymgayovyy@gmail.com', NULL, 'Portugal', 'Ourém', 'Santarém', 'Kiev', 90, 1);
 
 INSERT INTO Clube 
-VALUES (3564, 'KB Golden Eagle Ylli', 'KB Golden Eagle Ylli', 1975-01-01, NULL, NULL, '', 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
+VALUES (3564, 'KB Golden Eagle Ylli', 'KB Golden Eagle Ylli', 1975-01-01, NULL, NULL, NULL, 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
 
 INSERT INTO Clube 
-VALUES (3565, 'Norrköping Dolphins', 'Norrköping Dolphins', 1963-01-01, NULL, NULL, '', 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
+VALUES (3565, 'Norrköping Dolphins', 'Norrköping Dolphins', 1963-01-01, NULL, NULL, NULL, 'Portugal', 'Ourém', 'Santarém', NULL, 90, 1);
 
 INSERT INTO Clube 
-VALUES (3566, 'KK Paulus Pärnu', 'Pärnu Sadam', 2000-01-01, NULL, 'johan@paulus.ee', '', 'Portugal', 'Ourém', 'Santarém', NULL, 90, 10385);
+VALUES (3566, 'KK Paulus Pärnu', 'Pärnu Sadam', 2000-01-01, NULL, 'johan@paulus.ee', NULL, 'Portugal', 'Ourém', 'Santarém', NULL, 90, 10385);
 
 INSERT INTO Clube 
 VALUES (3567, 'Clube Desportivo Gumirães Basket - Viseu', 'Gumirães Basket', 2022-06-09, NULL, 'desporto@gumiraesbasket.pt', 'Cláudia Seabra', 'Portugal', 'Viseu', 'Viseu', 'Rua Capitão Silva Pereira nº 68, 1º', 10, 10237);
 
 INSERT INTO Clube 
-VALUES (3568, 'Córdoba Baloncesto Femenino', 'Córdoba', 2020-07-01, NULL, 'chanydelrey@hotmail.com', '', 'Portugal', 'Viseu', 'Viseu', 'AVDA. FUENSANTA, 37 14010 Córdoba (Córdoba)', 90, 1);
+VALUES (3568, 'Córdoba Baloncesto Femenino', 'Córdoba', 2020-07-01, NULL, 'chanydelrey@hotmail.com', NULL, 'Portugal', 'Viseu', 'Viseu', 'AVDA. FUENSANTA, 37 14010 Córdoba (Córdoba)', 90, 1);
 
 INSERT INTO Clube 
-VALUES (3570, 'Club Unicaja Baloncesto', 'Club Unicaja Baloncesto', 1992-01-01, NULL, 'correo@unicajabaloncesto.com', '', 'Portugal', 'Viseu', 'Viseu', 'Malaga', 90, 10158);
+VALUES (3570, 'Club Unicaja Baloncesto', 'Club Unicaja Baloncesto', 1992-01-01, NULL, 'correo@unicajabaloncesto.com', NULL, 'Portugal', 'Viseu', 'Viseu', 'Malaga', 90, 10158);
 
 INSERT INTO Clube 
-VALUES (3572, 'Sheffield Sharks', 'Sheffield Sharks', 1991-01-01, '441142573180', 'portugalbasket@fpb.pt', '', 'Portugal', 'Viseu', 'Viseu', 'Sheffield', 90, 10158);
+VALUES (3572, 'Sheffield Sharks', 'Sheffield Sharks', 1991-01-01, '441142573180', 'portugalbasket@fpb.pt', NULL, 'Portugal', 'Viseu', 'Viseu', 'Sheffield', 90, 10158);
 
 INSERT INTO Clube 
 VALUES (3574, 'Inedsport Associação Desportiva', 'Inedsport ', 2022-08-25, '935757596', 'tsalgado@inedsport-ad.com', 'Paula Marlene Veiga da Silva', 'Portugal', 'Porto', 'Porto', 'R do Marechal Saldanha, 1374', 4, 9974);
 
 INSERT INTO Clube 
-VALUES (3575, 'Juventus Basket Cascais Clube ', 'Juventus Cascais ', 2022-07-21, '961705943', 'juventusbasketcascais@gmail.com', '', 'Portugal', 'Cascais', 'Lisboa', 'Rua Marechal Costa Gomes Nº 159 - 3º - Dtº', 1, 9642);
+VALUES (3575, 'Juventus Basket Cascais Clube ', 'Juventus Cascais ', 2022-07-21, '961705943', 'juventusbasketcascais@gmail.com', NULL, 'Portugal', 'Cascais', 'Lisboa', 'Rua Marechal Costa Gomes Nº 159 - 3º - Dtº', 1, 9642);
 
 INSERT INTO Clube 
-VALUES (3576, 'BBC Gréngewald Hueschtert', 'Grengewald', 1947-01-01, NULL, 'secretariat@bbc-grengewald.lu', '', 'Portugal', 'Cascais', 'Lisboa', 'B.P. 66 L-6905 Niederanven', 90, 1);
+VALUES (3576, 'BBC Gréngewald Hueschtert', 'Grengewald', 1947-01-01, NULL, 'secretariat@bbc-grengewald.lu', NULL, 'Portugal', 'Cascais', 'Lisboa', 'B.P. 66 L-6905 Niederanven', 90, 1);
 
 INSERT INTO Clube 
 VALUES (3588, 'Associação Solidariedade Social das Silveiras', 'Silveiras Basket', 2000-11-13, NULL, 'asssilveiras@gmail.com', 'Rui Rato Araújo Fonseca', 'Portugal', 'Montemor-O-Novo', 'Évora', 'Rua Florbela Espanca, nº 3', 12, 9401);
 
 INSERT INTO Clube 
-VALUES (3589, 'Baxi Manresa', 'Baxi Manresa', 2022-09-25, NULL, 'portugalbasket@fpb.pt', '', 'Portugal', 'Montemor-O-Novo', 'Évora', 'A', 90, 10398);
+VALUES (3589, 'Baxi Manresa', 'Baxi Manresa', 2022-09-25, NULL, 'portugalbasket@fpb.pt', NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', 'A', 90, 10398);
 
 INSERT INTO Clube 
-VALUES (3590, 'Basketballgemeinschaft Göttingen', 'BG Gottingen', 1974-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', 'Gotinga', 90, 1);
+VALUES (3590, 'Basketballgemeinschaft Göttingen', 'BG Gottingen', 1974-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', 'Gotinga', 90, 1);
 
 INSERT INTO Clube 
-VALUES (3594, 'VEF Riga', 'VEF Riga', 1958-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10399);
+VALUES (3594, 'VEF Riga', 'VEF Riga', 1958-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10399);
 
 INSERT INTO Clube 
-VALUES (3595, 'Limoges CSP', 'Limoges CSP', 2022-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10400);
+VALUES (3595, 'Limoges CSP', 'Limoges CSP', 2022-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10400);
 
 INSERT INTO Clube 
-VALUES (3596, 'BCF Elfic Fribourg Basket', 'BCF Elfic Fribourg Basket', 1900-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10402);
+VALUES (3596, 'BCF Elfic Fribourg Basket', 'BCF Elfic Fribourg Basket', 1900-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10402);
 
 INSERT INTO Clube 
-VALUES (3597, 'T71 Diddeleng', 'T71 Diddeleng', 1900-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10403);
+VALUES (3597, 'T71 Diddeleng', 'T71 Diddeleng', 1900-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 10403);
 
 INSERT INTO Clube 
-VALUES (3598, 'Karhu Basket', 'Karhu Basket', 2000-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
+VALUES (3598, 'Karhu Basket', 'Karhu Basket', 2000-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
 
 INSERT INTO Clube 
-VALUES (3599, 'Anwil Wloclawek', 'Anwil Wloclawek', 2000-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
+VALUES (3599, 'Anwil Wloclawek', 'Anwil Wloclawek', 2000-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
 
 INSERT INTO Clube 
-VALUES (3600, 'Egis Kormend', 'Egis Kormend', 2000-01-01, NULL, NULL, '', 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
+VALUES (3600, 'Egis Kormend', 'Egis Kormend', 2000-01-01, NULL, NULL, NULL, 'Portugal', 'Montemor-O-Novo', 'Évora', NULL, 90, 1);
 
 INSERT INTO Clube 
 VALUES (3604, 'Benedita Hoopers Club BHC', 'Benedita Hoopers', 2022-09-28, '928111141', 'beneditahoopers@gmail.com', 'Renato Bernardino', 'Portugal', 'Alcobaça', 'Leiria', 'Benedita ', 11, 10410);
 
 INSERT INTO Clube 
-VALUES (3606, 'CSI - Ubuntu Basket Academy', 'Ubuntu Basket ', 2020-04-21, NULL, 'ubuntu.basket.academy@gmail.com', '', 'Portugal', 'Loures', 'Lisboa', 'Rua das Forças Armadas V da Rocha - R/C Esqº D', 1, 10338);
+VALUES (3606, 'CSI - Ubuntu Basket Academy', 'Ubuntu Basket ', 2020-04-21, NULL, 'ubuntu.basket.academy@gmail.com', NULL, 'Portugal', 'Loures', 'Lisboa', 'Rua das Forças Armadas V da Rocha - R/C Esqº D', 1, 10338);
 
 INSERT INTO Clube 
-VALUES (3608, 'SCM Universitatea Craiova', 'SCMU Craiova', 2007-01-01, NULL, 'office@scmcraiova.ro', '', 'Portugal', 'Loures', 'Lisboa', 'Strada Brestei, nr. 4', 90, 10415);
+VALUES (3608, 'SCM Universitatea Craiova', 'SCMU Craiova', 2007-01-01, NULL, 'office@scmcraiova.ro', NULL, 'Portugal', 'Loures', 'Lisboa', 'Strada Brestei, nr. 4', 90, 10415);
 
 INSERT INTO Clube 
-VALUES (3609, 'Basketballvereinigung Chemnitz 99', 'BV Chemnitz 99', 1999-01-01, NULL, 'marketing@chemnitz99.de', '', 'Portugal', 'Loures', 'Lisboa', NULL, 90, 10416);
+VALUES (3609, 'Basketballvereinigung Chemnitz 99', 'BV Chemnitz 99', 1999-01-01, NULL, 'marketing@chemnitz99.de', NULL, 'Portugal', 'Loures', 'Lisboa', NULL, 90, 10416);
 
 INSERT INTO Clube 
-VALUES (3610, 'Cholet Basket', 'Cholet Basket', 1975-01-01, NULL, NULL, '', 'Portugal', 'Loures', 'Lisboa', NULL, 90, 10417);
+VALUES (3610, 'Cholet Basket', 'Cholet Basket', 1975-01-01, NULL, NULL, NULL, 'Portugal', 'Loures', 'Lisboa', NULL, 90, 10417);
 

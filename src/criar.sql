@@ -1,19 +1,21 @@
 PRAGMA FOREIGN_KEYS = ON;
 
-DROP TABLE IF EXISTS Periodo;
-DROP TABLE IF EXISTS Jogo;
-DROP TABLE IF EXISTS Pavilhao;
-DROP TABLE IF EXISTS Jogador;
-DROP TABLE IF EXISTS EpocaEquipa;
-DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
+DROP TABLE IF EXISTS Competicao;
 DROP TABLE IF EXISTS Associacao;
+DROP TABLE IF EXISTS Escalao;
 DROP TABLE IF EXISTS Epoca;
 
 
 CREATE TABLE Epoca(
     idEpoca                 INTEGER PRIMARY KEY,
     ano                     TEXT NOT NULL
+);
+
+CREATE TABLE Escalao(
+    idEscalao               INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
 );
 
 CREATE TABLE Associacao(
@@ -29,6 +31,26 @@ CREATE TABLE Associacao(
     morada                  TEXT
     --idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) --36 ?
 );
+
+CREATE TABLE Competicao(
+    idCompeticao            INTEGER PRIMARY KEY, --1
+    nome                    TEXT NOT NULL, --3
+    abreviatura             TEXT NOT NULL, --2
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
+    idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE, --5
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) --7
+);
+
+
+/*
+CREATE TABLE Recinto(
+    idRecinto               INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome                    TEXT NOT NULL,
+    morada                  TEXT NOT NULL,
+    idConcelho  
+    idDistrito
+    lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
+);*/
 
 -- distrito concelho
 CREATE TABLE Clube(
@@ -47,14 +69,7 @@ CREATE TABLE Clube(
     idRecinto               INTEGER --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
 );
 
-/*CREATE TABLE Recinto(
-    idRecinto               INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    morada                  TEXT NOT NULL,
-    idConcelho  
-    idDistrito
-    lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
-);
+/*
 
 -- escalao
 
@@ -80,15 +95,6 @@ CREATE TABLE EpocaEquipa(
     FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );*/
-
-CREATE TABLE Competicao(
-    idCompeticao            INTEGER PRIMARY KEY,
-    nome                    TEXT NOT NULL,
-    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
-    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
-    idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE,
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao)
-);
 
 -- criar tabela fase
 CREATE TABLE FASE(

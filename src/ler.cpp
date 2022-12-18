@@ -17,6 +17,18 @@ int main(){
     ofstream writer("povoar.sql");
     writer << "PRAGMA FOREIGN_KEYS = ON;" << endl << endl;
 
+    /* EPOCAS */
+    writer << "--Épocas" << endl << endl;
+
+    writer << "INSERT INTO Epoca\n"
+    << "VALUES (60, \'2021/2022\');" << endl << endl;
+
+    /* ESCALOES */
+    writer << "--Escalões" << endl << endl;
+
+    writer << "INSERT INTO Escalao\n"
+    << "VALUES (18, \'Sénior\', \'M\');" << endl << endl;
+
     /* ASSOCIACOES */
     ifstream associacoes("../csv/associacoes.csv");
     writer << "--Associações" << endl << endl;
@@ -89,6 +101,52 @@ int main(){
         << concelho << "\', \'" << distrito << "\', \'" << morada << "\');" << endl << endl;
     }
 
+    /* COMPETICOES */
+    ifstream competicoes("../csv/competicoes.csv");
+    writer << "--Competições" << endl << endl;
+
+    getline(competicoes, header); // ignorar o cabeçalho
+
+    for (string line; getline(competicoes, line);){
+        istringstream line_(line);
+
+        // ler o idCompeticao
+        string idCompeticao;
+        getline(line_, idCompeticao, ',');
+
+        // ler a abreviatura
+        string abreviatura;
+        getline(line_, abreviatura, ',');
+
+        // ler o nome
+        string nome;
+        getline(line_, nome, ',');
+
+        // ler o idEpoca
+        ignore_cols(line_, 1, ',');
+
+        string idEpoca;
+        getline(line_, idEpoca, ',');
+
+        // ler o idAssociacao
+        ignore_cols(line_, 1, ',');
+
+        string idAssociacao;
+        getline(line_, idAssociacao, ',');
+
+        // ler o idEscalao
+        ignore_cols(line_, 1, ',');
+
+        string idEscalao;
+        getline(line_, idEscalao, ',');
+
+        // escrever no ficheiro
+        writer << "INSERT INTO Competicao " << endl
+        << "VALUES (" << idCompeticao << ", " << nome << ", " << abreviatura
+        << ", " << idEpoca << ", " << idEscalao << ", " << idAssociacao << ");"
+        << endl << endl;
+    }
+
     /* CLUBES */
     ifstream clubes("../csv/clubes.csv");
     writer << "--Clubes" << endl << endl;
@@ -154,7 +212,7 @@ int main(){
         string nomePresidente;
         getline(line_, nomePresidente, ';');
 
-        nomePresidente = "\'" + nomePresidente + "\'";
+        nomePresidente = (nomePresidente.empty()) ? "NULL" : ("\'" + nomePresidente + "\'");
 
         // ler o pais
         ignore_cols(line_, 6, ';');
