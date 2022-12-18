@@ -1,6 +1,7 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 DROP TABLE IF EXISTS Jogo;
+DROP TABLE IF EXISTS EquipaJogador;
 DROP TABLE IF EXISTS Jogador;
 DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
@@ -104,30 +105,32 @@ CREATE TABLE EpocaEquipa(
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );*/
 
-
 CREATE TABLE Jogador(
-    idJogador               INTEGER PRIMARY KEY, --1
-    nome                    TEXT NOT NULL, --3
-    nomeCompleto            TEXT NOT NULL, --2
-    dataNascimento          DATE NOT NULL, --19
-    pais                    TEXT NOT NULL, --6
+    idJogador               INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    nomeCompleto            TEXT NOT NULL,
+    dataNascimento          DATE NOT NULL,
+    pais                    TEXT NOT NULL,
     sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
     altura                  INTEGER                         CONSTRAINT alturaPositiva CHECK (altura > 0),
     peso                    INTEGER                         CONSTRAINT pesoPositivo CHECK (peso > 0)
 );
 
-/*
 CREATE TABLE EquipaJogador(
-    idEquipa
-    idJogador
-    numCamisola             INTEGER NOT NULL                CONSTRAINT numValido CHECK (numCamisola >= 0 and numCamisola <= 99),
-    posicao                 TEXT NOT NULL
-);*/
+    idEquipa                INTEGER NOT NULL,
+    idJogador               INTEGER NOT NULL,
+    numCamisola             INTEGER                        CONSTRAINT numCamisolaValido CHECK (numCamisola >= 0 and numCamisola <= 99),
+    posicao                 TEXT,
+
+    PRIMARY KEY (idEquipa, idJogador),
+    FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    FOREIGN KEY (idJogador) REFERENCES Jogador(idJogador) ON UPDATE CASCADE
+);
 
 CREATE TABLE Jogo(
     idJogo                  INTEGER PRIMARY KEY,
     idFase                  TEXT NOT NULL,
-    jornada                 TEXT,
+    jornada                 INTEGER NOT NULL,
     dataJogo                DATE NOT NULL,
     horaJogo                TIME NOT NULL,
     estado                  TEXT NOT NULL,

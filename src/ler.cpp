@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -11,6 +12,22 @@ void ignore_cols(istringstream& line_, int n, char sep){
     for (int i = 0; i < n; i++){
         getline(line_, temp, sep);
     }
+}
+
+string team_name(string equipa){
+    istringstream s(equipa);
+    string res;
+
+    string temp;
+    for (int i = 0; i < 2; i++){
+        getline(s, temp, ' ');
+
+        if (temp.substr(0, 3) == "Sub") continue;
+
+        res += temp + ' ';
+    }
+
+    return res;
 }
 
 int main(){
@@ -357,6 +374,13 @@ int main(){
 
     getline(equipas, header); // ignorar o cabeçalho
 
+    map<string, string> idsEquipas = {{"CAB Madeira ", "40597"},
+                                      {"Imortal BC Luzigás ", "40593"},
+                                      {"Imortal BC ", "40593"},
+                                      {"CD Póvoa ESC Online ", "40600"},
+                                      {"Académica ", "40599"},
+                                      {"SC Lusitânia ", "40596"}};
+
     for (string line; getline(equipas, line);){
         istringstream line_(line);
 
@@ -371,6 +395,7 @@ int main(){
         string nome;
         getline(line_, nome, ';');
 
+        idsEquipas[nome + ' '] = idEquipa;
         nome = "\'" + nome + "\'";
 
         // ler o idClube
@@ -451,6 +476,47 @@ int main(){
         << peso << ");" << endl << endl;
     }
 
+    ifstream equipajogador("../csv/jogadores.csv");
+    writer << "--EquipaJogador" << endl << endl;
+
+    getline(equipajogador, header); // ignorar o cabeçalho
+
+    for (string line; getline(equipajogador, line);){
+        istringstream line_(line);
+
+        // ler o idJogador
+        string idJogador;
+        getline(line_, idJogador, ';');
+
+        // ler a posicao
+        ignore_cols(line_, 3, ';');
+
+        string posicao;
+        getline(line_, posicao, ';');
+
+        posicao = (posicao.empty()) ? "NULL" : ("\'" + posicao + "\'");
+
+        // ler o numCamisola
+        ignore_cols(line_, 4, ';');
+
+        string numCamisola;
+        getline(line_, numCamisola, ';');
+
+        numCamisola = (numCamisola.empty()) ? "NULL" : numCamisola;
+
+        // ler o nome da equipa
+        string equipa;
+        getline(line_, equipa, ';');
+
+        string idEquipa = idsEquipas[team_name(equipa)];
+
+        // escrever no ficheiro
+        writer << "INSERT INTO EquipaJogador " << endl
+        << "VALUES (" << idJogador << ", " << idEquipa
+        << ", " << numCamisola << ", " << posicao << ");"
+        << endl << endl;
+    }
+
     /* JOGOS */
     ifstream jogos("../csv/jogos.csv");
     writer << "--Jogos" << endl << endl;
@@ -469,8 +535,6 @@ int main(){
 
         string jornada;
         getline(line_, jornada, ';');
-
-        jornada = ("\'" + jornada + "\'");
         
         // ler o idFase
         ignore_cols(line_, 2, ';');
@@ -538,4 +602,5 @@ int main(){
         << ", " << pontosEquipaFora << ");"
         << endl << endl; 
     }
+
 }

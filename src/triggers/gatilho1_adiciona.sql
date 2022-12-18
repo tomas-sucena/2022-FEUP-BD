@@ -1,0 +1,1 @@
+-- Trigger que verifica que muda o peso e a altura de um jogador para NULL, caso estes sejam 0, antes de inserir na base de dados
