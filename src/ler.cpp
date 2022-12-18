@@ -118,9 +118,13 @@ int main(){
         string abreviatura;
         getline(line_, abreviatura, ',');
 
+        abreviatura = ("\'" + abreviatura + "\'");
+
         // ler o nome
         string nome;
         getline(line_, nome, ',');
+
+        nome = ("\'" + nome + "\'");
 
         // ler o idEpoca
         ignore_cols(line_, 1, ',');
@@ -129,8 +133,6 @@ int main(){
         getline(line_, idEpoca, ',');
 
         // ler o idAssociacao
-        ignore_cols(line_, 1, ',');
-
         string idAssociacao;
         getline(line_, idAssociacao, ',');
 
