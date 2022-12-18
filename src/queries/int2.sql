@@ -9,7 +9,8 @@ colunas de 'Máximo' e 'Mínimo', respetivamente). */
 -- tabela auxiliar que lista a fase e o total de pontos de cada jogo
 WITH pontuacao AS
 (SELECT j.idFase, j.pontosEquipaCasa + j.pontosEquipaFora AS pontos
-FROM Jogo j)
+FROM Jogo j
+WHERE j.estado = 'Realizado')
 
 SELECT f.nome AS Nome, sum(p.pontos) AS 'Pontos totais', max(p.pontos) as 'Máximo', min(p.pontos) as 'Mínimo'
 FROM Fase f JOIN pontuacao p ON f.idFase = p.idFase
