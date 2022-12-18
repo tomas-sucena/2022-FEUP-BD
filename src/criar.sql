@@ -32,14 +32,32 @@ CREATE TABLE Associacao(
 
 -- distrito concelho
 CREATE TABLE Clube(
-    idClube                 INTEGER PRIMARY KEY,
+    idClube                 INTEGER PRIMARY KEY, --1
+    nome                    TEXT NOT NULL, --2
+    abreviatura             TEXT, --7
+    dataFundacao            DATE NOT NULL, --5
+    telefone                CHARACTER(9), --11
+    email                   TEXT NOT NULL, --13
+    nomePresidente          TEXT, --15
+    pais                    TEXT NOT NULL, --22
+    concelho                TEXT, --23
+    distrito                TEXT, --24
+    morada                  TEXT, --25
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE, --4
+    idRecinto               INTEGER NOT NULL --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
+);
+
+/*CREATE TABLE Recinto(
+    idRecinto               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
-    dataFundacao            DATE NOT NULL,
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE
+    morada                  TEXT NOT NULL,
+    idConcelho  
+    idDistrito
+    lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );
 
 -- escalao
-/*
+
 CREATE TABLE Equipa(
     idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
     designacao              TEXT NOT NULL,
@@ -98,15 +116,6 @@ CREATE TABLE FASE(
     faltasComparenciaCasa
     faltasComparenciaFora
     espectadores            INTEGER                         CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
-);
-
-CREATE TABLE Pavilhao(
-    idPavilhao              INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    morada                  TEXT NOT NULL,
-    idConcelho  
-    idDistrito
-    lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );
 
 CREATE TABLE Jogador(
