@@ -1,5 +1,7 @@
 PRAGMA FOREIGN_KEYS = ON;
 
+DROP TABLE IF EXISTS Jogo;
+DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
 DROP TABLE IF EXISTS Fase;
 DROP TABLE IF EXISTS Competicao;
@@ -42,7 +44,7 @@ CREATE TABLE Competicao(
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) --7
 );
 
-CREATE TABLE FASE(
+CREATE TABLE Fase(
     idFase                  INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
     tipo                    TEXT NOT NULL,
@@ -79,19 +81,14 @@ CREATE TABLE Clube(
     idRecinto               INTEGER --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
 );
 
-/*
-
--- escalao
-
 CREATE TABLE Equipa(
-    idEquipa                INTEGER PRIMARY KEY AUTOINCREMENT,
-    designacao              TEXT NOT NULL,
-    idEscalao               INTEGER NOT NULL REFERENCES Escalao()
-    sexo                    CHARACTER(1) NOT NULL, -- 'M' -> masculino, 'F' -> feminino
+    idEquipa                INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
-    idEpoca                 INTEGER NOT NULL
 );
 
+/*
 CREATE TABLE EpocaEquipa(
     ano                     TEXT NOT NULL,
     idEquipa                INTEGER NOT NULL,
@@ -106,25 +103,7 @@ CREATE TABLE EpocaEquipa(
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );*/
 
--- criar tabela jornada
-
-/*CREATE TABLE Jogo(
-    idJogo                  INTEGER PRIMARY KEY AUTOINCREMENT,
-    idFase                  TEXT NOT NULL,
-    jornada                 TEXT,
-    dataJogo                DATE NOT NULL,
-    horaJogo                             ,
-    idPavilhao              INTEGER NOT NULL REFERENCES Pavilhao(idPavilhao) ON UPDATE CASCADE,
-    idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    idEquipaFora            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
-    estado                  TEXT NOT NULL,
-    pontosEquipaCasa
-    pontosEquipaFora
-    faltasComparenciaCasa
-    faltasComparenciaFora
-    espectadores            INTEGER                         CONSTRAINT espectadoresPositivo CHECK (espectadores > 0)
-);
-
+/*
 CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY AUTOINCREMENT,
     nome                    TEXT NOT NULL,
@@ -134,7 +113,23 @@ CREATE TABLE Jogador(
     peso                    INTEGER NOT NULL                CONSTRAINT pesoPositivo CHECK (peso > 0),
     nacionalidade           TEXT NOT NULL,
 );
+*/
 
+CREATE TABLE Jogo(
+    idJogo                  INTEGER PRIMARY KEY,
+    idFase                  TEXT NOT NULL,
+    jornada                 TEXT,
+    dataJogo                DATE NOT NULL,
+    horaJogo                TIME NOT NULL,
+    estado                  TEXT NOT NULL,
+    idRecinto               INTEGER, --NOT NULL REFERENCES Recinto(idRecinto) ON UPDATE CASCADE,
+    idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    idEquipaFora            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
+    pontosEquipaCasa        INTEGER                         CONSTRAINT pontosEquipaCasaValidos CHECK (pontosEquipaCasa >= 0),
+    pontosEquipaFora        INTEGER                         CONSTRAINT pontosEquipaForaValidos CHECK (pontosEquipaFora >= 0)
+);
+
+/*
 CREATE TABLE EquipaJogador(
     idEquipa
     idJogador
@@ -171,3 +166,5 @@ CREATE TABLE Classificacao(
     nPontosSofridos
     faltasComparencia
 );*/
+
+COMMIT;

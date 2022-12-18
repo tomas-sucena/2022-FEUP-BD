@@ -350,4 +350,126 @@ int main(){
         << pais << ", " << concelho << ", " << distrito << ", " << morada << ", " << idAssociacao 
         << ", " << idRecinto << ");" << endl << endl;
     }
+
+    /* EQUIPAS */
+    ifstream equipas("../csv/equipas.csv");
+    writer << "--Equipas" << endl << endl;
+
+    getline(equipas, header); // ignorar o cabeçalho
+
+    for (string line; getline(equipas, line);){
+        istringstream line_(line);
+
+        // ler o idEquipa
+        string idEquipa;
+
+        getline(line_, idEquipa, ';');
+
+        // ler o nome
+        ignore_cols(line_, 1, ';');
+
+        string nome;
+        getline(line_, nome, ';');
+
+        nome = "\'" + nome + "\'";
+
+        // ler o idClube
+        ignore_cols(line_, 3, ';');
+
+        string idClube;
+        getline(line_, idClube, ';');
+
+        // escrever no ficheiro
+        writer << "INSERT INTO Equipa " << endl
+        << "VALUES (" << idEquipa << ", " << nome << ", " 
+        << 18 << ", " << idClube << ");" << endl << endl;
+    }
+
+    /* JOGOS */
+    ifstream jogos("../csv/jogos.csv");
+    writer << "--Jogos" << endl << endl;
+
+    getline(jogos, header); // ignorar o cabeçalho
+
+    for (string line; getline(jogos, line);){
+        istringstream line_(line);
+
+        // ler o idClube
+        string idJogo;
+        getline(line_, idJogo, ';');
+
+        // ler a jornada
+        ignore_cols(line_, 1, ';');
+
+        string jornada;
+        getline(line_, jornada, ';');
+
+        jornada = ("\'" + jornada + "\'");
+        
+        // ler o idFase
+        ignore_cols(line_, 2, ';');
+
+        string idFase;
+        getline(line_, idFase, ';');
+
+        // ler o estado
+        ignore_cols(line_, 1, ';'); 
+
+        string estado;
+        getline(line_, estado, ';');
+
+        estado = "\'" + estado + "\'";
+
+        // ler a dataJogo
+        ignore_cols(line_, 3, ';');
+
+        string dataJogo;
+        getline(line_, dataJogo, ';');
+
+        // ler a horaJogo
+        string horaJogo;
+        getline(line_, horaJogo, ';');
+
+        horaJogo = "\'" + horaJogo + "\'";
+
+        // ler o idEquipaCasa
+        ignore_cols(line_, 2, ';');
+
+        string idEquipaCasa;
+        getline(line_, idEquipaCasa, ';');
+
+        // ler o idEquipaFora
+        ignore_cols(line_, 3, ';');
+
+        string idEquipaFora;
+        getline(line_, idEquipaFora, ';');
+
+        // ler os pontosEquipaCasa
+        ignore_cols(line_, 1, ';');
+
+        string pontosEquipaCasa;
+        getline(line_, pontosEquipaCasa, ';');
+
+        pontosEquipaCasa = (pontosEquipaCasa.empty()) ? "NULL" : pontosEquipaCasa;
+
+        // ler os pontosEquipaFora
+        string pontosEquipaFora;
+        getline(line_, pontosEquipaFora, ';');
+
+        pontosEquipaFora = (pontosEquipaFora.empty()) ? "NULL" : pontosEquipaFora;
+
+        // ler o idRecinto
+        ignore_cols(line_, 3, ';');
+
+        string idRecinto;
+        getline(line_, idRecinto, ';');
+
+        // escrever no ficheiro
+        writer << "INSERT INTO Jogo" << endl
+        << "VALUES (" << idJogo << ", " << idFase << ", " << jornada
+        << ", " << dataJogo << ", " << horaJogo << ", " << estado << ", " << idRecinto
+        << ", " << idEquipaCasa << ", " << idEquipaFora << ", " << pontosEquipaCasa
+        << ", " << pontosEquipaFora << ");"
+        << endl << endl; 
+    }
 }
