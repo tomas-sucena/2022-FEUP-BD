@@ -512,7 +512,7 @@ int main(){
 
         // escrever no ficheiro
         writer << "INSERT INTO EquipaJogador " << endl
-        << "VALUES (" << idJogador << ", " << idEquipa
+        << "VALUES (" << idEquipa << ", " << idJogador
         << ", " << numCamisola << ", " << posicao << ");"
         << endl << endl;
     }
