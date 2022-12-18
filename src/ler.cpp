@@ -5,11 +5,11 @@
 
 using namespace std;
 
-void ignore_cols(istringstream& line_, int n){
+void ignore_cols(istringstream& line_, int n, char sep){
     string temp;
 
     for (int i = 0; i < n; i++){
-        getline(line_, temp, ',');
+        getline(line_, temp, sep);
     }
 }
 
@@ -37,7 +37,7 @@ int main(){
         getline(line_, nome, ',');
 
         // ler a abreviatura
-        ignore_cols(line_, 5);
+        ignore_cols(line_, 5, ',');
 
         string abreviatura;
         getline(line_, abreviatura, ',');
@@ -47,19 +47,19 @@ int main(){
         getline(line_, dataFundacao, ',');
 
         // ler o telefone
-        ignore_cols(line_, 3);
+        ignore_cols(line_, 3, ',');
 
         string telefone;
         getline(line_, telefone, ',');
 
         // ler o email
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ',');
 
         string email;
         getline(line_, email, ',');
 
         // ler o pais
-        ignore_cols(line_, 10);
+        ignore_cols(line_, 10, ',');
 
         string pais;
         getline(line_, pais, ',');
@@ -99,92 +99,96 @@ int main(){
         istringstream line_(line);
 
         // ler o idClube
-        string temp;
-        getline(line_, temp, ',');
-
-        int idClube = stoi(temp);
+        string idClube;
+        getline(line_, idClube, ';');
 
         // ler o nome
         string nome;
-        getline(line_, nome, ',');
+        getline(line_, nome, ';');
+
+        nome = ("\'" + nome + "\'");
         
         // ler o idAssociacao
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ';');
 
-        getline(line_, temp, ',');
-
-        int idAssociacao = stoi(temp);
+        string idAssociacao;
+        getline(line_, idAssociacao, ';');
 
         // ler a data de fundação
         string dataFundacao;
-        getline(line_, dataFundacao, ',');
+        getline(line_, dataFundacao, ';');
 
         // ler a abreviatura
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ';');
 
         string abreviatura;
-        getline(line_, abreviatura, ',');
+        getline(line_, abreviatura, ';');
+
+        abreviatura = "\'" + abreviatura + "\'";
 
         // ler o idRecinto
-        ignore_cols(line_, 2);
+        ignore_cols(line_, 2, ';');
 
-        getline(line_, temp, ',');
+        string idRecinto;
+        getline(line_, idRecinto, ';');
 
-        int idRecinto;
-        try{
-            idRecinto = stoi(temp);
-        }
-        catch (...){
-            idRecinto = -1;
-        }
+        idRecinto = (idRecinto.empty()) ? "NULL" : idRecinto;
 
         // ler o telefone
         string telefone;
-        getline(line_, telefone, ',');
+        getline(line_, telefone, ';');
+
+        telefone = (telefone.empty() || telefone[0] == '.') ? "NULL" : ("\'" + telefone + "\'");
 
         // ler o email
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ';');
 
         string email;
-        getline(line_, email, ',');
+        getline(line_, email, ';');
+
+        email = (email.empty() || email[0] == '.') ? "NULL" : ("\'" + email + "\'");
 
         // ler o nomePresidente
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ';');
 
         string nomePresidente;
-        getline(line_, nomePresidente, ',');
+        getline(line_, nomePresidente, ';');
+
+        nomePresidente = "\'" + nomePresidente + "\'";
 
         // ler o pais
-        ignore_cols(line_, 6);
+        ignore_cols(line_, 6, ';');
 
         string pais;
-        getline(line_, pais, ',');
+        getline(line_, pais, ';');
+
+        pais = "\'" + pais + "\'";
 
         // ler o concelho
-        ignore_cols(line_, 1);
+        ignore_cols(line_, 1, ';');
 
         string concelho;
-        getline(line_, concelho, ',');
+        getline(line_, concelho, ';');
 
-        concelho = (concelho.empty()) ? "NULL" : concelho;
+        concelho = (concelho.empty()) ? "NULL" : ("\'" + concelho + "\'");
 
         // ler o distrito
         string distrito;
-        getline(line_, distrito, ',');
+        getline(line_, distrito, ';');
 
-        distrito = (distrito.empty()) ? "NULL" : distrito;
+        distrito = (distrito.empty()) ? "NULL" : ("\'" + distrito + "\'");
 
         // ler o morada
         string morada;
-        getline(line_, morada, ',');
+        getline(line_, morada, ';');
         
-        morada = (morada.empty()) ? "NULL" : morada;
+        morada = (morada.empty() || morada[0] == '.') ? "NULL" : ("\'" + morada + "\'");
 
         // escrever no ficheiro
         writer << "INSERT INTO Clube " << endl
-        << "VALUES (" << idClube << ", \'" << nome << "\', \'" << abreviatura << "\', "
-        << dataFundacao << ", \'" << telefone << "\', \'" << email << "\', \'" << nomePresidente << "\', \'" 
-        << pais << "\', \'" << concelho << "\', \'" << distrito << "\', \'" << morada << "\', " << idAssociacao 
+        << "VALUES (" << idClube << ", " << nome << ", " << abreviatura << ", "
+        << dataFundacao << ", " << telefone << ", " << email << ", " << nomePresidente << ", " 
+        << pais << ", " << concelho << ", " << distrito << ", " << morada << ", " << idAssociacao 
         << ", " << idRecinto << ");" << endl << endl;
     }
 }

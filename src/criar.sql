@@ -17,34 +17,34 @@ CREATE TABLE Epoca(
 );
 
 CREATE TABLE Associacao(
-    idAssociacao            INTEGER PRIMARY KEY, --1
-    nome                    TEXT NOT NULL, --2
-    abreviatura             TEXT, --8
-    dataFundacao            DATE NOT NULL, --9
-    telefone                CHARACTER(9), --13
-    email                   TEXT NOT NULL, --15
-    pais                    TEXT NOT NULL, --26
-    concelho                TEXT, --28
-    distrito                TEXT, --29
-    morada                  TEXT --30
+    idAssociacao            INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    abreviatura             TEXT,
+    dataFundacao            DATE NOT NULL,
+    telefone                CHARACTER(9),
+    email                   TEXT NOT NULL,
+    pais                    TEXT NOT NULL,
+    concelho                TEXT,
+    distrito                TEXT,
+    morada                  TEXT
     --idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) --36 ?
 );
 
 -- distrito concelho
 CREATE TABLE Clube(
-    idClube                 INTEGER PRIMARY KEY, --1
-    nome                    TEXT NOT NULL, --2
-    abreviatura             TEXT, --7
-    dataFundacao            DATE NOT NULL, --5
-    telefone                CHARACTER(9), --11
-    email                   TEXT NOT NULL, --13
-    nomePresidente          TEXT, --15
-    pais                    TEXT NOT NULL, --22
-    concelho                TEXT, --23
-    distrito                TEXT, --24
-    morada                  TEXT, --25
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE, --4
-    idRecinto               INTEGER NOT NULL --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
+    idClube                 INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    abreviatura             TEXT,
+    dataFundacao            DATE NOT NULL,
+    telefone                CHARACTER(9),
+    email                   TEXT,
+    nomePresidente          TEXT,
+    pais                    TEXT NOT NULL,
+    concelho                TEXT,
+    distrito                TEXT,
+    morada                  TEXT,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE,
+    idRecinto               INTEGER --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
 );
 
 /*CREATE TABLE Recinto(
