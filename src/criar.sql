@@ -1,6 +1,7 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 DROP TABLE IF EXISTS Clube;
+DROP TABLE IF EXISTS Fase;
 DROP TABLE IF EXISTS Competicao;
 DROP TABLE IF EXISTS Associacao;
 DROP TABLE IF EXISTS Escalao;
@@ -41,6 +42,15 @@ CREATE TABLE Competicao(
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) --7
 );
 
+CREATE TABLE FASE(
+    idFase                  INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    tipo                    TEXT NOT NULL,
+    estado                  TEXT NOT NULL,
+    numEquipas              INTEGER NOT NULL                CONSTRAINT numEquipasPositivo CHECK (numEquipas > 0),
+    numEquipasApuradas      INTEGER NOT NULL                CONSTRAINT numEquipasApuradasValido CHECK (numEquipasApuradas >= 0),   
+    idCompeticao            INTEGER NOT NULL REFERENCES Competicao(idCompeticao) ON UPDATE CASCADE
+);
 
 /*
 CREATE TABLE Recinto(
@@ -95,15 +105,6 @@ CREATE TABLE EpocaEquipa(
     FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );*/
-
--- criar tabela fase
-CREATE TABLE FASE(
-    idFase                  INTEGER PRIMARY KEY,
-    nome                    TEXT NOT NULL,
-    numEquipas              INTEGER NOT NULL                CONSTRAINT numEquipasPositivo CHECK (numEquipas > 0),      
-    idCompeticao            INTEGER NOT NULL REFERENCES Competicao(idCompeticao) ON UPDATE CASCADE
-);
-
 
 -- criar tabela jornada
 

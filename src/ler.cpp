@@ -191,6 +191,63 @@ int main(){
         << endl << endl;
     }
 
+    /* FASES */
+    ifstream fases("../csv/fases.csv");
+    writer << "--Fases" << endl << endl;
+
+    getline(fases, header); // ignorar o cabeçalho
+
+    for (string line; getline(fases, line);){
+        istringstream line_(line);
+
+        // ler o idFase
+        string idFase;
+        getline(line_, idFase, ',');
+
+        // ler o nome
+        string nome;
+        getline(line_, nome, ',');
+
+        nome = ("\'" + nome + "\'");
+
+        // ler o tipo
+        string tipo;
+        getline(line_, tipo, ',');
+
+        tipo = ("\'" + tipo + "\'");
+
+        // ler o numEquipas
+        ignore_cols(line_, 1, ',');
+
+        string numEquipas;
+        getline(line_, numEquipas, ',');
+
+        // ler o numEquipasApuradas
+        string numEquipasApuradas;
+        getline(line_, numEquipasApuradas, ',');
+
+        // ler o idCompeticao
+        ignore_cols(line_, 2, ',');
+
+        string idCompeticao;
+        getline(line_, idCompeticao, ',');
+
+        // ler o estado
+        ignore_cols(line_, 4, ',');
+
+        string estado;
+        getline(line_, estado, ',');
+
+        estado = "\'" + estado + "\'";
+
+        // escrever no ficheiro
+        writer << "INSERT INTO Fase " << endl
+        << "VALUES (" << idFase << ", " << nome << ", "
+        << tipo << ", " << estado << ", " << numEquipas << ", "
+        << numEquipasApuradas << ", " << idCompeticao << ");"
+        << endl << endl;
+    }
+
     /* CLUBES */
     ifstream clubes("../csv/clubes.csv");
     writer << "--Clubes" << endl << endl;

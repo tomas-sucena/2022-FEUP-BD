@@ -347,6 +347,32 @@ VALUES (9363, 'U16 European Championship - Division B', 'U16 European Championsh
 INSERT INTO Competicao 
 VALUES (9364, 'U16W European Championship - Division A', 'U16W EC - Division A', 60, 1, 50);
 
+--Fases
+
+INSERT INTO Fase 
+VALUES (22335, 'Fase Regular', 'Regular', 'Terminada', 12, 8, 8894);
+
+INSERT INTO Fase 
+VALUES (23620, '2ª Fase - Grupo C', 'Regular', 'Em curso', 4, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23633, '2ª Fase - Grupo B', 'Regular', 'Em curso', 4, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23634, '2ª Fase - Grupo A', 'Regular', 'Em curso', 4, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23754, 'Playout', 'Eliminatória', 'Em curso', 2, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23756, 'Playoff - 1/4 Final', 'PlayOff', 'Em curso', 8, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23757, 'Playoff - 1/2 Final', 'PlayOff', 'Em curso', 4, 0, 8894);
+
+INSERT INTO Fase 
+VALUES (23758, 'Playoff - Final', 'PlayOff', 'Terminada', 2, 0, 8894);
+
 --Clubes
 
 INSERT INTO Clube 
