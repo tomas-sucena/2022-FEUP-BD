@@ -2,17 +2,23 @@
 .headers on
 .nullvalue NULL
 
-/* Quais as equipas que, em todos os jogos da época, nunca conseguiram marcar mais de 70 pontos? Liste a equipa por ID e NOME.*/
+/* Quais as equipas que, em todos os jogos do campeonato, nunca conseguiram marcar mais de 100 pontos? Liste o nome das equipas como NOME
+e o número máximo de pontos que cada uma marcou num jogo como MÁXIMO. */
 
-with t1 as
-(select e.idEquipa, count(j.idJogo) as NR_JOGOS
-from Equipa e, Jogo j
-where j.idEquipaCasa = e.idEquipa or j.idEquipaFora = e.idEquipa
-group by 1
-)
+WITH jogos_casa AS
+(SELECT e.idEquipa AS id, max(j.pontosEquipaCasa) AS max
+FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaCasa
+GROUP BY 1),
 
-select e.idEquipa as "ID", e.nome as "NOME"
-from Equipa e, Jogo j, t1 
-where (j.idEquipaCasa = e.idEquipa and j.pontosEquipaCasa <= 70) or (j.idEquipaFora = e.idEquipa and j.pontosEquipaFora <= 70) and t1.idEquipa = e.idEquipa
-group by 1, 2
-having count(j.idJogo) = t1.NR_JOGOS; 
+jogos_fora AS
+(SELECT e.idEquipa AS id, max(j.pontosEquipaCasa) AS max
+FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaFora
+GROUP BY 1)
+
+SELECT e.nome as 'NOME', 
+CASE
+    WHEN jc.max > jf.max THEN jc.max 
+    ELSE jf.max
+END AS 'MÁXIMO'
+FROM Equipa e JOIN jogos_casa jc ON e.idEquipa = jc.id JOIN jogos_fora jf ON jc.id = jf.id
+WHERE jc.max <= 100 AND jf.max <= 100

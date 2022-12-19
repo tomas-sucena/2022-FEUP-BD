@@ -12,7 +12,7 @@ WITH pontuacao AS
 FROM Jogo j
 WHERE j.estado = 'Realizado')
 
-SELECT f.nome AS Nome, sum(p.pontos) AS 'PONTOS TOTAIS', max(p.pontos) as 'MÁXIMO', min(p.pontos) as 'MÍNIMO'
+SELECT f.nome AS 'NOME', sum(p.pontos) AS 'PONTOS TOTAIS', max(p.pontos) as 'MÁXIMO', min(p.pontos) as 'MÍNIMO'
 FROM Fase f JOIN pontuacao p ON f.idFase = p.idFase
 GROUP BY 1
 ORDER BY 2 DESC
