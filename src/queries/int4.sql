@@ -5,9 +5,10 @@
 /* Quais as equipas que, em todos os jogos da época, nunca conseguiram marcar mais de 70 pontos? Liste a equipa por ID e NOME.*/
 
 with t1 as
-(select e.id, count(*) as NR_JOGOS
+(select e.id, count(j.idJogo) as NR_JOGOS
 from equipa e, jogo j
 where j.idEquipaCasa = e.id or j.idEquipaFora = e.id
+group by 1
 )
 
 select e.id as "ID", e.nome as "NOME"
