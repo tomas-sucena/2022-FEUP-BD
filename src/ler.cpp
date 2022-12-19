@@ -556,11 +556,11 @@ int main(){
         string dataJogo;
         getline(line_, dataJogo, ';');
 
-        // ler a horaJogo
-        string horaJogo;
-        getline(line_, horaJogo, ';');
+        // ler a horaInicio
+        string horaInicio;
+        getline(line_, horaInicio, ';');
 
-        horaJogo = "\'" + horaJogo + "\'";
+        horaInicio = "\'" + horaInicio + "\'";
 
         // ler o idEquipaCasa
         ignore_cols(line_, 2, ';');
@@ -597,7 +597,7 @@ int main(){
         // escrever no ficheiro
         writer << "INSERT INTO Jogo" << endl
         << "VALUES (" << idJogo << ", " << idFase << ", " << jornada
-        << ", " << dataJogo << ", " << horaJogo << ", " << estado << ", " << idRecinto
+        << ", " << dataJogo << ", " << horaInicio << ", " << estado << ", " << idRecinto
         << ", " << idEquipaCasa << ", " << idEquipaFora << ", " << pontosEquipaCasa
         << ", " << pontosEquipaFora << ");"
         << endl << endl; 

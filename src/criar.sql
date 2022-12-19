@@ -132,7 +132,7 @@ CREATE TABLE Jogo(
     idFase                  TEXT NOT NULL,
     jornada                 INTEGER NOT NULL,
     dataJogo                DATE NOT NULL,
-    horaJogo                TIME NOT NULL,
+    horaInicio              TIME NOT NULL,
     estado                  TEXT NOT NULL,
     idRecinto               INTEGER, --NOT NULL REFERENCES Recinto(idRecinto) ON UPDATE CASCADE,
     idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
