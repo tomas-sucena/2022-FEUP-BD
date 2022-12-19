@@ -13,5 +13,5 @@ group by 1
 
 select e.id as "ID", e.nome as "NOME"
 from equipa e, jogo j, t1 
-where (j.idEquipaCasa = e.idEquipa and j.pontosEquipaCasa <= 70) or (j.idEquipaFora = e.idEquipa and j.pontosEquipaFora <= 70) and t1.id = e.idEquipa
+where (j.idEquipaCasa = e.idEquipa and j.pontosEquipaCasa <= 70) or (j.idEquipaFora = e.idEquipa and j.pontosEquipaFora <= 70) and t1.idEquipa = e.idEquipa
 having count(j.idJogo) = t1.NR_JOGOS; 
