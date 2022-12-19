@@ -48,5 +48,6 @@ CASE
     WHEN r.vitorias > 50 AND r.pontos > 50 THEN 'SIM'
     ELSE 'NÃO'
 END AS 'CONCLUSÃO'
-FROM resultados r;
+FROM resultados r
+ORDER BY 1;
     
