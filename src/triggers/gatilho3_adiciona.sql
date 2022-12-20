@@ -11,28 +11,27 @@ CREATE TABLE avisoJogador(
     mensagem            TEXT NOT NULL
 );
 
-CREATE TRIGGER verificarJogador
+CREATE TRIGGER verificarJogador_altura_peso
 AFTER INSERT ON Jogador
-BEGIN 
-    INSERT INTO avisoJogador (idJogador, mensagem)
-    VALUES (NEW.idJogador, 'O jogador' || NEW.nome || ' não apresenta um valor para a altura!');
-END;
-
-
-
-/*
-CREATE TRIGGER verificarJogador
-AFTER INSERT ON Jogador
-FOR EACH ROW
+WHEN NEW.altura IS NULL AND NEW.peso IS NULL
 BEGIN
-    CASE 
-        WHEN NEW.altura IS NULL THEN
-            (INSERT INTO avisoJogador (idJogador, mensagem)
-            VALUES(NEW.id, CONCAT('O jogador', NEW.nome, ', não apresenta um valor para a altura!')))
-
-        WHEN NEW.peso IS NULL THEN
-            (INSERT INTO avisoJogador (idJogador, mensagem)
-            VALUES(NEW.id, CONCAT('O jogador', NEW.nome, ', não apresenta um valor para o peso!')))
-    END;
+    INSERT INTO avisoJogador (idJogador, mensagem)
+    VALUES (NEW.idJogador, 'O jogador ' || NEW.nome || ' não apresenta um valor para a altura nem para o peso!');
 END;
-*/
+
+
+CREATE TRIGGER verificarJogador_altura
+AFTER INSERT ON Jogador
+WHEN NEW.altura IS NULL AND NEW.peso IS NOT NULL
+BEGIN
+    INSERT INTO avisoJogador (idJogador, mensagem)
+    VALUES (NEW.idJogador, 'O jogador ' || NEW.nome || ' não apresenta um valor para a altura!');
+END;
+        
+CREATE TRIGGER verificarJogador_peso
+AFTER INSERT ON Jogador
+WHEN NEW.peso IS NULL AND NEW.altura IS NOT NULL
+BEGIN
+    INSERT INTO avisoJogador (idJogador, mensagem)
+    VALUES (NEW.idJogador, 'O jogador ' || NEW.nome || ' não apresenta um valor para o peso!');
+END;
