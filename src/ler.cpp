@@ -410,6 +410,81 @@ int main(){
         << 18 << ", " << idClube << ");" << endl << endl;
     }
 
+    /* CLASSIFICAÇÕES */
+    ifstream classificacoes("../csv/classificacoes.csv");
+    writer << "--Classificações" << endl << endl;
+
+    getline(classificacoes, header); // ignorar o cabeçalho
+
+    for (string line; getline(classificacoes, line);){
+        istringstream line_(line);
+
+        // ler o idFase
+        string idFase;
+        getline(line_, idFase, ';');
+
+        ignore_cols(line_, 1, ';');
+
+        for (int i = 0; i < 12; i++){
+            // ler o numJogos
+            ignore_cols(line_, 4, ';');
+
+            string numJogos;
+            getline(line_, numJogos, ';');
+
+            // ler as vitorias
+            string vitorias;
+            getline(line_, vitorias, ';');
+
+            // ler as derrotas
+            string derrotas;
+            getline(line_, derrotas, ';');
+
+            // ler as faltasComparencia
+            ignore_cols(line_, 1, ';');
+
+            string faltasComparencia;
+            getline(line_, faltasComparencia, ';');
+
+            // ler o pontosMarcados
+            string pontosMarcados;
+            getline(line_, pontosMarcados, ';');
+
+            // ler os pontosSofridos
+            string pontosSofridos;
+            getline(line_, pontosSofridos, ';');
+
+            // ler a pontuacao
+            ignore_cols(line_, 5, ';');
+
+            string pontuacao;
+            getline(line_, pontuacao, ';');
+
+            // ler a classificacao
+            string classificacao;
+            getline(line_, classificacao, ';');
+
+            // ler o idEquipa
+            ignore_cols(line_, 8, ';');
+
+            string idEquipa;
+            getline(line_, idEquipa, ';');
+
+            // escrever no ficheiro
+            if (idEquipa.empty()){
+                continue;
+            }
+
+            writer << "INSERT INTO FaseEquipa " << endl
+            << "VALUES (" << idFase << ", " << idEquipa
+            << ", " << classificacao << ", " << pontuacao
+            << ", " << numJogos << ", " << vitorias << ", " << derrotas 
+            << ", " << faltasComparencia << ", " << pontosMarcados 
+            << ", " << pontosSofridos << ");" 
+            << endl << endl;
+        }
+    }
+
     /* JOGADORES */
     ifstream jogadores("../csv/jogadores.csv");
     writer << "--Jogadores" << endl << endl;
@@ -515,81 +590,6 @@ int main(){
         << "VALUES (" << idEquipa << ", " << idJogador
         << ", " << numCamisola << ", " << posicao << ");"
         << endl << endl;
-    }
-
-    /* CLASSIFICAÇÕES */
-    ifstream classificacoes("../csv/classificacoes.csv");
-    writer << "--Classificações" << endl << endl;
-
-    getline(classificacoes, header); // ignorar o cabeçalho
-
-    for (string line; getline(classificacoes, line);){
-        istringstream line_(line);
-
-        // ler o idFase
-        string idFase;
-        getline(line_, idFase, ';');
-
-        ignore_cols(line_, 1, ';');
-
-        for (int i = 0; i < 12; i++){
-            // ler o numJogos
-            ignore_cols(line_, 4, ';');
-
-            string numJogos;
-            getline(line_, numJogos, ';');
-
-            // ler as vitorias
-            string vitorias;
-            getline(line_, vitorias, ';');
-
-            // ler as derrotas
-            string derrotas;
-            getline(line_, derrotas, ';');
-
-            // ler as faltasComparencia
-            ignore_cols(line_, 1, ';');
-
-            string faltasComparencia;
-            getline(line_, faltasComparencia, ';');
-
-            // ler o pontosMarcados
-            string pontosMarcados;
-            getline(line_, pontosMarcados, ';');
-
-            // ler os pontosSofridos
-            string pontosSofridos;
-            getline(line_, pontosSofridos, ';');
-
-            // ler a pontuacao
-            ignore_cols(line_, 5, ';');
-
-            string pontuacao;
-            getline(line_, pontuacao, ';');
-
-            // ler a classificacao
-            string classificacao;
-            getline(line_, classificacao, ';');
-
-            // ler o idEquipa
-            ignore_cols(line_, 8, ';');
-
-            string idEquipa;
-            getline(line_, idEquipa, ';');
-
-            // escrever no ficheiro
-            if (idEquipa.empty()){
-                continue;
-            }
-
-            writer << "INSERT INTO FaseEquipa " << endl
-            << "VALUES (" << idFase << ", " << idEquipa
-            << ", " << classificacao << ", " << pontuacao
-            << ", " << numJogos << ", " << vitorias << ", " << derrotas 
-            << ", " << faltasComparencia << ", " << pontosMarcados 
-            << ", " << pontosSofridos << ");" 
-            << endl << endl;
-        }
     }
 
 }
