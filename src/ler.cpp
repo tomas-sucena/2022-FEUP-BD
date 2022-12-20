@@ -517,90 +517,79 @@ int main(){
         << endl << endl;
     }
 
-    /* JOGOS */
-    ifstream jogos("../csv/jogos.csv");
-    writer << "--Jogos" << endl << endl;
+    /* CLASSIFICAÇÕES */
+    ifstream classificacoes("../csv/classificacoes.csv");
+    writer << "--Classificações" << endl << endl;
 
-    getline(jogos, header); // ignorar o cabeçalho
+    getline(classificacoes, header); // ignorar o cabeçalho
 
-    for (string line; getline(jogos, line);){
+    for (string line; getline(classificacoes, line);){
         istringstream line_(line);
 
-        // ler o idClube
-        string idJogo;
-        getline(line_, idJogo, ';');
-
-        // ler a jornada
-        ignore_cols(line_, 1, ';');
-
-        string jornada;
-        getline(line_, jornada, ';');
-        
         // ler o idFase
-        ignore_cols(line_, 2, ';');
-
         string idFase;
         getline(line_, idFase, ';');
 
-        // ler o estado
-        ignore_cols(line_, 1, ';'); 
-
-        string estado;
-        getline(line_, estado, ';');
-
-        estado = "\'" + estado + "\'";
-
-        // ler a dataJogo
-        ignore_cols(line_, 3, ';');
-
-        string dataJogo;
-        getline(line_, dataJogo, ';');
-
-        // ler a horaInicio
-        string horaInicio;
-        getline(line_, horaInicio, ';');
-
-        horaInicio = "\'" + horaInicio + "\'";
-
-        // ler o idEquipaCasa
-        ignore_cols(line_, 2, ';');
-
-        string idEquipaCasa;
-        getline(line_, idEquipaCasa, ';');
-
-        // ler o idEquipaFora
-        ignore_cols(line_, 3, ';');
-
-        string idEquipaFora;
-        getline(line_, idEquipaFora, ';');
-
-        // ler os pontosEquipaCasa
         ignore_cols(line_, 1, ';');
 
-        string pontosEquipaCasa;
-        getline(line_, pontosEquipaCasa, ';');
+        for (int i = 0; i < 12; i++){
+            // ler o numJogos
+            ignore_cols(line_, 4, ';');
 
-        pontosEquipaCasa = (pontosEquipaCasa.empty()) ? "NULL" : pontosEquipaCasa;
+            string numJogos;
+            getline(line_, numJogos, ';');
 
-        // ler os pontosEquipaFora
-        string pontosEquipaFora;
-        getline(line_, pontosEquipaFora, ';');
+            // ler as vitorias
+            string vitorias;
+            getline(line_, vitorias, ';');
 
-        pontosEquipaFora = (pontosEquipaFora.empty()) ? "NULL" : pontosEquipaFora;
+            // ler as derrotas
+            string derrotas;
+            getline(line_, derrotas, ';');
 
-        // ler o idRecinto
-        ignore_cols(line_, 3, ';');
+            // ler as faltasComparencia
+            ignore_cols(line_, 1, ';');
 
-        string idRecinto;
-        getline(line_, idRecinto, ';');
+            string faltasComparencia;
+            getline(line_, faltasComparencia, ';');
 
-        // escrever no ficheiro
-        writer << "INSERT INTO Jogo" << endl
-        << "VALUES (" << idJogo << ", " << idFase << ", " << jornada
-        << ", " << dataJogo << ", " << horaInicio << ", " << estado << ", " << idRecinto
-        << ", " << idEquipaCasa << ", " << idEquipaFora << ", " << pontosEquipaCasa
-        << ", " << pontosEquipaFora << ");"
-        << endl << endl; 
+            // ler o pontosMarcados
+            string pontosMarcados;
+            getline(line_, pontosMarcados, ';');
+
+            // ler os pontosSofridos
+            string pontosSofridos;
+            getline(line_, pontosSofridos, ';');
+
+            // ler a pontuacao
+            ignore_cols(line_, 5, ';');
+
+            string pontuacao;
+            getline(line_, pontuacao, ';');
+
+            // ler a classificacao
+            string classificacao;
+            getline(line_, classificacao, ';');
+
+            // ler o idEquipa
+            ignore_cols(line_, 8, ';');
+
+            string idEquipa;
+            getline(line_, idEquipa, ';');
+
+            // escrever no ficheiro
+            if (idEquipa.empty()){
+                continue;
+            }
+
+            writer << "INSERT INTO FaseEquipa " << endl
+            << "VALUES (" << idFase << ", " << idEquipa
+            << ", " << classificacao << ", " << pontuacao
+            << ", " << numJogos << ", " << vitorias << ", " << derrotas 
+            << ", " << faltasComparencia << ", " << pontosMarcados 
+            << ", " << pontosSofridos << ");" 
+            << endl << endl;
+        }
     }
 
 }
