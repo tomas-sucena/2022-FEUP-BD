@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS infoJogador;
 
 CREATE TABLE infoJogador(
     id                  INTEGER AUTO_INCREMENT,
-    idJogador           INTEGER,
+    idJogador           INTEGER NOT NULL,
     mensagem            TEXT NOT NULL,
     PRIMARY KEY (id, idJogador)
 );
@@ -17,9 +17,9 @@ FOR EACH ROW
 BEGIN
     IF NEW.altura IS NULL THEN
         INSERT INTO infoJogador (idJogador, mensagem)
-        VALUES(new.id,CONCAT('O jogador', NEW.nome, ', não apresenta um valor para a altura!'))
+        VALUES(NEW.id, CONCAT('O jogador', NEW.nome, ', não apresenta um valor para a altura!'))
     IF NEW.peso IS NULL THEN
         INSERT INTO infoJogador (idJogador, mensagem)
-        VALUES(new.id,CONCAT('O jogador', NEW.name, ', não apresenta um valor para o peso!'))
+        VALUES(NEW.id, CONCAT('O jogador', NEW.name, ', não apresenta um valor para o peso!'))
         END IF;
 END;
