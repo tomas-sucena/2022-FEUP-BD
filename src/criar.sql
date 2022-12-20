@@ -3,6 +3,7 @@ PRAGMA FOREIGN_KEYS = ON;
 DROP TABLE IF EXISTS Jogo;
 DROP TABLE IF EXISTS EquipaJogador;
 DROP TABLE IF EXISTS Jogador;
+DROP TABLE IF EXISTS FaseEquipa;
 DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
 DROP TABLE IF EXISTS Fase;
@@ -90,6 +91,23 @@ CREATE TABLE Equipa(
     idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) ON UPDATE CASCADE
 );
 
+CREATE TABLE FaseEquipa(
+    idFase                  INTEGER NOT NULL,
+    idEquipa                INTEGER NOT NULL,
+    classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
+    pontuacao               INTEGER NOT NULL                CONSTRAINT pontuacaoValida CHECK (pontuacao >= 0),
+    numJogos                INTEGER NOT NULL                CONSTRAINT numJogosValido CHECK (numJogos >= 0),
+    vitorias                INTEGER NOT NULL                CONSTRAINT vitoriasValidas CHECK (vitorias >= 0),
+    derrotas                INTEGER NOT NULL                CONSTRAINT derrotasValidas CHECK (derrotas >= 0),
+    faltasComparencia       INTEGER NOT NULL                CONSTRAINT faltasComparenciaValidas CHECK (faltasComparencia >= 0),
+    pontosMarcados          INTEGER NOT NULL                CONSTRAINT pontosMarcadosValidos CHECK (pontosMarcados >= 0),    
+    pontosSofridos          INTEGER NOT NULL                CONSTRAINT pontosSofridosValidos CHECK (pontosSofridos >= 0),
+
+    PRIMARY KEY (idFase, idEquipa),
+    FOREIGN KEY (idFase) REFERENCES Fase(idFase) ON UPDATE CASCADE,
+    FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
+);
+
 /*
 CREATE TABLE EpocaEquipa(
     ano                     TEXT NOT NULL,
@@ -132,7 +150,7 @@ CREATE TABLE Jogo(
     idFase                  TEXT NOT NULL,
     jornada                 INTEGER NOT NULL,
     dataJogo                DATE NOT NULL,
-    horaJogo                TIME NOT NULL,
+    horaInicio              TIME NOT NULL,
     estado                  TEXT NOT NULL,
     idRecinto               INTEGER, --NOT NULL REFERENCES Recinto(idRecinto) ON UPDATE CASCADE,
     idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
