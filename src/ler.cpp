@@ -30,6 +30,17 @@ string team_name(string equipa){
     return res;
 }
 
+string validar_altura(string altura){
+    int tam = altura.size();
+
+    for (int i = 0; i < 3 - tam; i++){
+        altura += '0';
+    }
+
+    return altura;
+}
+
+
 int main(){
     ofstream writer("povoar.sql");
     writer << "PRAGMA FOREIGN_KEYS = ON;" << endl << endl;
@@ -535,7 +546,7 @@ int main(){
         string altura;
         getline(line_, altura, ';');
 
-        altura = (altura.empty() || altura[0] == '0') ? "NULL" : altura;
+        altura = (altura.empty() || altura[0] == '0') ? "NULL" : validar_altura(altura);
  
         // ler o peso
         string peso;

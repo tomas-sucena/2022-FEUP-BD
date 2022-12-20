@@ -2206,7 +2206,7 @@ INSERT INTO Jogador
 VALUES (168201, 'João Ribeiro', 'João Filipe Brites Ribeiro', 1993-07-30, 'Portugal', 'M', 202, NULL);
 
 INSERT INTO Jogador 
-VALUES (157785, 'João Maia', 'João Filipe Valente Soares da Costa Maia', 1990-03-27, 'Portugal', 'M', 2, 97);
+VALUES (157785, 'João Maia', 'João Filipe Valente Soares da Costa Maia', 1990-03-27, 'Portugal', 'M', 200, 97);
 
 INSERT INTO Jogador 
 VALUES (168487, 'João Oliveira', 'João Francisco Mateus Oliveira', 1999-08-06, 'Portugal', 'M', 190, NULL);
@@ -2224,7 +2224,7 @@ INSERT INTO Jogador
 VALUES (167835, 'João Grosso', 'João Pedro Ascenso Grosso', 1994-02-11, 'Portugal', 'M', 196, 104);
 
 INSERT INTO Jogador 
-VALUES (175533, 'João Gallina', 'João Pedro Gallina', 1994-02-21, 'Portugal', 'M', 1, 90);
+VALUES (175533, 'João Gallina', 'João Pedro Gallina', 1994-02-21, 'Portugal', 'M', 100, 90);
 
 INSERT INTO Jogador 
 VALUES (156274, 'João Torrie', 'João Pedro Lopes Nogueira Stuart Torrie', 1991-03-20, 'Portugal', 'M', 200, NULL);
@@ -2257,7 +2257,7 @@ INSERT INTO Jogador
 VALUES (269979, 'Jonathan Silva', 'Jonathan Ferreira Machado da Silva', 2003-11-17, 'Brasil', 'M', 198, 114);
 
 INSERT INTO Jogador 
-VALUES (272928, 'Jonathan Arledge', 'Jonathan Harold Arledge', 1991-09-21, 'Estados Unidos da América', 'M', 2, NULL);
+VALUES (272928, 'Jonathan Arledge', 'Jonathan Harold Arledge', 1991-09-21, 'Estados Unidos da América', 'M', 200, NULL);
 
 INSERT INTO Jogador 
 VALUES (214779, 'Jorge Embaló', 'Jorge Amadu Embaló', 1999-07-20, 'Guiné-Bissau', 'M', 195, 85);
@@ -2413,7 +2413,7 @@ INSERT INTO Jogador
 VALUES (200019, 'Rafael Costa', 'Rafael Flores Costa', 2001-09-28, 'Portugal', 'M', 179, NULL);
 
 INSERT INTO Jogador 
-VALUES (272929, 'Rashard Odomes', 'Rashard Marque Odomes', 1996-12-21, 'Estados Unidos da América', 'M', 1, NULL);
+VALUES (272929, 'Rashard Odomes', 'Rashard Marque Odomes', 1996-12-21, 'Estados Unidos da América', 'M', 100, NULL);
 
 INSERT INTO Jogador 
 VALUES (235831, 'Raven Barber', 'Raven Louis Barber', 1991-10-02, 'Estados Unidos da América', 'M', NULL, NULL);

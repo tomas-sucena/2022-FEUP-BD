@@ -4,13 +4,31 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
-CREATE TRIGGER IF NOT EXISTS verificaRecinto
-BEFORE INSERT ON Jogo
+CREATE TRIGGER IF NOT EXISTS atualizaFaseEquipa
+AFTER INSERT ON Jogo
 FOR EACH ROW
-WHEN EXISTS
-    (SELECT *
-    FROM Jogo j
-    WHERE j.idRecinto = NEW.idRecinto AND j.dataJogo = NEW.dataJogo AND abs(j.horaInicio - NEW.horaInicio) < 2)
 BEGIN
-    SELECT RAISE(ABORT, 'O jogo que está a tentar inserir coincide com outro jogo que ocorre no mesmo recinto');
+    UPDATE FaseEquipa
+    SET pontosMarcados = 
+        CASE 
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosMarcados + NEW.pontosEquipaCasa
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaFora
+            ELSE pontosMarcados
+        END,
+        
+        pontosSofridos = 
+        CASE 
+            WHEN (idFase = idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosSofridos + NEW.pontosEquipaFora
+            WHEN (idFase = idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaCasa
+            ELSE pontosSofridos
+        END,
+
+        pontuacao =
+        CASE 
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 3
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 3
+            ELSE pontuacao
+        END;
 END;
