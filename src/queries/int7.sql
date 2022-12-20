@@ -27,14 +27,14 @@ GROUP BY 1),
 
 derrotas_casa AS
 (SELECT e.idEquipa as id, count(*) - vc.vitorias AS derrotas
-FROM Equipa e JOIN Jogo j ON e.idEquipa = j.idEquipaCasa
-              JOIN vitorias_casa vc ON e.idEquipa = vc.id
+FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaCasa
+              INNER JOIN vitorias_casa vc ON e.idEquipa = vc.id
 GROUP BY 1),
 
 derrotas_fora AS
 (SELECT e.idEquipa as id, count(*) - vf.vitorias AS derrotas
-FROM Equipa e JOIN Jogo j ON e.idEquipa = j.idEquipaFora
-              JOIN vitorias_fora vf ON e.idEquipa = vf.id
+FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaFora
+              INNER JOIN vitorias_fora vf ON e.idEquipa = vf.id
 GROUP BY 1),
 
 pontos_casa AS
@@ -52,12 +52,12 @@ resultados AS
        round(vc.vitorias * 100.0 / (vc.vitorias + vf.vitorias), 2) AS vitorias,
        round(dc.derrotas * 100.0 / (dc.derrotas + df.derrotas), 2) AS derrotas, 
        round(pc.pontos * 100.0 / (pc.pontos + pf.pontos), 2) AS pontos
-FROM Equipa e JOIN vitorias_casa vc ON e.idEquipa = vc.id 
-              JOIN vitorias_fora vf ON vc.id = vf.id
-              JOIN derrotas_casa dc ON vf.id = dc.id
-              JOIN derrotas_fora df ON dc.id = df.id 
-              JOIN pontos_casa pc ON df.id = pc.id
-              JOIN pontos_fora pf ON pc.id = pf.id)
+FROM Equipa e INNER JOIN vitorias_casa vc ON e.idEquipa = vc.id 
+              INNER JOIN vitorias_fora vf ON vc.id = vf.id
+              INNER JOIN derrotas_casa dc ON vf.id = dc.id
+              INNER JOIN derrotas_fora df ON dc.id = df.id 
+              INNER JOIN pontos_casa pc ON df.id = pc.id
+              INNER JOIN pontos_fora pf ON pc.id = pf.id)
 
 SELECT r.nome as NOME, r.vitorias AS '% VITÓRIAS', r.derrotas AS '% DERROTAS', r.pontos AS '% PONTOS',
 CASE
