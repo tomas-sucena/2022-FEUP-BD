@@ -4,13 +4,18 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
-CREATE TRIGGER IF NOT EXISTS verificaRecinto
-BEFORE INSERT ON Jogo
+CREATE TRIGGER IF NOT EXISTS atualizaFaseEquipaCasa
+AFTER INSERT ON Jogo
 FOR EACH ROW
-WHEN EXISTS
-    (SELECT *
-    FROM Jogo j
-    WHERE j.idRecinto = NEW.idRecinto AND j.dataJogo = NEW.dataJogo AND abs(j.horaInicio - NEW.horaInicio) < 2)
 BEGIN
-    SELECT RAISE(ABORT, 'O jogo que está a tentar inserir coincide com outro jogo que ocorre no mesmo recinto');
+    UPDATE FaseEquipa fe
+    SET fe.pontosMarcados += 
+        CASE 
+            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaCasa) THEN NEW.pontosEquipaCasa
+            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaFora) THEN NEW.pontosEquipaFora,
+        
+        fe.pontosSofridos += 
+        CASE 
+            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaCasa) THEN NEW.pontosEquipaFora
+            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaFora) THEN NEW.pontosEquipaCasa;
 END;

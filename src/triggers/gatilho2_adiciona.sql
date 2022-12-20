@@ -4,6 +4,7 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
+-- Antes de se adicionar um jogo, verifica se o recinto já se encontra ocupado
 CREATE TRIGGER IF NOT EXISTS verificaRecinto
 BEFORE INSERT ON Jogo
 FOR EACH ROW

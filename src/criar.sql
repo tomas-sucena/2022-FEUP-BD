@@ -108,21 +108,6 @@ CREATE TABLE FaseEquipa(
     FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
 );
 
-/*
-CREATE TABLE EpocaEquipa(
-    ano                     TEXT NOT NULL,
-    idEquipa                INTEGER NOT NULL,
-    pontos                  INTEGER NOT NULL                CONSTRAINT pontosEquipaValidos CHECK (pontos > 0),
-    classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
-    vitorias                INTEGER NOT NULL                CONSTRAINT vitoriasValidas CHECK (vitorias >= 0),
-    derrotas                INTEGER NOT NULL                CONSTRAINT derrotasValidas CHECK (derrotas >= 0),
-    faltasComparencia       INTEGER NOT NULL                CONSTRAINT faltasComparenciaValidas CHECK (faltasComparencia >= 0),       
-    
-    PRIMARY KEY (ano, idEquipa),
-    FOREIGN KEY (ano)       REFERENCES Epoca(ano) ON UPDATE CASCADE,
-    FOREIGN KEY (idEquipa)  REFERENCES Equipa(idEquipa) ON UPDATE CASCADE
-);*/
-
 CREATE TABLE Jogador(
     idJogador               INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
@@ -147,7 +132,7 @@ CREATE TABLE EquipaJogador(
 
 CREATE TABLE Jogo(
     idJogo                  INTEGER PRIMARY KEY,
-    idFase                  TEXT NOT NULL,
+    idFase                  INTEGER NOT NULL REFERENCES Fase(idFase) ON UPDATE CASCADE,
     jornada                 INTEGER NOT NULL,
     dataJogo                DATE NOT NULL,
     horaInicio              TIME NOT NULL,
@@ -175,17 +160,4 @@ CREATE TABLE JogoJogador(
     tempoJogo --segundos
     pontos
 );
-
-CREATE TABLE Classificacao(
-    idCompeticao
-    idFase
-    idEquipa
-    posicao
-    pontos
-    nJogos
-    nVitorias
-    nDerrotas
-    nPontosMarcados
-    nPontosSofridos
-    faltasComparencia
-);*/
+*/
