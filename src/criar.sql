@@ -94,7 +94,6 @@ CREATE TABLE Equipa(
 CREATE TABLE FaseEquipa(
     idFase                  INTEGER NOT NULL,
     idEquipa                INTEGER NOT NULL,
-    classificacao           INTEGER NOT NULL                CONSTRAINT classificacaoValida CHECK (classificacao > 0),
     pontuacao               INTEGER NOT NULL                CONSTRAINT pontuacaoValida CHECK (pontuacao >= 0),
     numJogos                INTEGER NOT NULL                CONSTRAINT numJogosValido CHECK (numJogos >= 0),
     vitorias                INTEGER NOT NULL                CONSTRAINT vitoriasValidas CHECK (vitorias >= 0),

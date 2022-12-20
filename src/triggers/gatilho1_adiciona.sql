@@ -23,6 +23,20 @@ BEGIN
             ELSE pontosSofridos
         END,
 
+        vitorias =
+        CASE 
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN vitorias + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN vitorias + 1
+            ELSE vitorias
+        END,
+
+        derrotas =
+        CASE 
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN derrotas + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN derrotas + 1
+            ELSE derrotas
+        END,
+
         pontuacao =
         CASE 
             WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 3
