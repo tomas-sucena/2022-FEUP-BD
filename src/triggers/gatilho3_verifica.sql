@@ -2,6 +2,8 @@
 .headers on
 .nullvalue NULL
 
+PRAGMA FOREIGN_KEYS = ON;
+
 INSERT INTO Jogador 
 VALUES (272930, 'Aaron Broussard', 'Aaron Broussard', 1990-04-14, 'Estados Unidos da América', 'M', 196, NULL);
 
