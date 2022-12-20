@@ -6,8 +6,8 @@ PRAGMA FOREIGN_KEYS = ON;
 
 -- pequena descricao
 CREATE TABLE avisoJogador(
-    id                  INTEGER AUTO_INCREMENT,
-    idJogador           INTEGER NOT NULL,
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    idJogador           INTEGER NOT NULL REFERENCES Jogador(idJogador),
     mensagem            TEXT NOT NULL
 );
 
@@ -15,7 +15,7 @@ CREATE TRIGGER verificarJogador
 AFTER INSERT ON Jogador
 BEGIN 
     INSERT INTO avisoJogador (idJogador, mensagem)
-    VALUES(idJogador, 'O jogador' || NEW.nome || ', não apresenta um valor para a altura!');
+    VALUES (NEW.idJogador, 'O jogador' || NEW.nome || ' não apresenta um valor para a altura!');
 END;
 
 
