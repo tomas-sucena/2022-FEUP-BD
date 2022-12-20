@@ -10,3 +10,9 @@ VALUES (279035, 'Andrew KosteckaIII', 'Andrew Edward KosteckaIII ', 1997-08-19, 
 
 INSERT INTO Jogador 
 VALUES (176602, 'Diogo Peixe', 'Diogo Janeiro Peixe', 2000-01-17, 'Portugal', 'M', NULL, 89);
+
+.print ''
+.print 'Something Something'
+.print ''
+
+SELECT * FROM avisoJogador;
