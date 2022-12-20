@@ -8,14 +8,27 @@ CREATE TRIGGER IF NOT EXISTS atualizaFaseEquipaCasa
 AFTER INSERT ON Jogo
 FOR EACH ROW
 BEGIN
-    UPDATE FaseEquipa fe
-    SET fe.pontosMarcados += 
+    UPDATE FaseEquipa
+    SET pontosMarcados = 
         CASE 
-            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaCasa) THEN NEW.pontosEquipaCasa
-            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaFora) THEN NEW.pontosEquipaFora,
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosMarcados + NEW.pontosEquipaCasa
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaFora
+            ELSE pontosMarcados
+        END,
         
-        fe.pontosSofridos += 
+        pontosSofridos = 
         CASE 
-            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaCasa) THEN NEW.pontosEquipaFora
-            WHEN (fe.idFase = NEW.idFase AND fe.idEquipa = NEW.idEquipaFora) THEN NEW.pontosEquipaCasa;
+            WHEN (idFase = idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosSofridos + NEW.pontosEquipaFora
+            WHEN (idFase = idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaCasa
+            ELSE pontosSofridos
+        END,
+
+        pontuacao =
+        CASE 
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 3
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 1
+            WHEN (idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 3
+            ELSE pontuacao
+        END;
 END;
