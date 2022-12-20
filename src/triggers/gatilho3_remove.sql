@@ -5,4 +5,4 @@
 PRAGMA FOREIGN_KEYS = ON;
 
 DROP TABLE IF EXISTS avisoJogador;
-DROP TRIGGER IF EXISTS verificaRecinto;
+DROP TRIGGER IF EXISTS verificarJogador;
