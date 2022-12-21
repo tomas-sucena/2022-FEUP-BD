@@ -3,7 +3,7 @@
 .nullvalue NULL
 
 /* Quais as equipas que, em todos os jogos da fase regular do campeonato, nunca conseguiram marcar mais de 100 pontos? 
-Liste o nome das equipas como NOME e o número máximo de pontos que cada uma marcou num jogo como MÁXIMO. Ordene,
+Liste o nome das equipas como 'NOME' e o número máximo de pontos que cada uma marcou num jogo como 'MÁXIMO'. Ordene,
 descendentemente, pelo número máximo de pontos. */
 
 WITH jogos_casa AS

@@ -5,8 +5,8 @@
 /* Tendo em conta o desempenho individual de cada jogador no campeonato, forme a melhor equipa possível. 
 Para tal, e considerando que uma equipa deve ter dois bases, dois extremos e um poste, selecione os melhores
 jogadores de cada posição. 
-Para cada jogador, liste o seu nome como NOME, o número total de pontos que marcou como PONTOS e a respetiva
-posição como POSIÇÃO. No caso de um jogador ter várias posições (por exemplo, ser extremo e poste), selecione-o 
+Para cada jogador, liste o seu nome como 'NOME', o número total de pontos que marcou como 'PONTOS' e a respetiva
+posição como 'POSIÇÃO'. No caso de um jogador ter várias posições (por exemplo, ser extremo e poste), selecione-o 
 apenas uma vez. */
 
 WITH pontos AS
