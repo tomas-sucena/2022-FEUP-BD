@@ -1,11 +1,13 @@
 PRAGMA FOREIGN_KEYS = ON;
 
+DROP TABLE IF EXISTS Lance;
 DROP TABLE IF EXISTS Jogo;
 DROP TABLE IF EXISTS EquipaJogador;
 DROP TABLE IF EXISTS Jogador;
 DROP TABLE IF EXISTS FaseEquipa;
 DROP TABLE IF EXISTS Equipa;
 DROP TABLE IF EXISTS Clube;
+DROP TABLE IF EXISTS Recinto;
 DROP TABLE IF EXISTS Fase;
 DROP TABLE IF EXISTS Competicao;
 DROP TABLE IF EXISTS Associacao;
@@ -120,7 +122,7 @@ CREATE TABLE Jogador(
 CREATE TABLE EquipaJogador(
     idEquipa                INTEGER NOT NULL,
     idJogador               INTEGER NOT NULL,
-    numCamisola             INTEGER                        CONSTRAINT numCamisolaValido CHECK (numCamisola >= 0 and numCamisola <= 99),
+    numCamisola             INTEGER                         CONSTRAINT numCamisolaValido CHECK (numCamisola >= 0 and numCamisola <= 99),
     posicao                 TEXT,
 
     PRIMARY KEY (idEquipa, idJogador),
@@ -143,9 +145,10 @@ CREATE TABLE Jogo(
 );
 
 CREATE TABLE Lance(
+    idLance                 INTEGER PRIMARY KEY AUTOINCREMENT,
     idJogador               INTEGER NOT NULL REFERENCES Jogador(idJogador) ON UPDATE CASCADE,
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE,        
     periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo > 0),
-    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto > 0 AND minuto <= 15),
+    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto > '00:00:00' AND minuto <= '00:12:00'),
     pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos >= 0 AND pontos <= 3)
 );
