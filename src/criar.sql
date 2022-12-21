@@ -67,7 +67,6 @@ CREATE TABLE Recinto(
     lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
 );*/
 
--- distrito concelho
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
@@ -143,20 +142,10 @@ CREATE TABLE Jogo(
     pontosEquipaFora        INTEGER                         CONSTRAINT pontosEquipaForaValidos CHECK (pontosEquipaFora >= 0)
 );
 
-/*
-CREATE TABLE Periodo(
-    idPeriodo               INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome                    TEXT NOT NULL,
-    pontosVisitante         INTEGER NOT NULL                CONSTRAINT pontosVisitanteValidos CHECK (pontosVisitante >= 0),
-    pontosVisitada          INTEGER NOT NULL                CONSTRAINT pontosVisitadaValidos CHECK (pontosVisitada >= 0),
-    idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE
+CREATE TABLE Lance(
+    idJogador               INTEGER NOT NULL REFERENCES Jogador(idJogador) ON UPDATE CASCADE,
+    idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE,        
+    periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo > 0),
+    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto > 0 AND minuto <= 15),
+    pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos >= 0 AND pontos <= 3)
 );
-
-CREATE TABLE JogoJogador(
-    idJogo
-    idJogador
-    numCamisola
-    tempoJogo --segundos
-    pontos
-);
-*/
