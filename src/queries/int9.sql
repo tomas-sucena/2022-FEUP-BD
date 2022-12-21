@@ -4,8 +4,8 @@
 
 /* Para um dado jogador, o field goal percentage, cuja abreviatura é FG%, é o rácio entre o número de lançamentos que
 resultaram em pontos e o número total de lançamentos efetuados.
-Com base nessa informação, quais foram as 3 equipas cujos jogadores apresentaram, na fase regular, a melhor FG%?
-Liste o nome das equipas como 'EQUIPA' e a média da FG% como 'FG%'. */
+Com base nessa informação, quais foram as 3 equipas cujos jogadores tiveram, na fase regular, a melhor FG%?
+Liste o nome das equipas como 'EQUIPA' e a média da FG% como 'FG%'. Apresente a média arredondada às milésimas. */
 
 WITH total AS
 (SELECT j.idJogador AS 'idJogador', count(*) AS 'total'
@@ -28,7 +28,7 @@ fieldgoal AS
 FROM total t INNER JOIN cestos c ON t.idJogador = c.idJogador
 GROUP BY 1)
 
-SELECT e.nome AS 'EQUIPA', avg(f.fg) AS 'FG'
+SELECT e.nome AS 'EQUIPA', round(avg(f.fg), 3) AS 'FG'
 FROM fieldgoal f INNER JOIN EquipaJogador ej ON f.idJogador = ej.idJogador
                  INNER JOIN Equipa e ON e.idEquipa = ej.idEquipa
 GROUP BY e.idEquipa
