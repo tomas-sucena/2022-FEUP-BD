@@ -15,7 +15,6 @@ SELECT * FROM log;
 
 .print ''
 .print 'Verificamos que o jogador foi adicionado à tabela log!'
-.print ''
 
 INSERT INTO Jogador
 VALUES (273183, 'Zambujo Nada', 'Zambujo Nada Pereira', 2000-01-17, 'Portugal', 'M', NULL, 89);
@@ -28,7 +27,6 @@ SELECT * FROM log;
 
 .print ''
 .print 'Verificamos que o jogador foi adicionado à tabela log!'
-.print ''
 
 INSERT INTO Jogador
 VALUES (273184, 'Bro Please', 'Bro Please Pereira', 1997-08-19, 'Estados Unidos da América', 'M', NULL, NULL);
@@ -41,7 +39,6 @@ SELECT * FROM log;
 
 .print ''
 .print 'Verificamos que o jogador foi adicionado à tabela log!'
-.print ''
 
 INSERT INTO Jogador
 VALUES (273185, 'Sussy Master', 'Sussy Master Pereira', 1994-08-19, 'Angola', 'M', 240, 420);

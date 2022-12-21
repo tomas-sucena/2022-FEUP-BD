@@ -9,9 +9,9 @@ de email e o número de clubes que respeita o critério. Em caso de empate, sele
 WITH t1 AS
 (SELECT *
 FROM Clube
-WHERE nome like "%Clube%" and nome like "%Club%")
+WHERE nome LIKE "%Clube%" AND nome LIKE "%Club%")
 
-SELECT a.nome as 'NOME', a.email as 'EMAIL', coalesce(count(t1.idClube), 0) as 'Nº CLUBES'
+SELECT a.nome AS 'NOME', a.email AS 'EMAIL', coalesce(count(t1.idClube), 0) AS 'Nº CLUBES'
 FROM Associacao a LEFT OUTER JOIN t1 ON a.idAssociacao = t1.idAssociacao
 GROUP BY a.idAssociacao
 ORDER BY 3, a.dataFundacao

@@ -471,12 +471,8 @@ int main(){
             string pontuacao;
             getline(line_, pontuacao, ';');
 
-            // ler a classificacao
-            string classificacao;
-            getline(line_, classificacao, ';');
-
             // ler o idEquipa
-            ignore_cols(line_, 8, ';');
+            ignore_cols(line_, 9, ';');
 
             string idEquipa;
             getline(line_, idEquipa, ';');
@@ -488,8 +484,8 @@ int main(){
 
             writer << "INSERT INTO FaseEquipa " << endl
             << "VALUES (" << idFase << ", " << idEquipa
-            << ", " << classificacao << ", " << pontuacao
-            << ", " << numJogos << ", " << vitorias << ", " << derrotas 
+            << ", " << pontuacao << ", " << numJogos 
+            << ", " << vitorias << ", " << derrotas 
             << ", " << faltasComparencia << ", " << pontosMarcados 
             << ", " << pontosSofridos << ");" 
             << endl << endl;
