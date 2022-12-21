@@ -59,15 +59,15 @@ CREATE TABLE Fase(
     idCompeticao            INTEGER NOT NULL REFERENCES Competicao(idCompeticao) ON UPDATE CASCADE
 );
 
-/*
 CREATE TABLE Recinto(
-    idRecinto               INTEGER PRIMARY KEY AUTOINCREMENT,
+    idRecinto               INTEGER PRIMARY KEY,
     nome                    TEXT NOT NULL,
-    morada                  TEXT NOT NULL,
-    idConcelho  
-    idDistrito
+    pais                    TEXT NOT NULL,
+    concelho                TEXT,
+    distrito                TEXT,
+    morada                  TEXT,
     lotacao                 INTEGER NOT NULL                CONSTRAINT lotacaoPositiva CHECK (lotacao > 0)
-);*/
+);
 
 CREATE TABLE Clube(
     idClube                 INTEGER PRIMARY KEY,
@@ -77,12 +77,8 @@ CREATE TABLE Clube(
     telefone                CHARACTER(9),
     email                   TEXT,
     nomePresidente          TEXT,
-    pais                    TEXT NOT NULL,
-    concelho                TEXT,
-    distrito                TEXT,
-    morada                  TEXT,
     idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) ON UPDATE CASCADE,
-    idRecinto               INTEGER --REFERENCES Recinto(idRecinto) ON UPDATE CASCADE --10
+    idRecinto               INTEGER REFERENCES Recinto(idRecinto) ON UPDATE CASCADE
 );
 
 CREATE TABLE Equipa(

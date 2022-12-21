@@ -12,14 +12,13 @@ FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaCasa INNER JOIN Fase f
 WHERE f.nome = 'Fase Regular'
 GROUP BY 1),
 
-
 jogos_fora AS
 (SELECT e.idEquipa AS id, max(j.pontosEquipaCasa) AS max
 FROM Equipa e INNER JOIN Jogo j ON e.idEquipa = j.idEquipaFora INNER JOIN Fase f ON j.idFase = f.idFase
 WHERE f.nome = 'Fase Regular'
 GROUP BY 1)
 
-SELECT e.nome as 'NOME', 
+SELECT e.nome AS 'NOME', 
 CASE
     WHEN jc.max > jf.max THEN jc.max 
     ELSE jf.max

@@ -13,7 +13,7 @@ CREATE TABLE log(
 );
 
 
-CREATE TRIGGER verificarAltura
+CREATE TRIGGER verificaAltura
 AFTER INSERT ON Jogador
 WHEN NEW.altura IS NULL
 BEGIN
@@ -21,7 +21,7 @@ BEGIN
     VALUES (NEW.idJogador, "O jogador " || NEW.nome || " não apresenta um valor para a altura!");
 END;
         
-CREATE TRIGGER verificarPeso
+CREATE TRIGGER verificaPeso
 AFTER INSERT ON Jogador
 WHEN NEW.peso IS NULL
 BEGIN

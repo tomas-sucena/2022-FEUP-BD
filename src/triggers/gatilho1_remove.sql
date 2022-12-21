@@ -4,4 +4,4 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
-DROP TRIGGER IF EXISTS atualizaFaseEquipa;
+DROP TRIGGER IF EXISTS verificaRecinto;
