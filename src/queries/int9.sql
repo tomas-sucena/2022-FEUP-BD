@@ -33,4 +33,4 @@ FROM fieldgoal f INNER JOIN EquipaJogador ej ON f.idJogador = ej.idJogador
                  INNER JOIN Equipa e ON e.idEquipa = ej.idEquipa
 GROUP BY e.idEquipa
 ORDER BY 2 DESC
-LIMIT 3;   
+LIMIT 3;

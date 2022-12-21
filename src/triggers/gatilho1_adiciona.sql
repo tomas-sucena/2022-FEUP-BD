@@ -4,45 +4,13 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
-CREATE TRIGGER IF NOT EXISTS atualizaFaseEquipa
-AFTER INSERT ON Jogo
-FOR EACH ROW
+-- Antes de se adicionar um jogo, verifica se o recinto já se encontra ocupado
+CREATE TRIGGER IF NOT EXISTS verificaRecinto
+BEFORE INSERT ON Jogo
+WHEN EXISTS
+    (SELECT *
+    FROM Jogo j
+    WHERE j.idRecinto = NEW.idRecinto AND j.dataJogo = NEW.dataJogo AND abs(j.horaInicio - NEW.horaInicio) < 2)
 BEGIN
-    UPDATE FaseEquipa
-    SET pontosMarcados = 
-        CASE 
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosMarcados + NEW.pontosEquipaCasa
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaFora
-            ELSE pontosMarcados
-        END,
-        
-        pontosSofridos = 
-        CASE 
-            WHEN (NEW.estado = 'Realizado' AND idFase = idFase AND idEquipa = NEW.idEquipaCasa) THEN pontosSofridos + NEW.pontosEquipaFora
-            WHEN (NEW.estado = 'Realizado' AND idFase = idFase AND idEquipa = NEW.idEquipaFora) THEN pontosMarcados + NEW.pontosEquipaCasa
-            ELSE pontosSofridos
-        END,
-
-        vitorias =
-        CASE 
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN vitorias + 1
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN vitorias + 1
-            ELSE vitorias
-        END,
-
-        derrotas =
-        CASE 
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN derrotas + 1
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN derrotas + 1
-            ELSE derrotas
-        END,
-
-        pontuacao =
-        CASE 
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 3
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaCasa AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 1
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa > NEW.pontosEquipaFora) THEN pontuacao + 1
-            WHEN (NEW.estado = 'Realizado' AND idFase = NEW.idFase AND idEquipa = NEW.idEquipaFora AND NEW.pontosEquipaCasa < NEW.pontosEquipaFora) THEN pontuacao + 3
-            ELSE pontuacao
-        END;
+    SELECT RAISE(ABORT, 'O jogo que está a tentar inserir coincide com outro jogo que ocorre no mesmo recinto');
 END;

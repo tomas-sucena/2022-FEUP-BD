@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -276,11 +277,15 @@ int main(){
         << endl << endl;
     }
 
-    /* CLUBES */
+    // ler o clubes.csv
     ifstream clubes("../csv/clubes.csv");
-    writer << "--Clubes" << endl << endl;
 
     getline(clubes, header); // ignorar o cabeçalho
+
+    map<int, vector<string>> info_recinto;
+    map<string, vector<string>> info_clube;
+
+    int recintoID = 100000;
 
     for (string line; getline(clubes, line);){
         istringstream line_(line);
@@ -313,9 +318,15 @@ int main(){
 
         abreviatura = "\'" + abreviatura + "\'";
 
-        // ler o idRecinto
-        ignore_cols(line_, 2, ';');
+        // ler o nomeRecinto
+        ignore_cols(line_, 1, ';');
 
+        string nomeRecinto;
+        getline(line_, nomeRecinto, ';');
+
+        nomeRecinto = (nomeRecinto.empty()) ? "NULL" : ("\'" + nomeRecinto + "\'");
+
+        // ler o idRecinto
         string idRecinto;
         getline(line_, idRecinto, ';');
 
@@ -371,12 +382,63 @@ int main(){
         
         morada = (morada.empty() || morada[0] == '.') ? "NULL" : ("\'" + morada + "\'");
 
-        // escrever no ficheiro
+        if (idRecinto != "NULL"){
+            info_recinto[recintoID].push_back(nomeRecinto);
+            info_recinto[recintoID].push_back(pais);
+            info_recinto[recintoID].push_back(concelho);
+            info_recinto[recintoID].push_back(distrito);
+            info_recinto[recintoID].push_back(morada);
+
+            idRecinto = to_string(recintoID++);
+        }
+
+        info_clube[idClube].push_back(nome);
+        info_clube[idClube].push_back(abreviatura);
+        info_clube[idClube].push_back(dataFundacao);
+        info_clube[idClube].push_back(telefone);
+        info_clube[idClube].push_back(email);
+        info_clube[idClube].push_back(nomePresidente);
+        info_clube[idClube].push_back(idAssociacao);
+        info_clube[idClube].push_back(idRecinto);
+    }
+
+    /* RECINTOS */
+    writer << "--Recintos" << endl << endl;
+
+    for (auto it = info_recinto.begin(); it != info_recinto.end(); it++){
+        if (it->second.size() > 5){
+            continue;
+        }
+
+        writer << "INSERT INTO Recinto " << endl
+        << "VALUES (" << it->first << ", ";
+
+        for (auto iit = it->second.begin(); iit != it->second.end(); iit++){
+            writer << *iit << ", ";
+        }
+
+        int lotacao = rand() % (300 - 85 + 1) + 85;
+
+        writer << lotacao << ");"
+        << endl << endl;
+    }
+
+    /* CLUBES */
+    writer << "--Clubes" << endl << endl;
+
+    for (auto it = info_clube.begin(); it != info_clube.end(); it++){
         writer << "INSERT INTO Clube " << endl
-        << "VALUES (" << idClube << ", " << nome << ", " << abreviatura << ", "
-        << dataFundacao << ", " << telefone << ", " << email << ", " << nomePresidente << ", " 
-        << pais << ", " << concelho << ", " << distrito << ", " << morada << ", " << idAssociacao 
-        << ", " << idRecinto << ");" << endl << endl;
+        << "VALUES (" << it->first << ", ";
+
+        for (int i = 0; i < it->second.size(); i++){
+            writer << it->second[i]; 
+            
+            if (i != it->second.size() - 1){
+                writer << ", ";
+            }
+        }
+
+        writer << ");" << endl << endl;
     }
 
     /* EQUIPAS */
