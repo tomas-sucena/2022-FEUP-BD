@@ -19,7 +19,7 @@ WHERE f.nome = 'Fase Regular';
 .print 'Suponhamos que o campeonato ainda está a decorrer. Vamos adicionar um jogo entre estas duas equipas, realizado no recinto benfiquista, que ficou 85-77 para o Benfica:'
 
 INSERT INTO Jogo
-VALUES (319743, 22335, 1, '2021-06-05', '15:00', 'Realizado', 9526, 40594, 40591, 85, 77);
+VALUES (319743, 22335, 1, '2021-06-05', '15:00', 'Realizado', 100052, 40594, 40591, 85, 77);
 
 .print ''
 .print 'Consultemos, de novo, a tabela das classificações:'

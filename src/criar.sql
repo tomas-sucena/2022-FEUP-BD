@@ -37,16 +37,15 @@ CREATE TABLE Associacao(
     concelho                TEXT,
     distrito                TEXT,
     morada                  TEXT
-    --idClube                 INTEGER NOT NULL REFERENCES Clube(idClube) --36 ?
 );
 
 CREATE TABLE Competicao(
-    idCompeticao            INTEGER PRIMARY KEY, --1
-    nome                    TEXT NOT NULL, --3
-    abreviatura             TEXT NOT NULL, --2
-    idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE, --5
-    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE, --9
-    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao) --7
+    idCompeticao            INTEGER PRIMARY KEY,
+    nome                    TEXT NOT NULL,
+    abreviatura             TEXT NOT NULL,
+    idEpoca                 INTEGER NOT NULL REFERENCES Epoca(idEpoca) ON UPDATE CASCADE,
+    idEscalao               INTEGER NOT NULL REFERENCES Escalao(idEscalao) ON UPDATE CASCADE,
+    idAssociacao            INTEGER NOT NULL REFERENCES Associacao(idAssociacao)
 );
 
 CREATE TABLE Fase(
@@ -133,7 +132,7 @@ CREATE TABLE Jogo(
     dataJogo                DATE NOT NULL,
     horaInicio              TIME NOT NULL,
     estado                  TEXT NOT NULL,
-    idRecinto               INTEGER, --NOT NULL REFERENCES Recinto(idRecinto) ON UPDATE CASCADE,
+    idRecinto               INTEGER NOT NULL REFERENCES Recinto(idRecinto) ON UPDATE CASCADE,
     idEquipaCasa            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     idEquipaFora            INTEGER NOT NULL REFERENCES Equipa(idEquipa) ON UPDATE CASCADE,
     pontosEquipaCasa        INTEGER                         CONSTRAINT pontosEquipaCasaValidos CHECK (pontosEquipaCasa >= 0),

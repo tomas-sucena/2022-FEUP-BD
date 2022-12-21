@@ -287,6 +287,8 @@ int main(){
 
     int recintoID = 100000;
 
+    map<string, string> get_recinto;
+
     for (string line; getline(clubes, line);){
         istringstream line_(line);
 
@@ -389,6 +391,7 @@ int main(){
             info_recinto[recintoID].push_back(distrito);
             info_recinto[recintoID].push_back(morada);
 
+            get_recinto[idRecinto] = to_string(recintoID);
             idRecinto = to_string(recintoID++);
         }
 
@@ -737,6 +740,9 @@ int main(){
 
         string idRecinto;
         getline(line_, idRecinto, ';');
+
+        idRecinto = get_recinto[idRecinto];
+        idRecinto = (idRecinto.empty()) ? "100000" : idRecinto;
 
         // escrever no ficheiro
         writer << "INSERT INTO Jogo" << endl
