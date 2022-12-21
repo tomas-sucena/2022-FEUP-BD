@@ -4,7 +4,8 @@
 
 PRAGMA FOREIGN_KEYS = ON;
 
--- pequena descricao
+-- Verifica se o jogador apresenta valores para a altura e/ou para o peso.
+
 CREATE TABLE log(
     id                  INTEGER PRIMARY KEY AUTOINCREMENT,
     idJogador           INTEGER NOT NULL REFERENCES Jogador(idJogador),
