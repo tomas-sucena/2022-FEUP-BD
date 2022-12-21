@@ -146,6 +146,6 @@ CREATE TABLE Lance(
     idJogador               INTEGER NOT NULL REFERENCES Jogador(idJogador) ON UPDATE CASCADE,
     idJogo                  INTEGER NOT NULL REFERENCES Jogo(idJogo) ON UPDATE CASCADE,        
     periodo                 INTEGER NOT NULL                CONSTRAINT periodoValido CHECK (periodo > 0),
-    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto > 0 AND minuto <= 15),
+    minuto                  TIME NOT NULL                   CONSTRAINT minutoValido CHECK (minuto > '00:00:00' AND minuto <= '00:15:00'),
     pontos                  INTEGER NOT NULL                CONSTRAINT pontosValidos CHECK (pontos >= 0 AND pontos <= 3)
 );

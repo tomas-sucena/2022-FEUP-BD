@@ -7,4 +7,5 @@ Selecione o nome do jogador como JOGADOR, a altura como ALTURA, o país de orige
 POSIÇÃO e o número de pontos que marcou como PONTOS. */
 
 SELECT j.nome as NOME, j.altura as ALTURA, j.pais as PAÍS 
-FROM Jogador j
+FROM Jogador j INNER JOIN EquipaJogador ej ON j.idJogador = ej.idJogador
+               INNER JOIN Lance l ON j.idJogador = l.idJogador; 
