@@ -2,8 +2,6 @@
 .headers on
 .nullvalue NULL
 
-PRAGMA FOREIGN_KEYS = ON;
-
 /* Qual foi a equipa que venceu o campeonato? Liste o nome da equipa como NOME. */
 SELECT e.nome as 'NOME'
 FROM Equipa e INNER JOIN FaseEquipa fe ON e.idEquipa = fe.idEquipa 
